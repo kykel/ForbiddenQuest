@@ -1,0 +1,79 @@
+#Adventure Quest Testfile
+#07Mar2017
+
+
+##*NOTE*## - This does not account for print statements outside of functions.
+
+mastertabcnt = 0
+masterfunc =''
+mgtdict = {}
+storagedict = {}
+
+def adventure() tabcnt = len(tabs), curtab='tab'+str(tabcnt), 
+	if curtab in mgtdict: 
+		check the key
+		if mgtdict[curtab] == functionname:
+			print 'duplicate function - error'
+		else:
+			mgtdict[curtab] = functionname
+	elif curtab not in mgtdict:
+		mgtdict[curtab] = functionname
+	mastertabcnt=tabcnt+1
+	masterfunc = functionname
+	#
+	#also, add functionname to the storagedict
+		storagedict[functionname] = []
+
+	#Test function tabcnt=len(tabs), 
+		if tabcnt == mastertabcnt:
+			if masterfunc not in storagedict:
+				print "no function for this line exists."
+			else:
+				add to storagedict[masterfunc] (functionality resides in quest_parser.py)
+		else: print "gotten out of tab bounds somehow. Error. Trace this back and find out why."
+
+
+
+	def ocean() 1->2
+		def fish() 2->3
+			print "you catch a fish"
+		def swim() if this tabcnt == previous ->new key -> 3->4, elif, tabcnt<previous ->
+			print "you go swimming\nA fish bites your foot."
+			print "so you get out of the water."
+
+		print "you arrive at the ocean" won't match mastertabcnt 
+			#if tabcnt < mastertabcnt:
+				tabcnt = tabcnt-1 (1)
+				curtab = 'tab'+str(tabcnt) = tab1
+				mastertabcnt = tabcnt = 2
+				masterfunction = mgtdict[curtab] = mgtdict[tab1] = ocean
+			#else:
+			#	add to storagedict[]
+
+
+#If i use nested dictionaries I could have a dictionary for print statements
+#dictionary for if statements, flags, etc.
+#LET'S SOLVE IF_STATEMENTS
+	def forest()
+		def wander()
+			print "you wander around aimlessly"
+			time.sleep(1)
+			print "You are obviously lost."
+			if lost == 1:
+				do this
+			else:
+				do this
+			adventure = {wander:{if1:do this, if2: do this},{print1:'hello',print2:'hello'},{function:'time',function:'clear'}}
+		def climbtree()
+			print "You climb a tree"
+			if grip_slips:
+				print "You fall out of the tree.\nYou also break your leg.\nNow you're stranded here."
+			if unlucky:
+				print "You see wolves approaching.\nNice knowing you."
+			
+
+	def cabin()
+		def eat()
+			print "You eat something from your pack"
+		def sleep()
+			print "You go to sleep"

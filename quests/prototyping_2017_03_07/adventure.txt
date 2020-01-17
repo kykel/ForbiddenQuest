@@ -1,0 +1,43 @@
+#Adventure Quest Testfile
+#07Mar2017
+
+def adventure()
+	#Test function
+	def ocean()
+		def fish()
+			if you_catch_fish == 1:
+				print "you catch a fish"
+			elif you_catch_fish == 0:
+				print "you don't catch anything.
+			else:
+				print "your line breaks."
+				if outofline == 1:
+					print "You can't fish anymore."
+				else:
+					print "You re-line your rod."
+		def swim()
+			print "you go swimming\nA fish bites your foot."
+			print "so you get out of the water."
+		print "you've made it to the ocean"
+
+	def forest()
+		def wander()
+			print "you wander around aimlessly"
+			time.sleep(1)
+			print "You are obviously lost."
+		def climbtree()
+			print "You climb a tree"
+			print "You fall out of the tree.\nYou also break your leg.\nNow you're stranded here."
+			print "You see wolves approaching.\nNice knowing you."
+		print "You've made it to the forest."
+
+	def cabin()
+		def eat()
+			print "You eat something from your pack"
+		def sleep()
+			print "You go to sleep"
+		print "You enter a cabin."
+	print "Time for an adventure.\nLet's go!"
+	print "Onward!"
+
+print "End of game!"

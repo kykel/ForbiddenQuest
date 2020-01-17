@@ -1,0 +1,27 @@
+{"{Skeleton Key}:[Graveyard]:graveyard:no": {}, 
+
+
+"{Skeleton Key}:[Graveyard]:graveyard:yes": {}, 
+
+"{Skeleton Key}:[Graveyard]:gravekeeper's house:yes": {"pointers": ["DEAD END"]}, 
+
+
+"{Skeleton Key}:[Graveyard]": {"pointers": ["gravekeeper's house", "mausoleum", "graveyard"]}, 
+
+"{Skeleton Key}:[Graveyard]:gravekeeper's house": {"pointers": ["yes", "no"]}, 
+
+"{Skeleton Key}:[Graveyard]:mausoleum": {"pointers": ["yes", "no"]}, 
+
+
+"{Skeleton Key}:[Graveyard]:mausoleum:yes": {"pointers": ["yes", "no"]}, 
+
+"{Skeleton Key}:[Graveyard]:mausoleum:yes:no": {"pointers": ["DEAD END"]}, 
+
+"{Skeleton Key}:[Graveyard]:mausoleum:yes:yes": {"pointers": ["DEAD END"]}, 
+
+"{Skeleton Key}:[Graveyard]:graveyard": {"pointers": ["yes", "no"]}, 
+
+
+"{Skeleton Key}:[Graveyard]:gravekeeper's house:no": {"pointers": ["DEAD END"]}, 
+
+"{Skeleton Key}:[Graveyard]:mausoleum:no": {"pointers": ["DEAD END"]}}

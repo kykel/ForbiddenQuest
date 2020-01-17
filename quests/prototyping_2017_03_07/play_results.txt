@@ -1,0 +1,17 @@
+Line outside of function:  End of game!
+
+
+Printing dictionary:
+{'swim': [[' you go swimming', 'A fish bites your foot.'], ' so you get out of the water.'], 
+'eat': [' You eat something from your pack'], 
+'fish': [' you catch a fish'], 'ocean': [" you've made it to the ocean"], 'sleep': [' You go to sleep'], 
+'forest': [" You've made it to the forest."], 
+'climbtree': [' You climb a tree', [' You fall out of the tree.', 'You also break your leg.', "Now you're stranded here."], [' You see wolves approaching.', 'Nice knowing you.']], 
+'wander': [' you wander around aimlessly', ' You are obviously lost.'], 
+'cabin': [' You enter a cabin.'], 
+'adventure': [[' Time for an adventure.', "Let's go!"], ' Onward!']
+}
+
+
+Printing management dictionary:
+{'tab2': 'sleep', 'tab1': 'cabin', 'tab0': 'adventure'}

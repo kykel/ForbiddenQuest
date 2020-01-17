@@ -1,0 +1,22 @@
+Flying	Ailment	Predator	Mount	Hunter	Stealth	Feline	
+Bat 	Rattlesnake	Monitor Lizard	Goat	Hunting Dog	Flying Squirrel	House cat	
+Hawk  	King Cobra	Komodo Dragon	Pony	Fox	Honey Badger	Lynx	
+Eagle	Python	Megalania	Horse	Coyote	Chimpanzee	Panther	
+Gryphon	Anaconda	Drake	Unicorn	Wolf	Gorilla	Tiger	
+Pheonix	Wurm	Wyvern	Pegasus	Dire Wolf	Leshy	Lion	
+Roc	Basilisk	Dragon	Gryphon	Cerberus	?	Manticore	
+							
+Special							
+Thunderbird	Jormungand	Hydra	Sleipnir	Fenrir	?	Chimera	
+							
+							
+							
+		Specials			kitsune		
+		Anansi	spider		djinn		
+		Coyote (native american)	coyote		Leshy		
+		Monkey King	monkey man		puca		
+		Iktomi (Nat. American)	spider		bannik		
+		Loki	various		hobgoblin		
+		Azeban (native american)	racoon				
+		Tengu (japan)	goblin				
+		Kutkh (russian)	crow				

@@ -1,0 +1,1 @@
+{"treename": "Mountain Top", "questname": "Blah Mountain", "keyitems": [], "{Blah Mountain}:[Mountain Top]": {"introtext": "\nYou don't know how you got up here but it's time to head down.", "question": "Down?", "pointers": ["Down", "down", "DOWN"], "secondarytext": "\nThe top of the mountain."}, "savepoint": ""}

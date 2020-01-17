@@ -1,0 +1,41 @@
+07MAR2017
+See prototyping folder. quest_tree.txt for most recent advancements and current tasking.
+
+
+
+Combat
+
+Give the option to attack or flee
+    - Fleeing based on luck + dice roll
+    - Combat has chance of miss based on dice roll
+    - Potential add in later: based on original dice roll, when opponent attacks, player has chance to block or dodge based on additional dice roll.
+    
+Add new combat features
+    - Range
+    - Specials
+    - Spells
+    - Pets
+    - Interaction with terrain
+    - ASCII kills scenes (animated)
+    - Incorperate Loot and specialization naming
+    - Random adversary generation
+    - Class generation for bosses
+        - Ability and class and combat generation for bosses
+    
+Storyline
+    - One function to rule them all.
+    - Use place markers and tab delineated storyline that gets read back into the game, rather than type storyline in directly to code. 
+    - Each quest has separate story file.
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Updates Made to Game
+Mainfile.py : Changed path command to have it dynamically recognize current domain
+memorycard.py : Changed path command to have it dynamically recognize current domain

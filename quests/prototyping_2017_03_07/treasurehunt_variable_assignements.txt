@@ -1,0 +1,121 @@
+def treasurehunt():
+
+    def questintro():
+
+        def mansionintro():
+
+        def gardenintro():
+
+    def mansion():
+
+        def library():
+
+            def libraryintro():
+
+--->                     libraryflag = 1
+--->                     choice = raw_input("Will you enter?")
+            def hiddenbook():
+
+--->                 choice = raw_input("Do you enter?\n(yes or no)\n")
+            def toatriary():
+
+--->                 choice = raw_input("There is no significant markings on the door. Do you wish to go through?")
+            def tunnel():
+
+--->                     torch = 1
+                def tunnel_victory():
+
+--->             choice = raw_input("Do you wish to search the library?")
+--->                 luck = random.randrange(1,20)
+        def dungeon():
+
+        def ballroom():
+
+            def candle():
+
+--->                     torch = 2
+            def music():
+
+--->             choice = raw_input("What do you want to do?\n1. Inspect candles.\n2. Explore room\n3. Return to the main lobby.\n")
+        def emptyroom():
+
+        def basement():
+
+            def flooded():
+
+--->         choice = raw_input("1. Heavy oak door left\n2. Dark mahogany door straight\n3. Dark mohogany door right\n4. Basement\n5. Back outside")
+    def atriary(x):
+
+        def frominside():
+
+--->             choice = raw_input("What do you want to do?\n1. Explore\n2. Cut through to other side\n3. Wait\n4. Return to where you came from\n")
+        def atriaryexplore():
+
+        def westdoor():
+
+        def atriarywait():
+
+        def fromoutside():
+
+    def gardenmaze():
+
+        def hedgemaze():
+
+            def threeway():
+
+            def twoway():
+
+            def deadend():
+
+            def pathleft():
+
+            def pathright():
+
+        def fountain():
+
+        def overgrowth():
+
+--->         choice = raw_input("Where do you want to go?\n1. Mansion\n2. Grounds\n")
+    def grounds():
+
+--->         choice = raw_input("Where do you want to go?\n1. Continue toward the graveyard.\n2. Return to the mansion. \n3. Return to the garden.\n")
+    def minigraveyard():
+
+        def makechoice():
+
+--->             choice = raw_input("What do you want to do?\n1. Inspect the graveyard.\n2. Inspect the mosuleaum.\n3. Inspect the lone tombstone.\n4. Follow the path to the back of the mansion.\n")
+        def newtombstone():
+
+--->             i = 1
+--->                 choice = raw_input("What do you want to do?\n1. Read the tombstone.\n2. Leave this tombstone and inspect elsewhere.\n3. Dig up the grave.\n")
+--->                     i = 0
+--->                     i = 0
+        def lonelystone(): 
+
+--->                 choice = raw_input("What do you want to do?\n1. Read the tombstone.\n2. Return to graveyard.\n3. Dig up grave.\n4. Attempt to break the tombstone.\n")
+        def singlemosuleaum():
+
+--->             i = 1
+--->                 choice = raw_input("What do you want to do?\n1. Push on door.\n2. Use key.\n3. Return to graveyard.\n")
+--->                         choice1 = raw_input("The door opens. Enter?\n(yes or no)\n")
+--->                             i = 0
+--->                     i = 0
+        def entermosuleaum():
+
+            def sarcophagus():
+
+--->                 choice = raw_input("Will you take it?\n(yes or no)\n")
+--->                     items.necklace = '1'
+--->                 choice = raw_input("What do you want to do?\n1. Check urns.\n2. Open sarcophagus.\n3. Return to graveyard.\n")
+        def digginggrave():
+
+--->             status.undeadflag = 1
+--->             choice = raw_input("What do you want to do?\n1. Re-inspect the hole.\n2. Further inspect the grounds.\n3. Head for the mansion to try to find a place to clean your wound.\n")
+--->                 choice1 = raw_input("What do you want to do?\n1. Climb back into the hole to get the shiny object.\n2. Try to reach the object from outside the hole.\n3. Leave the hole; return to the graveyard.")
+        def grabkey(x):
+
+--->                 items.key = '1'
+--->                 items.key = '1'
+        def rearpath():
+
+--->             choice = raw_input("What do you want to do?\n1. Wander around aimlessly.\n2. Jump off cliff.\n3. Return to graveyard.")

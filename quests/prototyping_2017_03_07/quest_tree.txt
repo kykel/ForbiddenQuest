@@ -1,0 +1,107 @@
+#quests
+
+#07MAR2017
+#Accomplished
+#Number annotated functions
+#quest_parser.py
+	#Reads both functions and print statements into a dictionary in a key:value/function:print system.
+
+#TO DO LIST
+#Maybe put quests inside a class for easy init/self structure.
+	#demo this with next quest.
+	#This would make parsing and using a dictionary for storyline print statements much easier. It would also make managing flags very effective.
+	#In this case, if statements would only manage the flag.
+	#I could use a small handful of functions, in their own module, to handle all quest control.
+		#This could mean everything from movement, to choice, to options, to battle.
+#Also, master flag for each quest that is changed once the quest is completed.
+	#Saved in player file to ensure no repeat of quests.
+
+#### NOTE ####
+#See quest_parser.py for dictionary functionality. Already accounts for both print statements and functions.
+#To account for lists in my dictionary, I'll have a function to handle standard printing and a function to handle conditional printing. Or one function that handles both using a flag for conditional.
+#This means, I don't have to pass a number code. I actually pass in a key value for the function.
+
+
+
+0. treasurehunt()
+	1. questintro()
+	4. mansion()
+	23. gardenmaze()
+	32. grounds()
+	33. minigraveyard()
+
+	1. questintro()
+		1. mansionintro()
+		3. gardenintro()
+
+	4. mansion()
+		5. library()
+		11. dungeon()
+		12. ballroom()
+		15. emptyroom() ### Finished. Simply a dead end.
+		16. basement() ### Dead end -> Death in any scenario.
+
+		5. library()
+			6. libraryintro
+			7. hiddenbook()
+			8. toatriary()
+			9. tunnel() -> (find hidden book)
+				10. tunnel_victory() #Is this function even neccessary?
+
+
+			9. tunnel()
+				# intro
+				10. tunnel_victory()
+					# cave (die or succeed - complete quest)
+					# key = treasure 
+
+		11. dungeon()
+			# door is locked
+
+		12. ballroom()
+			13. candle() # (light source to light torch for basement or upstairs))
+			14. music()
+
+		15. emptyroom()
+			# print statement -> dead end
+
+		16. basement()
+			#print statement -> dead end -> death
+
+	18. atriary(x)
+		19. frominside()
+		20. atriaryexplore()
+		21. westdoor()
+		22. atriarywait()
+		23. fromoutside()
+
+	24. gardenmaze()
+		25. hedgemaze
+		31. fountain()
+		32. overgrowth()
+
+			25. hedgemaze()
+				26. threeway()
+				27. twoway()
+				28. deadend()
+				29. pathleft()
+				30. pathright()
+
+	33. grounds()
+		#currently nothing # incomplete
+
+	34. minigraveyard() # All this should be moved into the grounds function.
+		#This should be inside the grounds
+		35. makechoice()
+		36. newtombstone()
+		37. lonelystone()
+		38. singlemosuleaum()
+		39. entermosuleaum()
+			40. sarcophagus()
+		41. digginggrave()
+		42. grabkey(x)
+		43. rearpath()
+
+		39. entermosuleaum()
+			40. sarcophagus()
+

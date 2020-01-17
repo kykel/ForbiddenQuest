@@ -1,0 +1,274 @@
+#TREASURE HUNT QUEST
+
+
+
+def treasurehunt():
+    #Houses all introductions for quest functions.
+
+    def questintro():
+        
+        def mansionintro():
+            config.clear()
+            mansion()
+
+        def gardenintro():
+            config.pause()
+            config.clear()
+            questintro()
+   
+        directions(gardenintro, mansionintro, grounds, questintro)
+                
+
+
+    #directions(direction)
+    def mansion():
+        #MANSION
+        def library():
+
+            def libraryintro():
+                global libraryflag
+                    yesorno(choice, library, mansion, mansion)
+            
+            def hiddenbook():
+                yesorno(choice, tunnel, library, library)
+
+
+            #What is the trigger for this? a search with a random variable?
+            def toatriary():
+                    atriary(2)
+                    library()
+                else:
+                    library()
+            
+
+            
+            def tunnel():
+                global torch
+
+                    config.pause()
+                    config.clear()
+                    config.pause()
+                    mainfile.main()
+
+                    config.pause()
+                    config.clear
+                    tunnel_victory()
+                tunnel()
+
+
+#                    Initiate boss battle with Cave_Ghoul
+
+                def tunnel_victory():
+                    config.pause()
+                    config.pause()
+                    mainfile.main()
+                    #otherwise, you have to go find it.
+
+            libraryintro()
+                    hiddenbook()
+                    toatriary()
+                else:
+                    config.pause()
+                    library()
+                mansion()
+            else:
+                mansion()
+            
+
+            
+        def dungeon():
+        
+        def ballroom():
+            
+            def candle():
+                global torch
+                    ballroom()
+                    config.clear()
+                    config.pause()
+                    ballroom()
+
+            def music():
+                config.pause()
+                config.clear
+                ballroom()
+
+            funccall(choice, candle, music, mansion, ballroom, ballroom)
+
+            
+        def emptyroom():
+            #Add random descriptions
+            mansion()
+        
+        def basement():
+            def flooded():
+                config.pause()
+                config.pause()
+                mainfile.main()
+
+            global torch
+                mansion()
+                mansion()
+                yesorno(choice, flooded, mansion, mansion)
+
+
+        funccall(choice, emptyroom, library, ballroom, basement, treasurehunt)
+            
+    def atriary(x):
+        def frominside():
+            funccall(choice, atriaryexplore, westdoor, atriarywait, mansion, mansion)
+            
+        def atriaryexplore():
+            atriary(2)
+        
+        
+        def westdoor():
+            mansion()
+        
+        def atriarywait():
+            mansion()
+        
+            
+        def fromoutside():
+            
+            
+        
+            fromoutside()
+            frominside()
+            
+    def gardenmaze():
+        #GARDENMAZE
+        
+        # def atriary() This and the mansion function both have access as the atriary connects them together.
+        def hedgemaze():
+            def threeway():
+            def twoway():
+            def deadend():
+            def pathleft():
+            def pathright():
+        
+        def fountain():
+            
+        def overgrowth():
+
+        yesorno(choice, mansion, grounds, hedgemaze)
+            
+    #########################################################################################################################################
+
+    #########################################################################################################################################
+
+    #########################################################################################################################################
+
+
+    def grounds():
+        #GROUNDS
+        #This function needs to be encompass all of minigraveyard.
+        #Add in ramshackle sheds to search for syth to clear entrance to hedgemaze garden
+        funccall(choice, minigraveyard, mansion, gardenmaze, grounds, grounds)
+
+    
+            
+    def minigraveyard():
+        
+        #This function needs to be incorporated into grounds. There's no reason for minigraveyard() to exist.
+        
+        def makechoice():
+            config.clear()
+                newtombstone()
+                singlemosuleaum()
+                lonelystone()
+                rearpath()
+            else:
+                grounds()
+
+
+
+
+
+            
+
+        def newtombstone():
+            
+            while i == 1:
+                    config.clear()
+                    config.pause()
+                    newtombstone()
+                    minigraveyard()
+                    digginggrave()
+
+        def lonelystone(): 
+            def lonelystone1():
+                    config.pause()
+                    lonelystone1()
+                    minigraveyard()
+                    config.clear()
+                    config.pause() 
+                    makechoice()
+                    config.pause()
+                    makechoice()
+                else:
+                    minigraveyard()
+            lonelystone1()
+
+        def singlemosuleaum():
+            while i == 1:
+                            entermosuleaum()
+                        else:
+                            makechoice()
+                    else:
+                    minigraveyard()
+        
+        def entermosuleaum():
+            def sarcophagus():
+                    config.clear()
+                    config.pause()
+                    entermosuleaum()
+                    entermosuleaum()
+            i=0
+            while i == 0:        
+                    sarcophagus()
+                    minigraveyard()
+                else:
+                
+                        
+                    
+
+        def digginggrave():
+            config.clear()
+            status.undead(status.cntrinc(1))
+                    grabkey(1)
+                    grabkey(2)
+                    minigraveyard()
+                grounds()
+                mansion()
+            else:
+                minigraveyard()
+                    
+        def grabkey(x):
+            config.clear()
+                config.pause()
+                config.pause()
+                config.clear()
+                status.undead(status.cntrinc(1))
+
+            makechoice()
+                
+                
+               
+        def rearpath():
+                config.pause()
+                minigraveyard()
+                config.clear()
+                config.pause()
+                exit()
+                minigraveyard()
+            else:
+                config.clear()
+                sys.exit(0)
+                
+            
+
+        makechoice()
+ 
+    questintro()   
+
+

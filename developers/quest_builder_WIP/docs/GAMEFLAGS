@@ -1,0 +1,27 @@
+GAME FLAGS
+
+DEAD END = end of branch, player cannot go past this
+DEATH = a pointer flag that triggers the game to print the death key from the running dictionary and kills the game
+REQUIREMENT = a pointer flag that requires something before it will present the true pointers.
+
+
+
+####################################################################################################################################
+Dictionary breakdowns
+
+Running dictionary
+yesmessage = prints a message for a yes/no branch for the yes option
+nomessage = prints a message for a yes/no branch for the no option
+damage = deals damage for a yes/no branch
+weapondict = a dictionary story all the informatino for an acquired weapon
+keyitemname = the name for a collected key item
+keyitemdescription = description of the keyitemname
+requirement = a flag or item of some kind that is required to access the pointers of this branch
+deathtext = description of a death scene
+cmd = a specific python command to be run if option is met. (May be uneccessary.)
+itemintrotext = prints a text when you find, receive, or otherwise acquire an item of some kind.
+
+
+story dictionary
+keyitems = a dictionary that stores all of the key items and their prompt locations in the game.
+prompts = these various branch prompts are dictionaries storing all the data associated to their branch

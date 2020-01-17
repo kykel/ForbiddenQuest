@@ -1,0 +1,2 @@
+Name: kail
+level: 3 battles: 7 health: 14 playerdmg: 4 playerdmg: 12 

@@ -1,0 +1,26 @@
+{"treename": "The Dark Wood", 
+
+"{Shadowland}:[The Dark Wood]:dark pool:vomit": {"pointers": ["DEAD END"]}, 
+
+"{Shadowland}:[The Dark Wood]:creepy old shack:scream:scream out": 
+{"introtext": "\nAgain you scream and again you hit the floor.\n\nThis time, in a more intelligent manner you stay on the floor.\nCrawling backward, you return to the doorway and very slowly start to rise, ready to lower if the sensation returns.\n\nThankfully, you are able to stand and from the doorway you survey the room.", "question": "Do you want to scream out again?", "pointers": ["yes", "no"], "secondarytext": "\nNothing of interest."}, "savepoint": "{Shadowland}:[The Dark Wood]:creepy old shack:scream:scream out:yes", 
+
+"{Shadowland}:[The Dark Wood]": {"introtext": "A dark and ominous wood. All around you shadows move, despite there not being enough light to see them. The trees lean in, reaching for you. You feel as though something is watching you.\n\nNo... You KNOW something is watching you.\n", "pointers": ["creepy old shack", "dark pool", "underground cave"], "secondarytext": "Shadows within the dark wood watching you on all sides but nothing happens."}, 
+
+"{Shadowland}:[The Dark Wood]:creepy old shack:scream": {"introtext": "\nYou scream and abruptly hit the hard ground.\nOther than a broken and bloody nose, all else seems okay.\n\nYou are lieing on the floor and as you stand feel the vertigo rush back over you. \nAgain, you're falling", "pointers": ["falling", "scream out"]}, 
+
+"{Shadowland}:[The Dark Wood]:creepy old shack:scream:falling": {"introtext": "\nAgain... falling.\nEndlessly.", "pointers": ["DEAD END"], "weapondict": {"description": "\na small cuved blade that laughs at you whenever you're clumsy", "name": "Sucker's knife of falling", "weapontype": "knife", "damage": 3}, "damage": 7}, "{Shadowland}:[The Dark Wood]:dark pool:2": {"pointers": ["DEAD END"]}, 
+
+"{Shadowland}:[The Dark Wood]:creepy old shack": {"keyitemdescription": "\nAn odd coin you found mixed in with the gold. You're unsure of its purpose but it is warm to the touch.", "gold": 2, "pointers": ["falling", "scream"], "weapondict": {"damage": [1,1], "description": "\nAn old and dull pocket knife.", "weapontype": "knife", "name": "dull knife"}, "itemintrotext": "\nA glint catches your eye as you approach.\n\nCuriously, you approach to find a tuft of moss has been compressed by your previous attempt to look through the window.\nThe compression has torn a small gap in the moss and you notice something shiny below.\n\nYou reach in and pull it out.", "introtext": "\nThe shack is barely more than an out house. The doorway takes up most of the front wall and a single window can be seen on the side of the structure.\n\nThe roof is sagging and a section in the top right corner of the shack has caved in completely, leaving shingles dangling into the shack.\nYou peer around looking for any threats but the window is too dirty to see much through.", "secondarytext": "\nYou approach the shack, just as you did last time. You pay little attention to your surroundings, knowing there is nothing of threat within.", "keyitem": "Fancy coin"}, 
+
+"keyitems": ["Fancy coin"], 
+
+"{Shadowland}:[The Dark Wood]:creepy old shack:scream:scream out:yes": {}, 
+
+"{Shadowland}:[The Dark Wood]:dark pool:lose conciousness": {"introtext": "\nYou pass out.", "pointers": ["DEAD END"]}, 
+
+"{Shadowland}:[The Dark Wood]:dark pool": {"introtext": "\nStrange lights with no apparent source shimmer across the surface of the dark water.  It is impossible to tell the depth.  The waters tremble, yet the woods are still and silent.  A cold shiver moves across your skin as you approach.", "pointers": ["2", "vomit", "lose conciousness"], "secondarytext": "\nA dark creature rises from the surface, its skin slick as oil.  You feel your sanity crawling away in your mind, desperate in self-preservation.  The world spins and the darkness of the creatures skin is like the void outside of time.  \nA stench fills your nostrils and floods you with dread.  Your mind runs but you are frozen. Awareness of the woods around you crumbles, only you and the creature of nightmares exist in this moment.  \nTime unravels and you feel sick from the vertigo."}, 
+
+"{Shadowland}:[The Dark Wood]:creepy old shack:falling": {"introtext": "\nYou fall endlessly. No stopping. No dieing.", "pointers": ["DEAD END"]}, 
+
+"questname": "Shadowland"}

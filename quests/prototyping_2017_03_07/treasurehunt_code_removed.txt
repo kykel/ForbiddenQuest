@@ -1,0 +1,273 @@
+
+0 > def treasurehunt():
+
+1 >     def questintro():
+
+2 >         def mansionintro():
+--->              You enter the mansion, stepping lightly and cautiously. Already the walls look as though they are about to bleed. You may be a bit paranoid but hey, better safe than sorry is what your Auntie Genna used to say. Then again, she also got eaten by a wyvern that one of her booby traps had locked in her garden... 
+--->              You glance around but all seems quiet. Maybe too quiet? Then again, it is an abandoned mansion. What really constitutes 'too quiet'?
+--->              After ten minutes of standing in place and staring about the room, holding the door open for fear of it slamming behind you, you finally let it go. It creeks its way back to the frame and closes. No slamming, no clicking locks. No trapped wyverns... yet. So, you've made it this far. 
+
+3 >         def gardenintro():
+--->              Far to your left, wrapping around the side of the ominous structure you see the garden hedges, standing well over your head. It's common knowledge that gardens often lead to the green houses at the back of the building. It's also common knowledge people often 'get lost' and don't come back out... Still, you decide to take a look. 
+--->              Unfortunately, at this time, the garden is too overgrown to enter. You'll need something to cut your way through the entrance to get in. 
+--->          Against complete common sense(it's obvious you were the brightest among your parent's litter) you accept the offer. What could possibly go wrong?
+--->          After a long trudge you find yourself at the abandoned shell of a mansion, or rather castle. The quest master really underplayed the place.
+--->          On your left you can see the garden, the mansion lay straight ahead and to your right is the rest of the grounds.  
+
+4 >     def mansion():
+
+5 >         def library():
+
+6 >             def libraryintro():
+	                 if libraryflag == 1:
+                         pass
+	                 elif libraryflag == 0:
+--->                      You attempt to push the door open but can only get it cracked, just enough to squeeze through. Something appears to barricading the door from the other side. As soon as you squeeze into the room you see a nearby shelf has fallen over, restricting movement of the door. A look around the room(what you can see anyway) shows fallen books and odd, clawed foots in the dust. 
+
+7 >             def hiddenbook():
+--->                  You search the library relentlessly and find nothing. It's only when you are about to give up that you notice something. There is one book in particular that stands out. On an oddly empty shelf, only half filled with books stands a single large green book. Title: Nevermore. A curious title to be sure. You decide to investigate further. 
+--->                  You reach for the book. Only, it won't budge. It's as though the book is glued to the shelf. You pull harder and then suddenly it comes loose, jerking free and sticking out from the shelf at an odd angle. An odd grinding sound emanates from the wall and then the shelf suddenly parts, splitting down the middle and sliding to the side, opening a small body-width gap to squeeze through. 
+--->                  Peering inside you see that it's dark but a slightly visible staircase descends into a tunnel below. 
+
+8 >             def toatriary():
+--->                  You notice, far in the back corner, hidden by a fallen bookshelf is a door. The door isn't blocked but with the angle of the wall and the shelf had you not been looking for it you could have easily missed it. 
+	                 if choice == 'yes' or choice.lower == 'yes' or choice == '1':
+	                 elif choice == 'no' or choice.lower == 'no' or choice == '2':
+
+9 >             def tunnel():
+	                 if torch == 0:
+--->                      Well, you have a torch but due to your lazieness it's unlit, and so the tunnel is darker than a black widow on a moonless night.
+	                 elif torch == 1:
+--->                      You follow the tunnel in darkness for as long as you can remember. No seriously, after like... 4 and a half, maybe 4 and 3/4 minutes, you've lost all sense of time. You might as well have been down here a week. 
+--->                      You navigate blindly, feeling your hands on the walls and shuffling your feet one at a time. It's only when the feel of the terrain changes beneath your feet and the wall goes from smooth to rocky that you realize you've entered the cave. 
+--->                      BRILLIANT! YOU'VE DONE IT! You've found the cave! With the treasure. At least you think you have. Only, you can't see shit because your dumb ass decided to trek into a dark and creepy tunnel without a torch or even a candle. But hey, who needs light right. I'm sure they'll ask you that in heaven about 30 seconds when that ghoul who's lunging at you in the darkness right now is finished ripping out your entrails. Congrats. You've died. 
+--->                      Game over.  
+	                 elif torch == 2:
+--->                      The tunnel stretches on far past your torch light. Still, you are determined and follow it into seeming oblivion. Quite possibly death but hey, you've come this far. I'm sure you can handle some creepy cave creature. Who knows, maybe this time next year they'll name a monument after you for discovering some creepy cave pigmies...  But I wouldn't count on that. That would imply you're going to survive. Which is obviously not going to happen. Come on. Let's be real.  You're walking into a dark creepy tunnel and nobody else cares you're here. Yeah... You're fucked! 
+9 ->                     time.sleep(5)
+--->                      The darkness seems to extend on forever. You walk for so long you start to wonder if you're moving at all. You start thinking back to adventure school when one-eye, one-leg, decapitated arm Pete told you about his adventures in the Forest of Andabar and how he became trapped for weeks after getting trapped in a darkness enchanment, walking in the same circle for weeks. The punch line, he didn't lose the arm and leg in combat... 
+	                      The darkness seems to extend on forever. You walk for so long you start to wonder if you're moving at all. You start thinking back to adventure school when one-eye, one-leg, decapitated arm Pete told you about his adventures in the Forest of Andabar and how he became trapped for weeks after getting trapped in a darkness enchanment, walking in the same circle for weeks. The punch line, he didn't lose the arm and leg in combat... --->                      In the end however, the boring flat landscape of the stone tunnel melts away into a slightly less, but still noticeably creepy and boring canvas of cave rock. Yay! 
+--->                      The cave isn't very large and you find yourself bordering between anxiety and excitement. You've found it! Obviously you're better than all those blokes who failed. I mean come on! How hard was this really? It's not like... 
+--->                      Wait.... Has it not occurred to you that this is too easy? Well, of course it has! Even more so when you finally find yourself face to face with the creepiest, ugliest and foul smelling ghoul face you've ever seen. And judging but it's lunging at you and clacking teeth, it wants to eat you... Go figure. 
+
+10 >                 def tunnel_victory():
+--->                      You've killed the cave ghoul... Wow. That's a job well done. Gotta say, I didn't really think you had it in you. But you did it so I guess I was wrong. Heh. Anyway, congrats. 
+--->                       You follow the cave a few more feet when something glints in the distance. You step forward, at the ready only to see you've discovered a large metal chest. Needless to say you won't be smashing this open. A quick glance tells you you'll need the key. You found that right? 
+--->                      Success! You win! 
+--->              You've entered the library. You cannot see past the bookshelves, standing from floor to ceiling, from one end of the room to the other in the parralling fashion typical of libraries. Among the shadowed hallways of shelves, old tombs, dust and cobwebs clutter your vision.  
+	             if choice == '1' or choice == 'yes' or choice.lower == 'yes':
+	                 if luck <=5:
+	                 elif luck <=18:
+--->                      You find nothing. 
+	             elif choice == '2' or choice == 'no' or choice.lower == 'no':
+
+11 >         def dungeon():
+--->              The door is jammed shut. You are unable to open it.
+
+12 >         def ballroom():
+
+13 >             def candle():
+	                 if torch == 0:
+--->                      It appears to be an ordinary candle. If you had a torch maybe you could light it here.
+	                 elif torch == 1:
+--->                      You light your torch on the candle. With this you'll be able to explore the darker areas of the mansion. Great, more places to get killed in. 
+--->                       You've aquired a lit torch. 
+
+14 >             def music():
+--->                  You decide to explore the room. The decision leaves you feeling rather unnerved as you quickly realize that the faint music you thought you heard was in fact not an illusion at all. Even worse, the music changes based on where you are in the room. Creepy.............
+--->              A strange air seems to permeate the grand hall. You hear the faint sound of music and laughing to the air. As you walk around the room, the temperature seems to change in different areas. 
+--->              Overhead, a great glass dome stretches the length of the room. Candle racks burn, unchanged, as though by magic, on each of the stone pillars bordering the walls. On the far end of the room, large glass windows expose the overgrown and manacingly dark atriary. There are no other doors in the room. Otherwise, the room appears empty. 
+
+15 >         def emptyroom():
+--->              Aside from assorted furniture and items, a table, its chairs, an ugly painting over the fireplace mantle, and such, the room is empty.
+
+16 >         def basement():
+
+17 >             def flooded():
+--->                  You walk your way down the steps and into the water. The water is colder than ice. Still, somehow you thought this was a good idea... 
+--->                  You're wading through the water, seeing nothing of usefullness when suddenly something moves in the water. Naturally, you're terrified. You make a break for the door when it trips you, causing you to drop your torch as you crash into the water. 
+--->                  You come up in complete darknes. Oh god. What have you gotten yourself into? You get a very good idea when something sharp and unnatural plunges into your right calf muscle. The last sound you'll ever make is a very unbrave squeal as you're dragged under the dark watery void. Congrats. You've died. 
+--->                  Game Over.
+	             if torch == 0:
+--->                  The basement is dark and flooded. With a torch you'd be able to see, but judging by the amount of water it might be best to steer clear.
+--->                  I'm sure you'd rather your legacy not be remembered as the guy eaten by basement leeches...
+	             elif torch == 1:
+--->                  Well, you have a torch but due to your laziness it's unlit. A lot of good that's going to do here... Moron.
+	             elif torch == 2:
+--->          You've entered the mansion. A large empty room with three doors and a set of stairs going up to the second floor, currently shrouded in darkness. 
+--->          There are three doors around you, a heavy oak door left, a dark mohogany door straight and another on the right. A fourth door under the stairs displays in bold letters: BASEMENT. Maybe you can find some kind of light source in one of those directions. 
+
+18 >     def atriary(x):
+
+19 >         def frominside():
+--->              You close the door behind you. The atriary isn't even much of an atriary anymore. Much of the glass in its construction is cracked and dirty, many panes broken in several places. You hear nor see no birds, but that is no surprise really as all vegetation in the room is dead. 
+--->              Yet for all the misery, at least it's well lit and you see no obvious threats in the room.
+
+20 >         def atriaryexplore():
+--->              You begin exploring the room. Most of the plants have died. A few odd looking trees have broken through their pots and their roots have dug into the ground. They seem the only plants to have escape starvation. Aside from this you see nothing. 
+
+21 >         def westdoor():
+--->              You find the door on the opposite end of the atriary is unfortunately locked and you can't seem to get it open. No worries, the garden is rather menacing looking through the glass anyway. 
+--->              You return to the library instead. 
+
+22 >         def atriarywait():
+--->              You decide to sit and wait. 
+22 ->             time.sleep(10)
+--->              Nothing happens. 
+
+23 >         def fromoutside():
+                 pass
+	         if x == 1:
+	         if x == 2:
+
+24 >     def gardenmaze():
+
+25 >         def hedgemaze():
+                 pass
+
+26 >             def threeway():
+                     pass
+
+27 >             def twoway():
+                     pass
+
+28 >             def deadend():
+--->                  You've reached a dead end. You go back to your last intersection.
+                     pass    
+
+29 >             def pathleft():
+                     pass
+
+30 >             def pathright():
+                     pass
+
+31 >         def fountain():
+                 pass
+
+32 >         def overgrowth():
+                 pass
+--->          Currently nothing to do here. Sorry. Until the hedge is cleared out you can't enter the hedgemaze. 
+
+33 >     def grounds():
+--->          The hedge garden looks a bit too overgrown for you but opt to explore rather than enter the ominous structure before you. The sun has only just risen and even in broad daylight the place makes creepy sound nice. Nevermind what the inside must look like. You decide to navigate your way through the maze of dieing trees and storage sheds that litter the grounds. 
+--->          Up ahead you can make out a structure and an old fence. A few tombstones as well. 
+--->          The path however splits three ways, to follow the side of the mansion around toward the back on the left, straight toward the tombstones ahead, and off out of sight on the right. 
+
+34 >     def minigraveyard():
+
+35 >         def makechoice():
+--->              You follow the path through the grounds for a while. Finally, the knarled trees and ramshackle death sheds part to a small clearing. Before you is a small graveyard. Thankfully, it's more of a fenced area of tombstones than actual graveyard. The path rounds the left side of the decrepit fence to circle around the back of the building. 
+--->              A small mosuleaum, barely big enough for a single coffin sits at the back of the plots. On the right of the small graveyard a single tombstone sits lonely and separate from the rest of it's kind. 
+	             if choice.lower() == 'left' or choice == '1':
+	             elif choice.lower() == 'right' or choice == '2':
+	             elif choice.lower() == 'straight' or choice == '3':
+	             elif choice.lower() == 'around' or choice == '4':
+
+36 >         def newtombstone():
+--->              You wander through the graveyard inspecting the different stones. One in particular catches your eye and as you near the stone you notice, it seems newer than the rest. In fact, by the lack of moss and sea salt collected on it, it's clear it's been placed only recently. Even more, the dirt appears to have been recently dug up. 
+	                 if choice == '1':
+--->                      RIP(ieces) HERE LIES THEODORE HE ENTERED WHERE HE DIDN'T BELONG 
+--->                      A warning? 
+	                 elif choice == '2':
+--->                      There's probably nothing worth reading on a stupid rock anyway. 
+	                 elif choice == '3':
+
+37 >         def lonelystone(): 
+	                 if choice == '1':
+--->                      The stone reads: 'Here Lies Riddle Never, but never did he die.' 
+	                 elif choice == '2':
+	                 elif choice == '3':
+--->                      After hours of digging, because you are a sick fuck that digs up resting corpses and you also don't have a shovel(way to go on that one moron), you finally come to the conclusion there is nothing buried here. 
+--->                      Maybe if you had a shovel you could dig deeper. Otherwise, it appears there's nothing here. 
+	                      Maybe if you had a shovel you could dig deeper. Otherwise, it appears there's nothing here. 	                 elif choice == '4':
+--->                      You attempt to smash the tombstone with your boot but despite the crack it refuses to break. Maybe with the right tools but for now it appears there's nothing you can do. 
+--->              You approach the lonely tombstone. It is old, possibly older than the rest of the graveyard and its epitaph is barely readable. Moss covers most of its surface and a large crack stretch across its center. 
+--->              It feels almost sad, like an old memory you've forgotten. Something about the stone feels important. After several minutes of tracing the fading words with your fingers you manage a translation. 
+
+38 >         def singlemosuleaum():
+--->              There are no handles on the thick metal doors. Only a large odd shaped keyhole. 
+	                 if choice == '1':
+--->                      You push on door but it doesn't budge. 
+	                 elif choice == '2':
+	                     if items.key == '1':
+	                         if choice1 == 'yes':
+	                     elif items.key == '0':
+--->                          You don't have a key. 
+--->                          Incorrect input. 
+	                 elif choice == '3':
+
+39 >         def entermosuleaum():
+
+40 >             def sarcophagus():
+--->                  You push hard against the lid, because, just as always you seem to think 'This' is the brightest idea in the world. Don't worry, I won't laugh when the mummy is gouging your eyes from their sockets. 
+--->                  The lid slides open, albeit with great difficulty. Dust sprays up into the air and you step back coughing heavily as you choke on it. 
+--->                  Finally, you look inside and unsurprisingly, there's a dead guy. Or rather, skeleton. Don't worry. It doesn't move. At least, not yet... 
+--->                  Around the skeleton's neck is a sparkling gold chain, a large yellow topaz attached to the chain. 
+	                 if choice == 'yes':
+--->                      You take the necklace and ...
+40 ->                     time.sleep(2)
+--->                      Wait for it...
+40 ->                     time.sleep(3)
+--->                      Almost there...
+40 ->                     time.sleep(5)
+--->                      Any moment now...
+40 ->                     time.sleep(10)
+--->                      HAHAHAHA! GOTCHA. Oh, you should have seen your face. Nothing happens. 
+	                 elif choice == 'no':
+--->                  The mosuleaum is rather empty. Aside from a few small ash earns and a single sarcophagus in the center you see nothing else. 
+	                 if choice == '1':
+--->                      Aside from collected dust, there is nothing special about the urns.
+                         pass
+	                 elif choice == '2':
+	                 elif choice == '3':
+                         pass
+
+41 >         def digginggrave():
+--->              Being the sick fuck that you are, you decide to dig up the grave. You catch a glimpse of the tombstone. It reads something about 'RIP(ieces)'. This is going to be fun. 
+--->              You dig for what seems like forever, using your hands as you have nothing else to dig with. As you the dirt begins to level out to a wooden coffin you realize you've found the treasure you sought and boy does it smell fantastic. 
+--->              The coffin is rotted beyond imagining and peels apart like wet paper as your fingers attempt to scrape dirt away from its surface. You stand up to get a better look when the lid suddenly gives and your feet plung through the soft wood. Luckily, something soft and slushy melts away under your feet, bracing your fall. However, now you find yourself stuck knee-deep in metaphorical shit that doesn't feel so metaphorical. 
+--->               And then you feel it. Something's moved in the coffin, bumping into your leg. Chill bumps rise on your neck. Panic sets in. Suddenly you're struggling to get your legs free. It hits the other leg. An inaudible cry escapes your mouth when something suddenly bites into your calf. Panic turns to desparation and then you're free, the biting cling letting go of our leg as you leap from the whole you've dug. You roll away and sit stunned, staring at the hole. 
+--->              You wait several moments staring at the hole, too afraid to move for worry that something's going to spring up after you. The wound on your leg throbs dull-ly. 
+--->              You inspect the bite, fighting back vomit as the rotting sludge coating your legs. What the fuck were you thinking!? 
+--->              The bite isn't too bad, just enough to break skin but it bleeds little. Your bigger stresser at this point should be the risk of infection. It might be a good idea to look for somewhere to clean it.
+	             if choice == '1':
+--->                  Though terrified beyond all reason, you somehow manage to crawl back over to the grave and peer in. Whatever assaulted you is nowhere in sight. Maybe it fell back into the coffin.
+--->                  Something glints in the hole near where you fell through. You could swear there was nothing there before. Maybe it got thrown out of the coffin during your struggle.
+	                 if choice1 == '1':
+	                 elif choice1 == '2':
+	                 elif choice1 == '3':
+	             elif choice == '2':
+	             elif choice == '3':
+
+42 >         def grabkey(x):
+	             if x == 1:
+--->                  You climb into the hole to examine the shiny object. Fear rattles in your limbs and you're extra careful not to step on top of the coffin this time. Still, those yummy juices have fermented the damp soil into now putrid mud. 
+--->                  In the end though the operation goes down without a hitch. You climb from the hole with a fistful of mud and clean off the object to see you've found an odd shaped key. 
+	             elif x == 2:
+--->                  You lay close to the edge and reach for the glint but it's just out of reach. You scoot just a bit further and your fingers manage to scrape some mud away from the object, though it still remains out of reach. You can now make out the shape of a shiny key. 
+--->                  You slide forward just a bit more, hanging halfway into the hole now. Planting your free arm against the side of the hole to steady you, you reach out and... 
+--->                  Something slams into the lid of the coffin from inside. Panic sweeps from you as you flinch and lose your grip. You fall, face first, pulling your arms up to brace as you crash through the lid of the coffin. 
+--->                  You come up gasping for air as vomit rises up from your stomach to expel the rotted sludge from your mouth. Things are bumping around you and as you struggle to climb free you see the pile of dismembered limbs floating in the fluid. 
+--->                  You manage to jump free just as a chomping, rotting head floats to the surface, eyes you through pale eyes. You scream and fall back into the side of the grave. For a second you glimpse the key and reach out, grabbing mud and all. Hopefully you managed to grab it. 
+--->                  In the end you escape and as you roll over in the grass outside the hole you see the key in your hand. Success! 
+
+43 >         def rearpath():
+--->              The path before you is narrow and ends cornered between the rear wall of the mansion on your left, the cliff's edge on the right, and the sheer glass wall of the atriary at the opposite end. Aside from the soothing crashing of the waves on the rocks below, there is nothing here.
+	             if choice == '1':
+--->                  You wander around aimlessly for several minutes when suddenly you find yourself back in the graveyard...  Weird...
+	             elif choice == '2':
+--->                  The doctors always told you that you couldn't fly but hey, where's the fun in believing that. This is your moment! You'll show them!
+--->                  You run, spread your fleshy arm wings and you fly!
+43 ->                 time.sleep(1)
+--->                  Straight down...
+43 ->                 time.sleep(2)
+--->                  And down...
+43 ->                 time.sleep(5)
+--->                  Still falling...
+43 ->                 time.sleep(5)
+--->                  And.. 
+43 ->                 time.sleep(5)
+--->                   Nope. Rocks. Hehehe. Fucking moron.  You've died! 
+	             elif choice == '3':
+--->                  THIS IS AN ERROR! FIX IT!   
