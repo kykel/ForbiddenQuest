@@ -58,20 +58,27 @@ class Questbuilder():
 			print "Menu:\n1. New Storyline\n2. Load Storyline\n3. Save Current Working Storyline\n4. Open Manual\n5. Tutorial\n6. Exit\nAny other key to return to previous prompt\n"
 			o = self.input_prompt()
 			print "option:", o
-			if o == '1':
-				self.newstory()
-			elif o == '2':
-				self.load()
-			elif o == '3':
-				self.save()
-			elif o == '4':
-				self.helpmenu()
-			elif o == '5':
-				self.tutorial()
-			elif o == '6':
-				self.exit()
+			if o == '1': self.newstory()
+			elif o == '2': self.load()
+			elif o == '3': self.save()
+			elif o == '4': self.helpmenu()
+			elif o == '5': self.tutorial()
+			elif o == '6': self.exit()
 			else:
 				break
+            
+
+    def menu(self, menutext, options):
+        # pass function dict as:
+        # >>> x = { '1': self.newstory , '2': self.load , '3': self.save , '4': self.helpmenu , '5': self.tutorial , '6': self.exit }
+        While True:
+            self.clear()
+            print(menutext)
+            try:
+                x[self.input_prompt()]()
+            except KeyError:
+                break
+
 
 	def helpmenu(self):
 		self.clear()
