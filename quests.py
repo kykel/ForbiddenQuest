@@ -29,7 +29,7 @@ torch = 0
     #Soup
         #Needs ingredients for soup
         #Reward = money
-    
+
 
     #special quests
     #treasure hunt - the mansion quest and spectors
@@ -54,10 +54,10 @@ def yesorno(choice, option1, option2, returnoption):
     else:
         "\n\nSomehow, you break your time matrix and a rift opens beside you, a violent maelstrom sucking everything in. Time mages manage to appear and pull you out just in time. Close call... Phew.\n\n"
         config.pause()
-        config.clear() 
+        config.clear()
         returnoption()
 
-# This takes your choice and the options that occur from it and ports you back out into the proper function.        
+# This takes your choice and the options that occur from it and ports you back out into the proper function.
 def funccall(choice, option1, option2, option3, option4, returnoption):
     if choice == '1':
         return option1()
@@ -70,9 +70,9 @@ def funccall(choice, option1, option2, option3, option4, returnoption):
     else:
         "\n\nI do apologize but your action has resulted in a temporal fracture. Returning to a safer 'stamp' in time...\n\n"
         config.pause()
-        config.clear() 
+        config.clear()
         returnoption()
-    
+
 
 #DOESN'T WORK PROPERLY - CALLS THE FUNCTIONS AS LOCAL. WANTS GLOBAL. NOT RETURNING TO THE LOCAL FUNCTION
 def directions(option1, option2, option3, returnoption):
@@ -194,21 +194,21 @@ def skeletonkey():
         #if condition == 'yes':
             print "You enter the fenced portion of the graveyard but no sooner than four steps later the gate slams shut with a sickening crash.\nPanicked and frightened you run back and pound on the gate. You pull with all your might but it does not enter.\nUpon closer inspection of the keyhole you noticed a small inscription on the faceplate of the warped metal. It reads, in almost unlegible writing: \n\nSKELETON KEY REQUIRED TO OPEN.\n\nWell, isn't that a doozy. That's just what you're here for. Only thing left to do is continue on.\n"
             print "You follow the path until it ends at a large stone tomb. A large impression of the very key you'd been hired to find is centered in the top of its stony face. Surely it must be inside.\n"
-            print "||       ___________________________       ||   "                                                  
-            print "||      /                           \      ||   "                                   
-            print "||     /_____________________________\     ||   "                                       
-            print "||      |                           |      ||   "                                           
-            print "||      |    [=]             [=]    |      ||   "                                       
-            print "||       \_________________________/       ||   "                                                   
-            print "||          \XXXXXXXXXXXXXXXXXXXX/         ||   "                        
-            print "||           \XXXXXXXXXXXXXXXXXX/          ||   "                        
-            print "||            \XXXXXXXXXXXXXXXX/           ||   "                        
-            print "||             \XXXXXXXXXXXXXX/            ||   "                        
-            print "||              \XXXXXXXXXXXX/             ||   "                        
-            print "||               \XXXXXXXXXX/              ||   "                        
-            print "||                \XXXXXXXX/               ||   "                        
-            print "||                 \XXXXXX/                ||  "                         
-            print "||                 |XXXXXX|                ||  "                         
+            print "||       ___________________________       ||   "
+            print "||      /                           \      ||   "
+            print "||     /_____________________________\     ||   "
+            print "||      |                           |      ||   "
+            print "||      |    [=]             [=]    |      ||   "
+            print "||       \_________________________/       ||   "
+            print "||          \XXXXXXXXXXXXXXXXXXXX/         ||   "
+            print "||           \XXXXXXXXXXXXXXXXXX/          ||   "
+            print "||            \XXXXXXXXXXXXXXXX/           ||   "
+            print "||             \XXXXXXXXXXXXXX/            ||   "
+            print "||              \XXXXXXXXXXXX/             ||   "
+            print "||               \XXXXXXXXXX/              ||   "
+            print "||                \XXXXXXXX/               ||   "
+            print "||                 \XXXXXX/                ||  "
+            print "||                 |XXXXXX|                ||  "
             print "||                 |XXXXXX|                ||   "
             condition = raw_input("Will you open it?\n")
             if condition == 'yes':
@@ -220,8 +220,8 @@ def skeletonkey():
         def graveyarddeath():
             print "Panic setting in you immediatly turn and run the opposite direction but no more than a few seconds later something trips you. You slam face first into the mud.\nYou roll over just as a piercing object plunges into your guts.\nYour blood washes away the mud, but you're too dead to see what killed you."
             exit()
-        
-    
+
+
     #Currently this quest either ends in death or quest end. Either way it exits the game no matter what. FIX THIS!!!
     def gravekeeper():
         print "You walk over to the gravekeeper's house only to find the door locked. You knock on the door, thinking it's only the sensible thing to do.\nBesides, if nobody answers then maybe you could just break the 'window'.\n"
@@ -249,20 +249,20 @@ def skeletonkey():
         condition = raw_input("Will you enter anyway?\n")
         if condition == 'yes':
             print "You enter through the doors anyway and miraculously find nothing of a threatening nature inside. This is shaping up to be quite the easy job.\nYou approach the coffin and find engraved in old Andaal language, an ancient language you just so happen to grow up speaking, the words: \n\nONLY THE CHOSEN MAY OPEN.\nBE WARNED. ALL UNWORTHY WILL DIE.\n\n"
-            print "    ______________    "                      
-            print "   /\____________/\              "                 
-            print "  / /            \ \             "      
-            print " / /              \ \            "      
-            print "/ /                \ \           "      
-            print " /                  \ \          "      
-            print "/                    \ \         "      
-            print "                      \ \        "      
-            print "    ONLY THE CHOSEN    \ \       "      
-            print "       MAY OPEN         \_\      "      
-            print "                        / /      "     
-            print "      BE WARNED        / /       "      
-            print "ALL UNWORTHY WILL DIE / /        "      
-            print "                     / /         "      
+            print "    ______________    "
+            print "   /\____________/\              "
+            print "  / /            \ \             "
+            print " / /              \ \            "
+            print "/ /                \ \           "
+            print " /                  \ \          "
+            print "/                    \ \         "
+            print "                      \ \        "
+            print "    ONLY THE CHOSEN    \ \       "
+            print "       MAY OPEN         \_\      "
+            print "                        / /      "
+            print "      BE WARNED        / /       "
+            print "ALL UNWORTHY WILL DIE / /        "
+            print "                     / /         "
             print "____________________/_/_____     "
             condition = raw_input("But you quit believing in such mumbo jumbo years ago. Will you open the coffin?\n")
             if condition == 'yes':
@@ -296,7 +296,7 @@ def skeletonkey():
     #elif direction.lower() == 'straight' or direction == '3':
     #    moseleum()
     #else:
-    #    print "You're so lost."    
+    #    print "You're so lost."
     #    skeletonkey()
 
 ##########################################################################################################################################################
@@ -304,7 +304,7 @@ def skeletonkey():
 ##########################################################################################################################################################
 
 ##########################################################################################################################################################
-        
+
 
 
 #TREASURE HUNT QUEST
@@ -315,7 +315,7 @@ def treasurehunt():
     #Houses all introductions for quest functions.
 
     def questintro():
-        
+
         def mansionintro():
             print "You enter the mansion, stepping lightly and cautiously. Already the walls look as though they are about to bleed. You may be a bit paranoid but hey, better safe than sorry is what your Auntie Genna used to say.\nThen again, she also got eaten by a wyvern that one of her booby traps had locked in her garden...\n"
             print "You glance around but all seems quiet. Maybe too quiet? Then again, it is an abandoned mansion. What really constitutes 'too quiet'?"
@@ -330,12 +330,12 @@ def treasurehunt():
             config.pause()
             config.clear()
             questintro()
-   
+
         print "Against complete common sense(it's obvious you were the brightest among your parent's litter) you accept the offer.\nWhat could possibly go wrong?"
         print "After a long trudge you find yourself at the abandoned shell of a mansion, or rather castle. The quest master really underplayed the place."
         print "On your left you can see the garden, the mansion lay straight ahead and to your right is the rest of the grounds.\n\n"
         directions(gardenintro, mansionintro, grounds, questintro)
-                
+
 
 
     #directions(direction)
@@ -352,7 +352,7 @@ def treasurehunt():
                     print "You attempt to push the door open but can only get it cracked, just enough to squeeze through. Something appears to barricading the door from the other side.\nAs soon as you squeeze into the room you see a nearby shelf has fallen over, restricting movement of the door.\nA look around the room(what you can see anyway) shows fallen books and odd, clawed footprints in the dust.\n"
                     choice = raw_input("Will you enter?")
                     yesorno(choice, library, mansion, mansion)
-            
+
             def hiddenbook():
                 print "You search the library relentlessly and find nothing. It's only when you are about to give up that you notice something. There is one book in particular that stands out.\nOn an oddly empty shelf, only half filled with books stands a single large green book. Title: Nevermore.\nA curious title to be sure. You decide to investigate further.\n"
                 print "You reach for the book. Only, it won't budge. It's as though the book is glued to the shelf. You pull harder and then suddenly it comes loose, jerking free and sticking out from the shelf at an odd angle.\nAn odd grinding sound emanates from the wall and then the shelf suddenly parts, splitting down the middle and sliding to the side, opening a small body-width gap to squeeze through.\n"
@@ -371,9 +371,9 @@ def treasurehunt():
                     library()
                 else:
                     library()
-            
 
-            
+
+
             def tunnel():
                 global torch
                 if torch == 0:
@@ -432,14 +432,14 @@ def treasurehunt():
                 mansion()
             else:
                 mansion()
-            
 
-            
+
+
         def dungeon():
             print "The door is jammed shut. You are unable to open it."
-        
+
         def ballroom():
-            
+
             def candle():
                 global torch
                 if torch == 0:
@@ -464,12 +464,12 @@ def treasurehunt():
             choice = raw_input("What do you want to do?\n1. Inspect candles.\n2. Explore room\n3. Return to the main lobby.\n")
             funccall(choice, candle, music, mansion, ballroom, ballroom)
 
-            
+
         def emptyroom():
             #Add random descriptions
             print "Aside from assorted furniture and items, a table, its chairs, an ugly painting over the fireplace mantle, and such, the room is empty."
             mansion()
-        
+
         def basement():
             def flooded():
                 print "You walk your way down the steps and into the water. The water is colder than ice.\nStill, somehow you thought this was a good idea...\n"
@@ -496,44 +496,44 @@ def treasurehunt():
         print "There are three doors around you, a heavy oak door left, a dark mohogany door straight and another on the right. A fourth door under the stairs displays in bold letters: BASEMENT.\nMaybe you can find some kind of light source in one of those directions.\n"
         choice = raw_input("1. Heavy oak door left\n2. Dark mahogany door straight\n3. Dark mohogany door right\n4. Basement\n5. Back outside")
         funccall(choice, emptyroom, library, ballroom, basement, treasurehunt)
-            
+
     def atriary(x):
         def frominside():
             print "You close the door behind you. The atriary isn't even much of an atriary anymore. Much of the glass in its construction is cracked and dirty, many panes broken in several places. You hear nor see no birds, but that is no surprise really as all vegetation in the room is dead.\n"
             print "Yet for all the misery, at least it's well lit and you see no obvious threats in the room."
             choice = raw_input("What do you want to do?\n1. Explore\n2. Cut through to other side\n3. Wait\n4. Return to where you came from\n")
             funccall(choice, atriaryexplore, westdoor, atriarywait, mansion, mansion)
-            
+
         def atriaryexplore():
             print "You begin exploring the room. Most of the plants have died. A few odd looking trees have broken through their pots and their roots have dug into the ground. They seem the only plants to have escape starvation.\nAside from this you see nothing.\n"
             atriary(2)
-        
-        
+
+
         def westdoor():
             print "You find the door on the opposite end of the atriary is unfortunately locked and you can't seem to get it open.\nNo worries, the garden is rather menacing looking through the glass anyway.\n"
             print "You return to the library instead.\n"
             mansion()
-        
+
         def atriarywait():
             print "You decide to sit and wait.\n"
             time.sleep(10)
             print "Nothing happens.\n"
             mansion()
-        
-            
+
+
         def fromoutside():
             pass
-            
-            
-        
+
+
+
         if x == 1:
             fromoutside()
         if x == 2:
             frominside()
-            
+
     def gardenmaze():
         #GARDENMAZE
-        
+
         # def atriary() This and the mansion function both have access as the atriary connects them together.
         def hedgemaze():
             pass
@@ -543,22 +543,22 @@ def treasurehunt():
                 pass
             def deadend():
                 print "You've reached a dead end. You go back to your last intersection."
-                pass    
+                pass
             def pathleft():
                 pass
             def pathright():
                 pass
-        
+
         def fountain():
             pass
-            
+
         def overgrowth():
             pass
 
         print "Currently nothing to do here. Sorry. Until the hedge is cleared out you can't enter the hedgemaze.\n"
         choice = raw_input("Where do you want to go?\n1. Mansion\n2. Grounds\n")
         yesorno(choice, mansion, grounds, hedgemaze)
-            
+
     #########################################################################################################################################
 
     #########################################################################################################################################
@@ -575,12 +575,12 @@ def treasurehunt():
         choice = raw_input("Where do you want to go?\n1. Continue toward the graveyard.\n2. Return to the mansion. \n3. Return to the garden.\n")
         funccall(choice, minigraveyard, mansion, gardenmaze, grounds, grounds)
 
-    
-            
+
+
     def minigraveyard():
-        
-        
-        
+
+
+
         def makechoice():
             config.clear()
             print "You follow the path through the grounds for a while. Finally, the knarled trees and ramshackle death sheds part to a small clearing. Before you is a small graveyard.\nThankfully, it's more of a fenced area of tombstones than actual graveyard. The path rounds the left side of the decrepit fence to circle around the back of the building.\n"
@@ -601,12 +601,12 @@ def treasurehunt():
 
 
 
-            
+
 
         def newtombstone():
             i = 1
             print "You wander through the graveyard inspecting the different stones. One in particular catches your eye and as you near the stone you notice, it seems newer than the rest. In fact, by the lack of moss and sea salt collected on it, it's clear it's been placed only recently. Even more, the dirt appears to have been recently dug up.\n"
-            
+
             while i == 1:
                 choice = raw_input("What do you want to do?\n1. Read the tombstone.\n2. Leave this tombstone and inspect elsewhere.\n3. Dig up the grave.\n")
                 if choice == '1':
@@ -623,7 +623,7 @@ def treasurehunt():
                     i = 0
                     digginggrave()
 
-        def lonelystone(): 
+        def lonelystone():
             def lonelystone1():
                 choice = raw_input("What do you want to do?\n1. Read the tombstone.\n2. Return to graveyard.\n3. Dig up grave.\n4. Attempt to break the tombstone.\n")
                 if choice == '1':
@@ -634,9 +634,9 @@ def treasurehunt():
                     minigraveyard()
                 elif choice == '3':
                     config.clear()
-                    print "After hours of digging, because you are a sick fuck that digs up resting corpses and you also don't have a shovel(way to go on that one moron), you finally come to the conclusion there is nothing buried here.\n" 
+                    print "After hours of digging, because you are a sick fuck that digs up resting corpses and you also don't have a shovel(way to go on that one moron), you finally come to the conclusion there is nothing buried here.\n"
                     print "Maybe if you had a shovel you could dig deeper. Otherwise, it appears there's nothing here.\n"
-                    config.pause() 
+                    config.pause()
                     makechoice()
                 elif choice == '4':
                     print "You attempt to smash the tombstone with your boot but despite the crack it refuses to break. Maybe with the right tools but for now it appears there's nothing you can do.\n"
@@ -670,11 +670,11 @@ def treasurehunt():
                 elif choice == '3':
                     i = 0
                     minigraveyard()
-        
+
         def entermosuleaum():
             def sarcophagus():
-                print "You push hard against the lid, because, just as always you seem to think 'This' is the brightest idea in the world. Don't worry, I won't laugh when the mummy is gouging your eyes from their sockets.\n" 
-                print "The lid slides open, albeit with great difficulty. Dust sprays up into the air and you step back coughing heavily as you choke on it.\n" 
+                print "You push hard against the lid, because, just as always you seem to think 'This' is the brightest idea in the world. Don't worry, I won't laugh when the mummy is gouging your eyes from their sockets.\n"
+                print "The lid slides open, albeit with great difficulty. Dust sprays up into the air and you step back coughing heavily as you choke on it.\n"
                 print "Finally, you look inside and unsurprisingly, there's a dead guy. Or rather, skeleton.\nDon't worry. It doesn't move. At least, not yet...\n"
                 print "Around the skeleton's neck is a sparkling gold chain, a large yellow topaz attached to the chain.\n"
                 choice = raw_input("Will you take it?\n(yes or no)\n")
@@ -686,17 +686,17 @@ def treasurehunt():
                     time.sleep(3)
                     print "Almost there..."
                     time.sleep(5)
-                    print "Any moment now..." 
+                    print "Any moment now..."
                     time.sleep(10)
-                    print "HAHAHAHA! GOTCHA. Oh, you should have seen your face.\nNothing happens.\n" 
+                    print "HAHAHAHA! GOTCHA. Oh, you should have seen your face.\nNothing happens.\n"
                     items.necklace = '1'
                     config.pause()
                     entermosuleaum()
                 elif choice == 'no':
                     entermosuleaum()
             i=0
-            while i == 0:        
-                print "The mosuleaum is rather empty. Aside from a few small ash earns and a single sarcophagus in the center you see nothing else.\n" 
+            while i == 0:
+                print "The mosuleaum is rather empty. Aside from a few small ash earns and a single sarcophagus in the center you see nothing else.\n"
                 choice = raw_input("What do you want to do?\n1. Check urns.\n2. Open sarcophagus.\n3. Return to graveyard.\n")
                 if choice == '1':
                     print "Aside from collected dust, there is nothing special about the urns."
@@ -707,9 +707,9 @@ def treasurehunt():
                     minigraveyard()
                 else:
                     pass
-                
-                        
-                    
+
+
+
 
         def digginggrave():
             config.clear()
@@ -739,7 +739,7 @@ def treasurehunt():
                 mansion()
             else:
                 minigraveyard()
-                    
+
         def grabkey(x):
             config.clear()
             if x == 1:
@@ -760,9 +760,9 @@ def treasurehunt():
                 status.undead(status.cntrinc(1))
 
             makechoice()
-                
-                
-               
+
+
+
         def rearpath():
             print "The path before you is narrow and ends cornered between the rear wall of the mansion on your left, the cliff's edge on the right, and the sheer glass wall of the atriary at the opposite end.\nAside from the soothing crashing of the waves on the rocks below, there is nothing here."
             choice = raw_input("What do you want to do?\n1. Wander around aimlessly.\n2. Jump off cliff.\n3. Return to graveyard.")
@@ -780,7 +780,7 @@ def treasurehunt():
                 time.sleep(2)
                 print "And down..."
                 time.sleep(5)
-                print "Still falling..." 
+                print "Still falling..."
                 time.sleep(5)
                 print "And..\n"
                 time.sleep(5)
@@ -792,8 +792,8 @@ def treasurehunt():
                 config.clear()
                 "THIS IS AN ERROR! FIX IT!\n\n\n"
                 sys.exit(0)
-                
-            
+
+
 
         makechoice()
 #    print "You decide the hedge garden looks a bit too overgrown for you but opt to explore rather than enter the ominous structure before you. The sun has only just risen and even in broad daylight the place makes creepy sound nice.\nNevermind what the inside must look like. You decide to navigate your way through the maze of dieing trees and storage sheds that litter the grounds.\n"
@@ -813,10 +813,10 @@ def treasurehunt():
 #        print "You're so lost."
 
 #        config.clear()
-        
-                
-                        
-            
+
+
+
+
         #if direction.lower() == 'left' or direction == '1':
         #    gardenmaze()
         #elif direction.lower() == 'right' or direction == '2':
@@ -824,12 +824,12 @@ def treasurehunt():
         #elif direction.lower() == 'straight' or direction == '3':
         #    grounds()
         #else:
-        #    print "You're so lost."     
-    questintro()        
-      
+        #    print "You're so lost."
+    questintro()
 
 
-            
+
+
 
 #skeletonkey()
 #def bountyandtreasure():
@@ -842,7 +842,7 @@ def treasurehunt():
 
 # weapon | att | rng | spd|
 #sword    |    4    1    4
-#spear    
+#spear
 
 
 

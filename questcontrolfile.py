@@ -8,10 +8,10 @@ def yesorno(choice, option1, option2, returnoption):
     else:
         "\n\nSomehow, you break your time matrix and a rift opens beside you, a violent maelstrom sucking everything in. Time mages manage to appear and pull you out just in time. Close call... Phew.\n\n"
         config.pause()
-        config.clear() 
+        config.clear()
         returnoption()
 
-# This takes your choice and the options that occur from it and ports you back out into the proper function.        
+# This takes your choice and the options that occur from it and ports you back out into the proper function.
 def funccall(choice, option1, option2, option3, option4, returnoption):
     if choice == '1':
         return option1()
@@ -24,9 +24,9 @@ def funccall(choice, option1, option2, option3, option4, returnoption):
     else:
         "\n\nI do apologize but your action has resulted in a temporal fracture. Returning to a safer 'stamp' in time...\n\n"
         config.pause()
-        config.clear() 
+        config.clear()
         returnoption()
-    
+
 
 #DOESN'T WORK PROPERLY - CALLS THE FUNCTIONS AS LOCAL. WANTS GLOBAL. NOT RETURNING TO THE LOCAL FUNCTION
 def directions(option1, option2, option3, returnoption):

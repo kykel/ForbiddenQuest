@@ -64,6 +64,6 @@ def validateyesorno():
         else:
            print "Invalid input. "
            exit()
-            
+
 
 

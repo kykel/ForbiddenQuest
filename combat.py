@@ -16,9 +16,9 @@ def battle(c):
     health = config.health
     playerdmg = config.playerdmg
     battles = config.battles
-    
+
     config.clear()
-    
+
     print "battles:", battles
     print "level:", level
     print "health:", health
@@ -43,7 +43,7 @@ def battle(c):
         print "The", c[0], "strikes you, dealing", battledmg, "damage.\n"
         time.sleep(1)
         HP = HP - battledmg
-        creatureHP = creatureHP - playerattack        
+        creatureHP = creatureHP - playerattack
         if HP <= 0:
             if c[0] == 'goblin':
                 print "You attempt to swing again but your previous wound bleeds profusely and everything quickly grows dizzying. You blink and swallow. You taste blood.\nThe beast lashes out viciously and you miss your parry by an inch, watching knowingly as its weapon plunges into your chest. Suffocation surrounds you, the air growing heavy and the sky growing dark.\nYou've died!\n"
@@ -59,24 +59,24 @@ def battle(c):
                 print "You attempt to swing again but the beast catches you blade in its jaws. Before you have chance to respond its tail whips around, tripping you.\nThe last thing you see as its great shadow blocks out the sun is massive white fangs descend upon you.\You've died! Rest in peaces.\n"
             else:
                 print "In an attempt to dodge you trip landing on your own blade.\nYou've died, humiliatingly I might add!\n"
-            
+
         elif creatureHP <= 0:
             print "You swing your blade swiftly, striking the", c[0], "with a critical blow of", playerattack, "felling the foul creature.\nYou've survived this fight.\n"
             battles = battles + 1
             print "Battles after victory here:", battles
             loot()
             break
-            
+
         elif creatureHP >= 1 and creatureHP <= 2:
             print "It swings again but you parry swiping low and catching the beast across the gut with a critical strike. The", c[0], "panting and fearful for its dwindling life, flees into the woods,", creatureHP, "life remaining. It escapes for now."
             battles = battles + 1
             print "Battles after victory here:", battles
             break
-            
+
         elif HP > 0:
             print "You have", HP, "life left."
             print "You strike in turn, doing", playerattack, "damage to the", c[0], "but the creature holds its ground,", creatureHP, "life remaining."
-         
+
         else:
             print "you are now out of your loop."
     print "final update of battles in combat:", battles

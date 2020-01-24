@@ -73,7 +73,7 @@ class Hollow(Shop):
 	def __init__(self):
 		pass
 
-	def enter(self): 
+	def enter(self):
 		print self.description
 		print "\nA creepy old hag of a lady approaches from behind, more silent than a mouse.\n'Welcome to", self.name + "!' You jump when she speaks to you, surprised by how close she got without you seeing her.\n\n'May I assist you?' she asks.\n You find yourself staring at her glass eye..."
 		self.clerk()

@@ -4,26 +4,26 @@ import random, sys
 class monster():
     def __init__(self,name,hp,dmg):
         self.name = name
-        self.hp = hp 
+        self.hp = hp
         self.dmg = dmg
-        
-    
-        
+
+
+
 class Helga(monster):
     name = "Grand Witch Helga"
     hp = 45
     dmg = random.randrange(5,15)
-    
+
     def __init__(self):
         pass
-    
+
 
 class player():
     def __init__(self,name,plhp,dmg):
         self.plname = name
-        self.plhp = plhp 
+        self.plhp = plhp
         self.pldmg = dmg
-    
+
     def start(self):
         print "You are born.\n"
         print "You grow up.\n"
@@ -40,24 +40,24 @@ class player():
         else:
             wep = 'bow'
             self.pldmg = 4
-            
-        print "You picked a", wep + "." 
+
+        print "You picked a", wep + "."
         #self.attack()
 
-    
+
 class battle(player, Helga):
     def __init__(self):
         pass
-    
+
     def attack(self):
         while self.hp > 0 and self.plhp > 0:
-            
+
             self.choice()
             print "You attack with", self.pldmg, "damage."
-            self.hp -= self.pldmg 
+            self.hp -= self.pldmg
             print "The enemy has", self.hp, "left."
             print "The", self.name, "attacks with", self.dmg, "damage."
-            self.plhp -= self.dmg 
+            self.plhp -= self.dmg
             print "You have", self.plhp, "left."
             if self.plhp <= 0:
                 print "You've died. Sorry bro!"
@@ -66,8 +66,8 @@ class battle(player, Helga):
                 print "You've killed the", self.name, "! Yay! You win!"
                 break
             else:
-                pass  
-            
+                pass
+
     def flee(self):
         if self.plhp >0:
             roll = random.randrange(1,7)
@@ -79,8 +79,8 @@ class battle(player, Helga):
                 self.attack()
         else:
             print "You fail to escape!"
-            
-            
+
+
     def block(self):
         roll = random.randrange(1,7)
         if roll == 1:
@@ -88,12 +88,12 @@ class battle(player, Helga):
             self.choice()
         else:
             pass
-        
-        
+
+
     def potion(self):
-        self.plhp += 5 
+        self.plhp += 5
         self.attack()
-        
+
     def choice(self):
         choice = raw_input("What do you want to do?\n'flee'\n'attack'\ndrink 'potion'\n")
         if choice == 'flee' or choice.lower == 'flee':
@@ -105,16 +105,16 @@ class battle(player, Helga):
         else:
             print "Incorrect output. Try again.\n"
             self.choice()
-    
-
-        
-    
-    
-        
 
 
 
-            
+
+
+
+
+
+
+
 #enemy = Helga()
 
 human = player("Kail",20,2)

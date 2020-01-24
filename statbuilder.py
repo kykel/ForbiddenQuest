@@ -34,26 +34,26 @@ def dice6():
             #roll = roll - 1
         level = level + 1
     print "Current level:", level, "and current stats:\nSTR:", strength, "\nDEX:", dex, "\nINT:", intel, "\nCON:", con, "\nLUCK:", luck
-      
-    
+
+
 def tensideddie():
     roll = random.randrange(1,11)
-    #print "You rolled", roll 
-    return roll 
-    
+    #print "You rolled", roll
+    return roll
+
 def startingstats():
     strength = tensideddie()
-    print "Strength:", strength 
+    print "Strength:", strength
     dexterity = tensideddie()
     print "Dexterity:", dexterity
     Intelligence = tensideddie()
     print "Intelligence:", Intelligence
     Const = tensideddie()
-    print "Constitution:", Const 
+    print "Constitution:", Const
     Luck = tensideddie()
     print "Luck:", Luck
-    
-    
+
+
 
 
 if __name__ == '__main__':

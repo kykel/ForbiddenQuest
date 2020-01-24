@@ -28,7 +28,7 @@ def savefile():
             print "A temporal flux has happened in the space time continuum. I'm afraid we've lost our time mage.\nI sincerely apologize for the inconvenience.\nIf you'll wait one moment we'll put you in contact with another time mage who is surely more qualified to assist you.\n"
             time.sleep(3)
             savefile()
-    
+
     name = selectingsave(name)
     if os.path.exists(name + '.txt'):
         handle = open(name + '.txt', 'r+w')
@@ -45,7 +45,7 @@ def savefile():
         time.sleep(1)
 
     config.pause()
-    
+
     try:
         print "Writing new save file now:\n"
         handle.seek(0)
@@ -60,15 +60,15 @@ def savefile():
         print "Restoring you back to your time line now. Have a pleasant day now!"
     except:
         print "\nSAVE FAILED! DEBUG AND TRY AGAIN!\n"
-        
+
     time.sleep(2)
     handle.close()
     config.pause()
     os.chdir(gamedir)
     mainfile.mainmenu()
-    
-    
-    
+
+
+
 def loadgame():
     os.chdir(savdir)
     def loading():

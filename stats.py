@@ -13,7 +13,7 @@ def playerstats():
     level = config.level
     battles = config.battles
     health = config.health
-    
+
     print "\n\n"
     print "PLAYER STAT READOUT:\n--------------------\n"
     print "Battles won:", battles
@@ -21,19 +21,19 @@ def playerstats():
     print "Max health:", health
     print "Player damage:", config.playerdmg
     print "\n\n"
-    
+
     exp = battles * 2
-    
+
     print "You've currently won in:", battles, "battles so your current total experience is:", exp
 
-    
+
     #Determine level experience
     if level <= 10 and level >=1:
         levelup = exp / 5
-        
+
     elif level > 10:
         levelup = exp / 10
-    
+
     #LEVELING UP
     if level == levelup:
         level = level + 1
@@ -45,13 +45,13 @@ def playerstats():
     elif level < levelup:
         print "You have a problem. Your level should never be below your level up."
     else:
-        print "You messed something up. You should not be here."   
-    
+        print "You messed something up. You should not be here."
+
     config.level = level
     config.health = health
     config.battles = battles
-        
-        
+
+
 #This function is complete!    ##############################################################################################################################
 def creaturefunc():
 
@@ -70,27 +70,27 @@ def creaturefunc():
             "demi-god":[75,25,60,"Suddenly, the ground begins to quake... Trees crack and splinter around you, sending shards the size of your sword through the air. You dive to the ground just in time to dodge one and cover your neck, praying to the gods. 'Hahaha! Prayer will not help you hear child!' You look up to see a glowing figure standing over you, power emanating so powerfully from him the very air vibrates. 'I am a son of Valicifar, god of war. And I challenge you!"],
             "god":[100,25,100,"All around you time slows down. The leaves stop moving, the wind stops blowing. You already know what's happening. You've killed enough demi-gods at this point to know the presence of one more. As the being crashes to the ground before you you draw your sword. Only as he stands up you realize this is no demi-god. Valicifar himself has come to avenge his sons. Yep.... You're fucked. Don't brother praying to the gods, I don't think they're listening on this one."],
             }
-    
+
     #Selects a creature to battle at random. DON"T TOUCH, IT WORKS!
     if level <= 3:
         currentbattle = ['goblin', 'large-spider', 'kobold']
-        
+
     elif level <= 6:
         currentbattle = ['goblin', 'large-spider', 'kobold', 'orc', 'ogre']
-        
+
     elif level <= 10:
         currentbattle = ['goblin', 'large-spider', 'kobold', 'orc', 'ogre', 'troll', 'basilisk', 'wyvern', 'dragon']
-            
+
     elif level > 10:
         currentbattle ['goblin', 'large-spider', 'kobold', 'orc', 'ogre', 'troll', 'basilisk', 'wyvern', 'dragon', 'wraith','demi-god','god']
-    
+
     #currentbattle = ['goblin','troll','kobold','wyvern','dragon','wraith']
 
     creature = random.choice(currentbattle)
     #This line selects the stats for the particular creature you are fighting.
     battlestats = stats[creature]
     battledmg = random.randint(battlestats[1],battlestats[2])
-    
+
     return creature, battlestats[0], battlestats[1], battlestats[2], battlestats[3] #creature, creatureHP, battlemin, battlemax, description
 
 
