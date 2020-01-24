@@ -1,9 +1,9 @@
 # CONTROL FILE
 
 def yesorno(choice, option1, option2, returnoption):
-    if choice == '1' or choice == 'yes' or choice.lower == 'yes':
+    if choice == '1' or choice.lower() == 'yes':
         return option1()
-    elif choice == '2' or choice == 'no' or choice.lower == 'no':
+    elif choice == '2' or choice.lower() == 'no':
         return option2()
     else:
         "\n\nSomehow, you break your time matrix and a rift opens beside you, a violent maelstrom sucking everything in. Time mages manage to appear and pull you out just in time. Close call... Phew.\n\n"
