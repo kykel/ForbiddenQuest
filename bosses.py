@@ -96,15 +96,15 @@ class battle(player, Helga):
 
     def choice(self):
         choice = raw_input("What do you want to do?\n'flee'\n'attack'\ndrink 'potion'\n")
-        if choice == 'flee' or choice.lower == 'flee':
-            self.flee()
-        elif choice == 'attack' or choice.lower == 'attack':
-            self.attack()
-        elif choice == 'drink' or choice == 'potion' or choice.lower == 'drink' or choice.lower == 'potion':
-            self.potion()
+        if choice.lower() == 'flee':
+            return self.flee()
+        elif choice.lower() == 'attack':
+            return self.attack()
+        elif choice.lower() in ['drink', 'potion']:
+            return self.potion()
         else:
             print "Incorrect output. Try again.\n"
-            self.choice()
+            return self.choice()
 
 
 
