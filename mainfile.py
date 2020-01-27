@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 
 import subprocess
 import random
@@ -24,7 +24,6 @@ c = stats.creaturefunc()
 cwd = os.getcwd()
 savdir = cwd + "/saves"
 gamedir = cwd
-#intro = list
 
 
 def title(x):
@@ -34,7 +33,6 @@ def title(x):
 def titlescreen():
     config.clear()
     intro = "W e l c o m e t"
-    #intro = intro.split()
     i = []
     for letter in intro:
         if letter == 't':
@@ -46,8 +44,6 @@ def titlescreen():
             time.sleep(.3)
             config.clear()
             print ''.join(i)
-        
-        #time.sleep(.1)
 
     
     
@@ -111,8 +107,7 @@ def newgame():
     config.playerdmg = [1, 8]
     config.health = 10
     config.battles = 0
-    print "Welcome player, to Forbidden Quest; a world of adventure and magic, mystery and secrecy, bravery and betrayal.\nPress enter to continue.\n"
-    #story = raw_input("Welcome player, to Forbidden Quest; a world of adventure and magic, mystery and secrecy, bravery and betrayal.\nPress enter to continue.\n")
+    print "Welcome player, to Forbidden Quest; a world of adventure and magic, mystery and secrecy, bravery and betrayal.\n"
     config.pause()
     name = raw_input("Quickly now, so your adventure can begin, what is your name young warrior?\n")
     
@@ -132,13 +127,6 @@ def newgame():
     config.name = name
     storyline.story()
 
-    
-
-
-##############################################################################################################################
-##############################################################################################################################
-##############################################################################################################################      
-
  
 def validation(x):
     print type(x)
@@ -146,20 +134,3 @@ def validation(x):
 
 if __name__ == "__main__":
     titlescreen()
-
-
-#UNDER CONSTRUCTION
-    #print "\nSorry, as our time mages are still in training, the time freeze functionality is currently still under construction. Please check back later.\n"
-    #print "Wait one moment as we teleport you back to the main menu."
-    #print "."
-    #time.sleep(1)
-    #print ".."
-    #time.sleep(1)
-    #print "..."
-    #time.sleep(1)
-    #print "...."
-    #time.sleep(1)
-    #print "....."
-    #time.sleep(1)
-    #filename = raw_input("Enter your save file name(don't forget to append .txt to the end of your filename: ")
-    #mainmenu()
