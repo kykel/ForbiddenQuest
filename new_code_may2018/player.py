@@ -3,18 +3,12 @@
 
 import random, json
 
-#24OCT2018 - Built basic model. Includes name, inventory, keyitems, weapon, hp, damage, gp, sp, cp. Additionally can add and remove, attack, and be damaged and calculate costs
-#29OCT2018 - Buy, sell, attack, defend, take damage, equip and unequip weapon and armor, calculate defense, and add/remove items are all complete. Can also load and save character stats
-
-'''
-Later additions:
-Injury status
-'''
 
 class Player:
     
     def __init__(self):
         self.level = 1
+        self.exp = 0
         self.gold = 10
         self.inventory = {}
         self.keyitems = []
@@ -56,9 +50,9 @@ class Player:
             self.weapon = name
             self.weapondata = self.inventory[name]
             self.damage = self.weapondata['damage']
-            print "'{}' successfully equipped.".format(name)
+            print("'{}' successfully equipped.".format(name))
         else:
-            print "Unable to equip '{}'. Not found in inventory.".format(name)
+            print("Unable to equip '{}'. Not found in inventory.".format(name))
     
     #Equips article of armor passed in.  
     def equip_armor(self, armor):
@@ -73,12 +67,12 @@ class Player:
             self.armor[armor] = armordata
             del self.inventory[armor]
             self.calculate_defense()
-            print "'{}' successfully equipped.".format(armor)
+            print("'{}' successfully equipped.".format(armor))
           
                     
                     
         else:
-            print "Cannot equip '{}'. Valid armor must be provided with correct type:\n".format(armor) + " : ".join(armortypes)
+            print("Cannot equip '{}'. Valid armor must be provided with correct type:\n".format(armor) + " : ".join(armortypes))
     
     #Unequips name of armor passed in.
     def unequip_armor(self, armor):
@@ -86,9 +80,9 @@ class Player:
             self.inventory[armor] = self.armor[armor]
             del self.armor[armor]
             self.calculate_defense()
-            print "'{}' successfully unequipped.".format(armor)
+            print("'{}' successfully unequipped.".format(armor))
         else:
-            print "Can't unequip '{}'. Not a valid equipped armor.".format(armor)
+            print("Can't unequip '{}'. Not a valid equipped armor.".format(armor))
     
     #Unequips name of weapon passed in.        
     def unequip_weapon(self, item):
@@ -97,9 +91,9 @@ class Player:
             self.weapon = 'fists'
             self.weapondata = {'name': 'fists', 'damage': [1,1], 'description': 'Bare knuckles'}
             self.damage = [1,1]
-            print "'{}' successfully unequipped.".format(item)
+            print("'{}' successfully unequipped.".format(item))
         else:
-            print "Failed to unequip '{}'. Not a valid equipped item.".format(item)
+            print("Failed to unequip '{}'. Not a valid equipped item.".format(item))
     
     #Calculates new defense after equipping armor.
     def calculate_defense(self):
@@ -114,65 +108,65 @@ class Player:
         if type(itemvalue) == dict:
             itemvalue['name'] = item
         self.inventory[item] = itemvalue
-        print "'{}' added to inventory.".format(item)
+        print("'{}' added to inventory.".format(item))
         
     #Deletes an item from the inventory
     def remove_item(self, item):
         if item in self.inventory:
             del self.inventory[item]
-            print "'{}' removed from inventory.".format(item)
+            print("'{}' removed from inventory.".format(item))
         else:
-            print "'{}' not in inventory.".format(item)
+            print("'{}' not in inventory.".format(item))
     
     #Adds a keyitem to the key items list as well as stores it in inventory.
     def add_keyitem(self, item, itemvalue):
         self.keyitems.append(item)
         self.inventory[item] = itemvalue
-        print "'{}' added to key items.".format(item)
+        print("'{}' added to key items.".format(item))
     
     #Removes a key item from inventory.
     def remove_keyitem(self, item):
         if item in self.keyitems:
             self.keyitems.remove(item)
             del self.inventory[item]
-            print "'{}' removed from keyitems and inventory.".format(item)
+            print("'{}' removed from keyitems and inventory.".format(item))
         else:
-            print "Key item not acquired."
+            print("Key item not acquired.")
     
     #Adds gold.    
     def add_gold(self, cnt):
         self.gold += cnt
-        print "{} gold added.".format(cnt)
+        print("{} gold added.".format(cnt))
     
     #Removes specified gold.    
     def remove_gold(self, cnt):
         self.gold -= cnt
-        print "{} gold removed.".format(cnt)
+        print("{} gold removed.".format(cnt))
     
     #Buys item passed in for gold passed in.
     def buy(self, gold, item, itemvalue):
         if (self.gold - gold) >= 0:
             self.add_item(item, itemvalue)
             self.gold -= gold
-            print "'{}' bought for {} gold.".format(item, gold)
+            print("'{}' bought for {} gold.".format(item, gold))
         else:
-            print "Not enough gold."
+            print("Not enough gold.")
     
     #Sells item passed in for gold passed in.
     def sell(self, item, gold):
         if item in self.inventory:
             del self.inventory[item]
             self.gold += gold
-            print "'{}' sold for {} gold.".format(item, gold)
+            print("'{}' sold for {} gold.".format(item, gold))
         else:
-            print "'{}' not in inventory.".format(item)
+            print("'{}' not in inventory.".format(item))
     
     #Prints out inventory.     
     def show_inventory(self):
-        print "Inventory:\n"
+        print("Inventory:\n")
         for i in self.inventory:
-            print "- {}".format(i)
-        return raw_input("\nPress enter to continue.\n")
+            print("- {}".format(i))
+        return input("\nPress enter to continue.\n")
     
     #Loads player stats from data dictionary passed in.
     def load_player(self, data):
@@ -188,21 +182,22 @@ class Player:
             self.armor = data['armor']
             self.defense = self.calculate_defense()
             self.questlog = data['questlog']
+            self.exp = data['exp']
             try:
                 self.damage = self.weapondata['damage']
                 self.weapon = self.weapondata['name']
             except Exception as e:
                 pass
-            print "Player {} successfully loaded.".format(self.name)
+            print("Player {} successfully loaded.".format(self.name))
         except Exception as e:
-            print "Failed to load character.", e
+            print("Failed to load character.", e)
     
     #Renames duplicate item.
     def rename_item(self, item):
         while True:
             if item in self.inventory:
-                print "This item ({}) already exists in inventory. Please rename.".format(item)
-                name = raw_input("New Item Name: ")
+                print("This item ({}) already exists in inventory. Please rename.".format(item))
+                name = input("New Item Name: ")
                 return name  
             else:
                 return item
@@ -220,6 +215,7 @@ class Player:
         stats['gold'] = self.gold
         stats['armor'] = self.armor
         stats['questlog'] = self.questlog
+        stats['exp'] = self.exp
         return stats
     
     #Prints out character data.    
