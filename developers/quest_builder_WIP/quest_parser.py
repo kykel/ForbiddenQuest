@@ -30,21 +30,21 @@ class quest_parser:
         
     #loads in the json dictionary for the new quest.
     def data_load(self):
-    	self.questname = self.questdata['questname']
-    	self.treename = self.questdata['treename']
-    	self.branchname = self.treename
-    	self.currentbranch = "{"+self.questname+"}:"+"["+self.treename+"]"
-    	self.previousbranch = ''
-    	self.questtree = "{"+self.questname+"}:"+"["+self.treename+"]"
-    	self.branchdata = self.questdata[self.currentbranch]
+        self.questname = self.questdata['questname']
+        self.treename = self.questdata['treename']
+        self.branchname = self.treename
+        self.currentbranch = "{"+self.questname+"}:"+"["+self.treename+"]"
+        self.previousbranch = ''
+        self.questtree = "{"+self.questname+"}:"+"["+self.treename+"]"
+        self.branchdata = self.questdata[self.currentbranch]
     
-    #Sets up a new quest.	
+    #Sets up a new quest.    
     def new_quest(self):
-    	with open(self.quest_dir+self.questname) as data_file:
-    	    self.questdata = json.load(data_file)
-    	self.data_load()
-    	self.build_tracker()
-	    	    
+        with open(self.quest_dir+self.questname) as data_file:
+            self.questdata = json.load(data_file)
+        self.data_load()
+        self.build_tracker()
+                
     #Begins gameplay of quest.
     def start_quest(self):
         self.clear()
@@ -52,7 +52,7 @@ class quest_parser:
         print "You arrive at {}.".format(self.questdata['treename'])
         self.player.questlog[self.questname] = "Incomplete"
         self.running()
-	
+    
     #Main program function
     def running(self):
         branchtext = self.secondarytext
@@ -268,15 +268,15 @@ class quest_parser:
     def quest_save(self):
         self.questdata['tracker'] = self.tracker
         self.player.questlog[self.questname] = ['Incomplete',self.questdata]
-	
-	#Load previous quest
+    
+    #Load previous quest
     def load_quest(self):
         self.questdata = self.player.questlog[self.questname][1]
         self.tracker = self.questdata['tracker']
         self.data_load()
-	    
-		
-		
+        
+        
+        
 
 if __name__ == "__main__":
     #import player
