@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
 import json
-import subprocess
-import readline
+
 
 #readline.parse_and_bind('tab: complete')
 #readline.parse_and_bind('set editing-mode vi')
@@ -67,16 +66,16 @@ class Questbuilder():
             else:
                 break
 
-    def menu(self, menutext, options):
+    #def menu(self, menutext, options):
         # pass function dict as:
         # >>> x = { '1': self.newstory , '2': self.load , '3': self.save , '4': self.helpmenu , '5': self.tutorial , '6': self.exit }
-        while True:
-            self.clear()
-            print(menutext)
-            try:
-                x[self.input_prompt()]()
-            except KeyError:
-                break
+    #    while True:
+    #        self.clear()
+    #        print(menutext)
+    #        try:
+    #            x[self.input_prompt()]()
+    #        except KeyError:
+    #            break
 
 
     def helpmenu(self):

@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 
-import subprocess
-import random
 import time
 import os
-import sys
 
 #Custom Imports
 import storyline
