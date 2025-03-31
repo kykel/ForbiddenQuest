@@ -24,7 +24,7 @@ gamedir = cwd
 
 
 def title(x):
-    print x
+    print(x)
     time.sleep(.1)
 
 def titlescreen():
@@ -34,13 +34,13 @@ def titlescreen():
     for letter in intro:
         if letter == 't':
             time.sleep(.5)
-            print "t o"
+            print("t o")
             time.sleep(.5)
         else:
             i.append(letter)
             time.sleep(.3)
             config.clear()
-            print ''.join(i)
+            print(''.join(i))
 
     
     
@@ -63,8 +63,8 @@ def titlescreen():
     mainmenu()
 
 def mainmenu():
-    print "MAIN MENU:\n"
-    choice = raw_input("What do you wish to do:\n1. new game\n2. load game\n3. save current game\n4. exit\n")
+    print("MAIN MENU:\n")
+    choice = input("What do you wish to do:\n1. new game\n2. load game\n3. save current game\n4. exit\n")
     if choice == '1':
         config.clear()
         newgame()
@@ -78,8 +78,8 @@ def mainmenu():
         config.clear()
         exit()
     elif choice == '5':
-        print "Which function do you want to jump to:"
-        call = raw_input("\n1. quests\n2. combat\n3. storyline\n")
+        print("Which function do you want to jump to:")
+        call = input("\n1. quests\n2. combat\n3. storyline\n")
         if call == '1':
             config.clear()
             quests.main()
@@ -93,7 +93,7 @@ def mainmenu():
             config.clear()
             mainmenu()
     else:
-        print "Error with your choice. Exiting."
+        print("Error with your choice. Exiting.")
         time.sleep(5)
         exit()
 
@@ -104,9 +104,9 @@ def newgame():
     config.playerdmg = [1, 8]
     config.health = 10
     config.battles = 0
-    print "Welcome player, to Forbidden Quest; a world of adventure and magic, mystery and secrecy, bravery and betrayal.\n"
+    print("Welcome player, to Forbidden Quest; a world of adventure and magic, mystery and secrecy, bravery and betrayal.\n")
     config.pause()
-    name = raw_input("Quickly now, so your adventure can begin, what is your name young warrior?\n")
+    name = input("Quickly now, so your adventure can begin, what is your name young warrior?\n")
     
     if name == "":
         name = "Chosen-One"
@@ -120,13 +120,13 @@ def newgame():
             except:
                 pass
     else:
-        print "You introduce yourself as:", name, "\n"
+        print("You introduce yourself as:", name, "\n")
     config.name = name
     storyline.story()
 
  
 def validation(x):
-    print type(x)
+    print(type(x))
     
 
 if __name__ == "__main__":

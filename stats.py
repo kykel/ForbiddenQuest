@@ -14,17 +14,17 @@ def playerstats():
     battles = config.battles
     health = config.health
     
-    print "\n\n"
-    print "PLAYER STAT READOUT:\n--------------------\n"
-    print "Battles won:", battles
-    print "Current level:", level
-    print "Max health:", health
-    print "Player damage:", config.playerdmg
-    print "\n\n"
+    print("\n\n")
+    print("PLAYER STAT READOUT:\n--------------------\n")
+    print("Battles won:", battles)
+    print("Current level:", level)
+    print("Max health:", health)
+    print("Player damage:", config.playerdmg)
+    print("\n\n")
     
     exp = battles * 2
     
-    print "You've currently won in:", battles, "battles so your current total experience is:", exp
+    print("You've currently won in:", battles, "battles so your current total experience is:", exp)
 
     
     #Determine level experience
@@ -38,14 +38,14 @@ def playerstats():
     if level == levelup:
         level = level + 1
         health = health + 2
-        print "You've leveled up! New level:", level
-        print "Your health has gone up. You now have", health, "total life."
+        print("You've leveled up! New level:", level)
+        print("Your health has gone up. You now have", health, "total life.")
     elif level > levelup:
-        print "Current level:", level
+        print("Current level:", level)
     elif level < levelup:
-        print "You have a problem. Your level should never be below your level up."
+        print("You have a problem. Your level should never be below your level up.")
     else:
-        print "You messed something up. You should not be here."   
+        print("You messed something up. You should not be here.")   
     
     config.level = level
     config.health = health

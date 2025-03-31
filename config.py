@@ -43,26 +43,26 @@ def clear():
 
 #5 second pause
 def pause():
-    pause = raw_input("\nPress Enter to Continue.\n")
+    pause = input("\nPress Enter to Continue.\n")
 
 def validateyesorno():
     import mainfile
     i = 1
     while i < 2:
-        choice = raw_input('Yes or no?\n')
+        choice = input('Yes or no?\n')
         #print "Your choice:", choice
         if choice == "yes":
             i = 3
             break
         elif choice == "no":
-            choice = raw_input("Return to main menu?\nYes or no?\n")
+            choice = input("Return to main menu?\nYes or no?\n")
             if choice == 'yes':
                 mainfile.mainmenu()
             else:
-                print "So you've re-thought your decision?"
+                print("So you've re-thought your decision?")
                 pass
         else:
-           print "Invalid input. "
+           print("Invalid input. ")
            exit()
             
 
