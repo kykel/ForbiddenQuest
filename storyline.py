@@ -31,7 +31,7 @@ def story():
  
     land = input("\nAnd if I may be so bold, from what land do you hail?\n")
     print("OH! Of course. I have heard tales of", land + ".", "It is a quite a magical land.\n My own kingdom was once as lush and beautiful as the tales of ", land, " but I'm afraid my land has since come under a horrible threat. I fear I must ask for you help in this matter.\n")
-    answer = input("Will you help us?")
+    answer = input("Will you help us?\n")
     done = 0
     while done == 0:
 

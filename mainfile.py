@@ -29,7 +29,8 @@ def title(x):
 
 def titlescreen():
     config.clear()
-    intro = "W e l c o m e t"
+    #intro = "W e l c o m e t"
+    intro = ['W ','e ','l ','o ','m ','e ','t']
     i = []
     for letter in intro:
         if letter == 't':
@@ -40,10 +41,29 @@ def titlescreen():
             i.append(letter)
             time.sleep(.3)
             config.clear()
-            print(''.join(i))
+            print(''.join(i).strip())
 
-    
-    
+    title = [" ______________         _______   ________  ________    ________",
+    "{              |    ___/       \_/        \/        \__/         \__",
+    " \     ~~~~~    \  /      ||           ||     ||                    \____",
+    "   \   ||        \ \      ||           ||     ||   __      _          __/",
+    "   /   ||~~~  ___ \/  __  ||~~~  ~  ~~~||  ~~~||  /__\\  |// \\        /",
+    " /     ||    || || ||/  \\ ||  || | ||  || ||  || |      ||   |   ____>",
+    " \     ||    ||_|| ||       ~~~  |  ~~~    ~~~    \\__/  ||   |  _>",
+    "{                                                             _]",
+    " |      _____                                                / ",
+    "{      ||    |        ___      _    ||                       \___  __  ",
+    " \     ||    | |  || /__\\\\   // \\ ~~||~~    ___     __           \/  \   ",
+    "   \   ||   \\| |  |||    _    \\\\    ||      \   \__/   \             /    ",
+    " __/   ||____\\ |__|| \\__// \\__//    ||  _____\           \____        \ ",
+    " \                     ____            /                      >____   /",
+    " /                ____/    \__________/                            \  | ",
+    "<~~~~~~~~~~~~~~~~/                                                  ~~>"]
+    for line in title:
+        print(line)
+        time.sleep(.1)
+
+    '''
     title(" ______________         _______   ________  ________    ________")
     title("{              |    ___/       \_/        \/        \__/         \__")
     title(" \     ~~~~~    \  /      ||           ||     ||                    \____")
@@ -60,6 +80,7 @@ def titlescreen():
     title(" \                     ____            /                      >____   /")
     title(" /                ____/    \__________/                            \  | ")
     title("<~~~~~~~~~~~~~~~~/                                                  ~~>")
+    '''
     mainmenu()
 
 def mainmenu():
@@ -115,7 +136,7 @@ def newgame():
     elif name != "":
             try:
                 name = int(name)
-                "Improper name. Game resetting."
+                print("Improper name. Game resetting.")
                 newgame()
             except:
                 pass

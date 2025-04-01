@@ -23,7 +23,7 @@ class quest_parser:
         self.branchname = ''
         self.branchdata = {}
         self.questname = questname
-        self.quest_dir = 'quest_saves/'
+        self.quest_dir = '../../developers/quest_builder_WIP/quest_saves/'
         self.tracker = {}
         self.player = player
         self.win_condition = False
