@@ -12,9 +12,9 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 #print bcolors.WARNING colors the terminal and bcolors.ENDC reverts back to original color
-print bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC
-print bcolors.FAIL + "Warning: No active frommets remain. Continue?"
-print bcolors.OKGREEN + "Warning: No active frommets remain. Continue?" + bcolors.ENDC
+print(bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
+print(bcolors.FAIL + "Warning: No active frommets remain. Continue?")
+print(bcolors.OKGREEN + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
 
 
 
