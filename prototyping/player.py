@@ -15,6 +15,7 @@ class Player:
     
     def __init__(self):
         self.level = 1
+        self.exp = 0
         self.gold = 10
         self.inventory = {}
         self.keyitems = []
