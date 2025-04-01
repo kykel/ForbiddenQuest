@@ -92,62 +92,6 @@ def newgame():
     pause = input("Press enter.\n")
     stores()
 
-'''
-def story():
-    #mainfile.namefunc()
-    #global name
-    #print "You find yourself at a crossroads. The road splits into a three way before you. You can go left,right or straight."
-    print("\nIt is an honor to meet you,", config.name + ".","\nI am Akendrial, third king of the third age of Vandaal. Long has prophecy fortold of your coming and long have I waited for you. Though, I'm afraid that prophecy was not specific as to who exactly you were.\n")
-    race = input("\nIf I may ask, of what ancestory are you?\n1. <Elf>\n2. <Human>\n3. <Dwarf>\n4. <Or something else entirely>\n")
-    if race == '1':
-        race = 'Elf'
-        print("Excellent! An agile Elf, warrior of the wood! How I've dreamed of meeting your kind.\n")
-    elif race == '2':
-        race = 'Human'
-        print("It is an honor to meet you then brother. I was quite the adventurer myself as a lad.\n")
-    elif race == '3':
-        race = 'Dwarf'
-        print("Ah yes! The sturdy dwarf, miner of the stony depths. Your kind has ever been a mystery to us surface dwellers. An honor to meet you, to be sure.\n")
-    else:
-        race = input("Interesting. So what ancestory are you exactly?\n")
-        print("OH! Of course. Your kind are so rare here. Forgive me! I am meerly shocked by your presence.\n")                   
- 
-    land = input("\nAnd if I may be so bold, from what land do you hail?\n")
-    print("OH! Of course. I have heard tales of", land + ".", "It is a quite a magical land.\n My own kingdom was once as lush and beautiful as the tales of ", land, " but I'm afraid my land has since come under a horrible threat. I fear I must ask for you help in this matter.\n")
-    answer = input("Will you help us?\n")
-    done = 0
-    while done == 0:
-
-        if answer == 'yes':
-            print("Oh Thank you! Thank you so much. You are indeed the warrior of prophecy. You must set off at once, there is little time left. I have spoken with my people and many have already agreed to accompany you upon this dark journey.\n")
-            done = 1
-        elif answer == 'no':
-            print("\nThe king in a sudden and uncontrollable rage rips a dagger out from beneath his kingly robes and stabs you and as you fall to the floor your vision fades and all goes black. \nGoodbye cruel world.\n")
-            print("AAAAHHHHHHHHHH!")
-            print("AAAAHHHHHHHHHH!")
-            print("AAAAHHHHHHHHHH!")
-            print("AAAAHHHHHHHHHH!")
-            print("AAAAHHHHHHHHHH!")
-            print("AAAAHHHHHHHHHH!")
-            exit()
-
-        else:
-            print("I'm sorry", name, "but I'm afraid your language is still new to me and I didn't quite understand that.\n")
-            answer = input("Will you help us?\n")
-
-
-    print("You soon depart the king's good company on your quest to defeat Rirakoor, the great purple dragon in the east.\nFor many years the dragon has plagued the land. It is your quest to defeat it.\n")
-    print("Paused...\n\n")
-    time.sleep(2)
-    print("You've parted company with the king, ten of his most trusted knights joining you on your quest. You contemplate the lucidity of your decision a moment but then push it aside.\nHow hard could it be to kill a dragon after all.\n")
-    print("The men follow you down, decked in armor and you realize that you have little to fight with. Luckily, the king well equipped you with treasure for your quest. Surely you can afford something.\n")
-    print("You exit through the gate to the main city below. The buildings stretch on for blocks.\n")
-    pause = input("Press enter.\n")
-    stores()
-    return 0
-'''
-
-
 #class Stores:
     
     #print "As you walk down the stree you glance around. To your right you notice a place called The Wizard's Hollow. No doubt, it is a mages shop.\nTo the left of it you see The Blacksmith's Armory and a few more shops down stands The Tamer's Den.\nHaving always been a freelancer you realize this is a chance to try a new style of combat or continue without a trade.\n"
