@@ -92,27 +92,9 @@ def newgame():
     pause = input("Press enter.\n")
     stores()
 
-#class Stores:
-    
-    #print "As you walk down the stree you glance around. To your right you notice a place called The Wizard's Hollow. No doubt, it is a mages shop.\nTo the left of it you see The Blacksmith's Armory and a few more shops down stands The Tamer's Den.\nHaving always been a freelancer you realize this is a chance to try a new style of combat or continue without a trade.\n"
-    #store = raw_input("Where do you want to go?\n(Pick location based by number.)\n1. The Wizard's Hollow\n2. The Blacksmith's Armory\n3. The Tamer's Den\n4. Continue (without entering a shop)\n")
-    #store = int(store)
-    #def __init__(self, name, description):
-      #  self.name = name
-     #   self.description = description
-    
-    #class Wizardhollow(Stores):
-       # self.
-        
-    #class Blacksmitharmory(Stores):   
-        
-    #class tamerden(Stores):
-        
-   # class ignore(Stores):
-        
-    
 def stores():
-    print("As you walk down the stree you glance around. To your right you notice a place called The Wizard's Hollow. No doubt, it is a mages shop.\nTo the left of it you see The Blacksmith's Armory and a few more shops down stands The Tamer's Den.\nHaving always been a freelancer you realize this is a chance to try a new style of combat or continue without a trade.\n")
+    # Obsolete. Replacing with shops.py
+    print("As you walk down the street you glance around. To your right you notice a place called The Wizard's Hollow. No doubt, it is a mages shop.\nTo the left of it you see The Blacksmith's Armory and a few more shops down stands The Tamer's Den.\nHaving always been a freelancer you realize this is a chance to try a new style of combat or continue without a trade.\n")
     store = input("Where do you want to go?\n(Pick location based by number.)\n1. The Wizard's Hollow\n2. The Blacksmith's Armory\n3. The Tamer's Den\n4. Continue (without entering a shop)\n")
     #store = int(store)
     if store == '1':
