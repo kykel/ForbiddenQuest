@@ -29,7 +29,7 @@ class Player:
         self.armor = {}
         self.questlog = {}
     
-    #Returns the amount of damage being done    .
+    #Returns the amount of damage being done
     def attack(self):
         return random.randint(self.damage[0], self.damage[1])
     
@@ -57,13 +57,20 @@ class Player:
             self.weapon = name
             self.weapondata = self.inventory[name]
             self.damage = self.weapondata['damage']
-            print("'{}' successfully equipped.".format(name))
+            print("'{}' successfully equipped.\n".format(name))
         else:
-            print("Unable to equip '{}'. Not found in inventory.".format(name))
+            print("Unable to equip '{}'. Not found in inventory.\n".format(name))
     
     #Equips article of armor passed in.  
     def equip_armor(self, armor):
         armortypes = ['chest','arms','legs','hands','feet','head','shield']
+        #Test code
+        #if armor in self.inventory:
+        #    print("Armor: ",armor)
+        #if 'type' in self.inventory[armor]:
+        #    print(self.inventory[armor])
+        #if self.inventory[armor]['type'] in armortypes:
+        #    print("Armor: {} is valid type: {}".format(armor,self.inventory[armor]['type']))
         if (armor in self.inventory) and ('type' in self.inventory[armor]) and (self.inventory[armor]['type'] in armortypes):
             armordata = self.inventory[armor]
             #Unequip current armor if any.
@@ -75,9 +82,8 @@ class Player:
             del self.inventory[armor]
             self.calculate_defense()
             print("'{}' successfully equipped.".format(armor))
-          
-                    
-                    
+            print("Current Defense: {}\n".format(self.defense))
+
         else:
             print("Cannot equip '{}'. Valid armor must be provided with correct type:\n".format(armor) + " : ".join(armortypes))
     
@@ -88,9 +94,23 @@ class Player:
             del self.armor[armor]
             self.calculate_defense()
             print("'{}' successfully unequipped.".format(armor))
+            print("Current Defense: {}\n".format(self.defense))
         else:
-            print("Can't unequip '{}'. Not a valid equipped armor.".format(armor))
-    
+            print("Can't unequip '{}'. Not a valid equipped armor.\n".format(armor))
+
+    #Shows currently equipped armor
+    def show_equipment(self):
+        if len(self.armor) == 0:
+            print("No armor currently equipped.\n")
+        else:
+            print("Equipped Equipment:")
+            print("#------------------------#")
+            for a in self.armor:
+                print(a)
+            print("#------------------------#")
+        return input("\nPress enter to continue.\n")
+
+
     #Unequips name of weapon passed in.        
     def unequip_weapon(self, item):
         if ((item == 'weapon') or (item == self.weapon)):
@@ -98,9 +118,9 @@ class Player:
             self.weapon = 'fists'
             self.weapondata = {'name': 'fists', 'damage': [1,1], 'description': 'Bare knuckles'}
             self.damage = [1,1]
-            print("'{}' successfully unequipped.".format(item))
+            print("'{}' successfully unequipped.\n".format(item))
         else:
-            print("Failed to unequip '{}'. Not a valid equipped item.".format(item))
+            print("Failed to unequip '{}'. Not a valid equipped item.\n".format(item))
     
     #Calculates new defense after equipping armor.
     def calculate_defense(self):
@@ -115,64 +135,69 @@ class Player:
         if type(itemvalue) == dict:
             itemvalue['name'] = item
         self.inventory[item] = itemvalue
-        print("'{}' added to inventory.".format(item))
+        print("'{}' added to inventory.\n".format(item))
         
     #Deletes an item from the inventory
     def remove_item(self, item):
         if item in self.inventory:
             del self.inventory[item]
-            print("'{}' removed from inventory.".format(item))
+            print("'{}' removed from inventory.\n".format(item))
         else:
-            print("'{}' not in inventory.".format(item))
+            print("'{}' not in inventory.\n".format(item))
     
     #Adds a keyitem to the key items list as well as stores it in inventory.
     def add_keyitem(self, item, itemvalue):
         self.keyitems.append(item)
         self.inventory[item] = itemvalue
-        print("'{}' added to key items.".format(item))
+        print("'{}' added to key items.\n".format(item))
     
     #Removes a key item from inventory.
     def remove_keyitem(self, item):
         if item in self.keyitems:
             self.keyitems.remove(item)
             del self.inventory[item]
-            print("'{}' removed from keyitems and inventory.".format(item))
+            print("'{}' removed from keyitems and inventory.\n".format(item))
         else:
-            print("Key item not acquired.")
+            print("Key item not acquired.\n")
     
     #Adds gold.    
     def add_gold(self, cnt):
         self.gold += cnt
-        print("{} gold added.".format(cnt))
+        print("{} gold added.\n".format(cnt))
     
     #Removes specified gold.    
     def remove_gold(self, cnt):
         self.gold -= cnt
-        print("{} gold removed.".format(cnt))
+        print("{} gold removed.\n".format(cnt))
     
     #Buys item passed in for gold passed in.
     def buy(self, gold, item, itemvalue):
         if (self.gold - gold) >= 0:
             self.add_item(item, itemvalue)
             self.gold -= gold
-            print("'{}' bought for {} gold.".format(item, gold))
+            print("'{}' bought for {} gold.\n".format(item, gold))
         else:
-            print("Not enough gold.")
+            print("Not enough gold.\n")
     
     #Sells item passed in for gold passed in.
     def sell(self, item, gold):
         if item in self.inventory:
             del self.inventory[item]
             self.gold += gold
-            print("'{}' sold for {} gold.".format(item, gold))
+            print("'{}' sold for {} gold.\n".format(item, gold))
         else:
-            print("'{}' not in inventory.".format(item))
+            print("'{}' not in inventory.\n".format(item))
     
     #Prints out inventory.     
     def show_inventory(self):
-        print("Inventory:\n")
-        for i in self.inventory:
-            print("- {}".format(i))
+        if len(self.inventory) == 0:
+            print("Inventory currently empty.\n")
+        else:
+            print("Inventory:")
+            print("#------------------------#")
+            for i in self.inventory:
+                print("- {}".format(i))
+            print("#------------------------#")
         return input("\nPress enter to continue.\n")
     
     #Loads player stats from data dictionary passed in.
@@ -195,8 +220,10 @@ class Player:
             except Exception as e:
                 pass
             print("Player {} successfully loaded.".format(self.name))
+            return input("\nPress enter to continue.\n")
         except Exception as e:
             print("Failed to load character.", e)
+            return input("\nPress enter to continue.\n")
     
     #Renames duplicate item.
     def rename_item(self, item):
@@ -231,17 +258,29 @@ class Player:
 if __name__ == "__main__":
     p = Player()
 
-    
+    p.show_inventory()
     armor = {'type': 'chest', 'name': "Iron Breastplate", 'defense': 5}
     helmet = {'type': 'head', 'name': "Iron Helmet", 'defense': 2}
     shelmet = {'type': 'head', 'name': "Skull Helmet", 'defense': 1}
-    
+
     p.add_item('dagger', {'damage': [1,4], 'name': 'dagger'})
     p.add_item('dagger', {'damage': [1,4], 'name': 'dagger'})
     p.add_item(armor['name'], armor)
     p.add_item(helmet['name'], helmet)
     p.add_item(shelmet['name'], shelmet)
-    
+    p.show_inventory()
+
+    #Test armor functions
+    p.equip_armor(shelmet['name'])
+    p.equip_armor(armor['name'])
+    p.add_gold(20)
+    p.remove_gold(10)
+    p.equip_weapon('dagger')
+    p.show_equipment()
+    p.unequip_armor(shelmet['name'])
+    p.remove_item('poki')
+    p.show_equipment()
+    '''
     p.equip_weapon('Shiny dagger')
     p.unequip_weapon('Shiny dagger')
     
@@ -254,5 +293,6 @@ if __name__ == "__main__":
     p.equip_armor(shelmet['name'])
     
     p.equip_armor('dagger')
+    '''
     
     
