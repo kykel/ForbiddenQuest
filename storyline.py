@@ -10,6 +10,9 @@ import config
 
 
 def newgame():
+    #Starts a new game to select name, race and origin land.
+    #Needs to be cleaned up.
+    #Replacing player stats with object of player.py
     config.level = 1
     config.playerdmg = [1, 8]
     config.health = 10
