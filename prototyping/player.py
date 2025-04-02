@@ -48,7 +48,7 @@ class Player:
             return 0
         else:
             return self.hp
-    
+
     #Equips name of new weapon passed in.
     def equip_weapon(self, name):
         if name in self.inventory:
@@ -60,6 +60,26 @@ class Player:
             print("'{}' successfully equipped.\n".format(name))
         else:
             print("Unable to equip '{}'. Not found in inventory.\n".format(name))
+
+    # Unequips name of weapon passed in.
+    def unequip_weapon(self, item):
+        if ((item == 'weapon') or (item == self.weapon)):
+            self.inventory[self.weapon] = self.weapondata
+            self.weapon = 'fists'
+            self.weapondata = {'name': 'fists', 'damage': [1, 1], 'description': 'Bare knuckles'}
+            self.damage = [1, 1]
+            print("'{}' successfully unequipped.\n".format(item))
+        else:
+            print("Failed to unequip '{}'. Not a valid equipped item.\n".format(item))
+
+    def show_weapon(self):
+        print("#------------------------#")
+        print("Equipped weapon:\n{}".format(self.weapon))
+        for key,val in self.weapondata.items():
+            print(key,":",val)
+        print("#------------------------#")
+        return input("\nPress enter to continue.\n")
+
     
     #Equips article of armor passed in.  
     def equip_armor(self, armor):
@@ -99,28 +119,17 @@ class Player:
             print("Can't unequip '{}'. Not a valid equipped armor.\n".format(armor))
 
     #Shows currently equipped armor
-    def show_equipment(self):
+    def show_armor(self):
         if len(self.armor) == 0:
             print("No armor currently equipped.\n")
         else:
-            print("Equipped Equipment:")
             print("#------------------------#")
+            print("Equipped Armor:")
             for a in self.armor:
                 print(a)
             print("#------------------------#")
         return input("\nPress enter to continue.\n")
 
-
-    #Unequips name of weapon passed in.        
-    def unequip_weapon(self, item):
-        if ((item == 'weapon') or (item == self.weapon)):
-            self.inventory[self.weapon] = self.weapondata
-            self.weapon = 'fists'
-            self.weapondata = {'name': 'fists', 'damage': [1,1], 'description': 'Bare knuckles'}
-            self.damage = [1,1]
-            print("'{}' successfully unequipped.\n".format(item))
-        else:
-            print("Failed to unequip '{}'. Not a valid equipped item.\n".format(item))
     
     #Calculates new defense after equipping armor.
     def calculate_defense(self):
@@ -193,8 +202,8 @@ class Player:
         if len(self.inventory) == 0:
             print("Inventory currently empty.\n")
         else:
-            print("Inventory:")
             print("#------------------------#")
+            print("Inventory:")
             for i in self.inventory:
                 print("- {}".format(i))
             print("#------------------------#")
@@ -276,23 +285,16 @@ if __name__ == "__main__":
     p.add_gold(20)
     p.remove_gold(10)
     p.equip_weapon('dagger')
-    p.show_equipment()
+    p.show_armor()
     p.unequip_armor(shelmet['name'])
     p.remove_item('poki')
-    p.show_equipment()
-    '''
-    p.equip_weapon('Shiny dagger')
-    p.unequip_weapon('Shiny dagger')
-    
-    p.unequip_weapon('dagger')
     p.equip_weapon('dagger')
-    p.equip_weapon('Shiny dagger')
-    
-    p.equip_armor(armor['name'])
-    p.equip_armor(helmet['name'])
-    p.equip_armor(shelmet['name'])
-    
-    p.equip_armor('dagger')
-    '''
+    p.show_weapon()
+    p.unequip_weapon('dagger')
+    p.show_armor()
+    p.show_inventory()
+
+
+    print("\nPlayer:\n{}\n".format(p))
     
     
