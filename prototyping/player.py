@@ -269,13 +269,13 @@ class Player:
 if __name__ == "__main__":
     p = Player()
 
+    #Test inventory functions
     p.show_inventory()
     armor = {'type': 'chest', 'name': "Iron Breastplate", 'defense': 5}
     helmet = {'type': 'head', 'name': "Iron Helmet", 'defense': 2}
     shelmet = {'type': 'head', 'name': "Skull Helmet", 'defense': 1}
 
     p.add_item('dagger', {'damage': [1,4], 'name': 'dagger'})
-    #p.add_item('dagger', {'damage': [1,4], 'name': 'dagger'})
     p.add_item(armor['name'], armor)
     p.add_item(helmet['name'], helmet)
     p.add_item(shelmet['name'], shelmet)
@@ -284,19 +284,28 @@ if __name__ == "__main__":
     #Test armor functions
     p.equip_armor(shelmet['name'])
     p.equip_armor(armor['name'])
-    p.add_gold(20)
-    p.remove_gold(10)
-    p.equip_weapon('dagger')
     p.show_armor()
     p.unequip_armor(shelmet['name'])
-    #p.remove_item('poki')
+    p.show_armor()
+
+    #Test Gold functions
+    p.add_gold(20)
+    p.remove_gold(10)
+
+    #Test weapon functions
     p.equip_weapon('dagger')
     p.show_weapon()
     p.unequip_weapon('dagger')
-    p.show_armor()
+
+    #Test modified inventory
     p.show_inventory()
 
-
+    #Test character object printout
     print(f"\nPlayer:\n{p}\n")
+
+    #Test save and Load character
+    kail = p.character_save()
+    p.load_player(kail)
+    print("New character:",p)
     
     
