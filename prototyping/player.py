@@ -295,6 +295,6 @@ if __name__ == "__main__":
     p.show_inventory()
 
 
-    print(f"\nPlayer:\n{}\n".format(p))
+    print(f"\nPlayer:\n{p}\n")
     
     
