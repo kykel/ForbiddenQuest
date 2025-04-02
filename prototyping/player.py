@@ -73,14 +73,12 @@ class Player:
             print(f"Failed to unequip '{name}'. Not a valid equipped item.\n")
 
     def show_weapon(self):
-        print(f"#------------------------#")
+        print("#------------------------#")
         print(f"Equipped weapon:\n - {self.weapon}")
         for key,val in self.weapondata.items():
-            print(f"  --",key,":",val)
-        print(f"#------------------------#")
-        #return input("\nPress enter to continue.\n")
+            print("  --",key,":",val)
+        print("#------------------------#")
 
-    
     #Equips article of armor passed in.  
     def equip_armor(self, armor):
         armortypes = ['chest','arms','legs','hands','feet','head','shield']
@@ -258,11 +256,27 @@ class Player:
             case 3:
                 self.show_stats()
 
+    #Access the player inventory
     def manage_inventory(self):
         pass
 
+    #Print out all player stats
     def show_stats(self):
         pass
+        self.level = 1
+        self.exp = 0
+        self.gold = 10
+        self.inventory = {}
+        self.keyitems = []
+        self.weapon = 'fists'
+        self.weapondata = {'name': 'fists', 'damage': 1, 'description': 'Bare knuckles, the way mama intended!'}
+        self.max_hp = 10
+        self.hp = 10
+        self.damage = [1, 1]
+        self.name = 'Chosen One'
+        self.defense = 0
+        self.armor = {}
+        self.questlog = {}
 
     # Renames duplicate item.
     def rename_item(self, item):
