@@ -213,21 +213,20 @@ class Player:
     def load_player(self, data):
         try:
             self.level = data['level']
+            self.exp = data['exp']
             self.name = data['name']
+            self.max_hp = data['max_hp']
             self.hp = data['hp']
             self.max_hp = data['max_hp']
             self.inventory = data['inventory']
             self.keyitems = data['keyitems']
+            self.weapon = data['weapon']
             self.weapondata = data['weapondata']
+            self.damage = data['damage']
             self.gold = data['gold']
             self.armor = data['armor']
             self.defense = self.calculate_defense()
             self.questlog = data['questlog']
-            try:
-                self.damage = self.weapondata['damage']
-                self.weapon = self.weapondata['name']
-            except Exception as e:
-                pass
             print(f"Player {self.name} successfully loaded.")
             return input("\nPress enter to continue.\n")
         except Exception as e:
@@ -249,9 +248,12 @@ class Player:
         stats = {}
         stats['name'] = self.name
         stats['level'] = self.level
+        stats['exp'] = self.exp
         stats['hp'] = self.hp
         stats['max_hp'] = self.max_hp
+        stats['weapon'] = self.weapon
         stats['weapondata'] = self.weapondata
+        stats['damage'] = self.damage
         stats['inventory'] = self.inventory
         stats['keyitems'] = self.keyitems
         stats['gold'] = self.gold
