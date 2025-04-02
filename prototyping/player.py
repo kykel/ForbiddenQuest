@@ -261,7 +261,7 @@ class Player:
     
     #Prints out character data.    
     def __str__(self):
-        return "Name: {}, Level: {}, HP: {}, Weapon: {}, Damage: {}, Defense: {}, Gold: {}, Armor: {},\n\nKey Items: {}\n\nInventory: {}\n".format(self.name,self.level,self.hp,self.weapon,self.damage,self.defense,self.gold,self.armor,self.keyitems,self.inventory)
+        return "Name: {}, Level: {}, Exp: {}, Max HP: {}, Current HP: {}, Weapon: {}, Weapon Data: {}, Damage: {}, Defense: {}, Gold: {}, Armor: {},\n\nKey Items: {}\n\nInventory: {}\n".format(self.name,self.level,self.exp,self.max_hp,self.hp,self.weapon,self.weapondata,self.damage,self.defense,self.gold,self.armor,self.keyitems,self.inventory)
 
 
 if __name__ == "__main__":
