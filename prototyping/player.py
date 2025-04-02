@@ -20,7 +20,7 @@ class Player:
         self.inventory = {}
         self.keyitems = []
         self.weapon = 'fists'
-        self.weapondata = {'name': 'fists', 'damage': 1, 'description': 'Bare knuckles, the way mama intended'}
+        self.weapondata = {'name': 'fists', 'damage': 1, 'description': 'Bare knuckles, the way mama intended!'}
         self.max_hp = 10
         self.hp = 10
         self.damage = [1,1]
@@ -62,15 +62,15 @@ class Player:
             print(f"Unable to equip '{name}'. Not found in inventory.\n")
 
     # Unequips name of weapon passed in.
-    def unequip_weapon(self, item):
-        if ((item == 'weapon') or (item == self.weapon)):
+    def unequip_weapon(self, name):
+        if ((name == 'weapon') or (name == self.weapon)):
             self.inventory[self.weapon] = self.weapondata
             self.weapon = 'fists'
             self.weapondata = {'name': 'fists', 'damage': [1, 1], 'description': 'Bare knuckles'}
             self.damage = [1, 1]
-            print(f"'{item}' successfully unequipped.\n")
+            print(f"'{name}' successfully unequipped.\n")
         else:
-            print(f"Failed to unequip '{item}'. Not a valid equipped item.\n")
+            print(f"Failed to unequip '{name}'. Not a valid equipped item.\n")
 
     def show_weapon(self):
         print(f"#------------------------#")
@@ -78,24 +78,18 @@ class Player:
         for key,val in self.weapondata.items():
             print(f"  --",key,":",val)
         print(f"#------------------------#")
-        return input("\nPress enter to continue.\n")
+        #return input("\nPress enter to continue.\n")
 
     
     #Equips article of armor passed in.  
     def equip_armor(self, armor):
         armortypes = ['chest','arms','legs','hands','feet','head','shield']
-        #Test code
-        #if armor in self.inventory:
-        #    print(f"Armor: ",armor)
-        #if 'type' in self.inventory[armor]:
-        #    print(self.inventory[armor])
-        #if self.inventory[armor]['type'] in armortypes:
-        #    print(f"Armor: {} is valid type: {}".format(armor,self.inventory[armor]['type']))
         if (armor in self.inventory) and ('type' in self.inventory[armor]) and (self.inventory[armor]['type'] in armortypes):
             armordata = self.inventory[armor]
             #Unequip current armor if any.
             for key,value in self.armor.items():
                 if value['type'] == armordata['type']:
+                    print(f"Already wearing {value['type']} type armor: {value['name']}. Unequipping.")
                     self.unequip_armor(key)
                     break
             self.armor[armor] = armordata
@@ -103,7 +97,6 @@ class Player:
             self.calculate_defense()
             print(f"'{armor}' successfully equipped.")
             print(f"Current Defense: {self.defense}\n")
-
         else:
             print(f"Cannot equip '{armor}'. Valid armor must be provided with correct type:\n" + " : ".join(armortypes))
     
@@ -118,7 +111,7 @@ class Player:
         else:
             print(f"Can't unequip '{armor}'. Not a valid equipped armor.\n")
 
-    #Shows currently equipped armor
+    # Shows currently equipped armor
     def show_armor(self):
         if len(self.armor) == 0:
             print("No armor currently equipped.\n")
@@ -128,8 +121,50 @@ class Player:
             for a in self.armor:
                 print(f"- {a}")
             print("#------------------------#")
-        return input("\nPress enter to continue.\n")
 
+    def manage_equipment(self):
+        while True:
+            print("Equipment Management Menu:")
+            options = ["1. Show Equipment","2. Equip","3. Unequip","4. Done"]
+            option = ""
+            for o in options:
+                print(o)
+            choice = input("What would you like to do?\n> ")
+
+            if (choice == "1") or (choice.lower() == "show equipment"):
+                self.show_weapon()
+                self.show_armor()
+            elif (choice == "2") or (choice.lower() == "equip"):
+                option = "Equip"
+            elif (choice == "3") or (choice.lower() == "unequip"):
+                option = "Unequip"
+            elif (choice == "4") or (choice.lower() == "back"):
+                break
+            else:
+                print("Incorrect option. Try again.")
+
+            if option != "":
+                e = input(f"{option}:\n1. Armor\n2. Weapon\n> ")
+                if (e == "1") or (e.lower() == "armor"):
+                    match option.lower():
+                        case "equip":
+                            armor = input("What armor would you like to equip: ")
+                            self.equip_armor(armor)
+                        case "unequip":
+                            armor = input("What armor would you like to unequip: ")
+                            self.unequip_armor(armor)
+                elif (e == "2") or (e.lower() == "weapon"):
+                    match option.lower():
+                        case "equip":
+                            weapon = input("What weapon would you like to equip: ")
+                            self.equip_weapon(weapon)
+                        case "unequip":
+                            weapon = input("What weapon would you like to unequip: ")
+                            self.unequip_weapon(weapon)
+                else:
+                    print("Incorrect option. Try again.")
+
+            input("\nPress enter to continue.\n")
     
     #Calculates new defense after equipping armor.
     def calculate_defense(self):
@@ -208,7 +243,37 @@ class Player:
                 print(f"- {i}")
             print("#------------------------#")
         return input("\nPress enter to continue.\n")
-    
+
+    def player_menu(self):
+        print("Accessing player menu. What would you like to do?")
+        options = ["1. Manage Inventory","2. Manage Equipment","3. Show Stats"]
+        for option in options:
+            print(option)
+        choice = input("> ")
+        match choice:
+            case 1:
+                self.manage_inventory()
+            case 2:
+                self.manage_equipment()
+            case 3:
+                self.show_stats()
+
+    def manage_inventory(self):
+        pass
+
+    def show_stats(self):
+        pass
+
+    # Renames duplicate item.
+    def rename_item(self, item):
+        while True:
+            if item in self.inventory:
+                print(f"This item ({item}) already exists in inventory. Please rename.")
+                name = input("New Item Name: ")
+                return name
+            else:
+                return item
+
     #Loads player stats from data dictionary passed in.
     def load_player(self, data):
         try:
@@ -232,16 +297,6 @@ class Player:
         except Exception as e:
             print("Failed to load character.", e)
             return input("\nPress enter to continue.\n")
-    
-    #Renames duplicate item.
-    def rename_item(self, item):
-        while True:
-            if item in self.inventory:
-                print(f"This item ({item}) already exists in inventory. Please rename.")
-                name = input("New Item Name: ")
-                return name  
-            else:
-                return item
     
     #Saves character stats.        
     def character_save(self):
@@ -276,6 +331,7 @@ if __name__ == "__main__":
     shelmet = {'type': 'head', 'name': "Skull Helmet", 'defense': 1}
 
     p.add_item('dagger', {'damage': [1,4], 'name': 'dagger'})
+    p.add_item('axe', {'damage': [1, 6], 'name': 'axe'})
     p.add_item(armor['name'], armor)
     p.add_item(helmet['name'], helmet)
     p.add_item(shelmet['name'], shelmet)
@@ -296,6 +352,7 @@ if __name__ == "__main__":
     p.equip_weapon('dagger')
     p.show_weapon()
     p.unequip_weapon('dagger')
+    p.manage_equipment()
 
     #Test modified inventory
     p.show_inventory()
