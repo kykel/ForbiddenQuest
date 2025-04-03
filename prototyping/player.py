@@ -3,12 +3,11 @@
 
 import random, json
 
-#24OCT2018 - Built basic model. Includes name, inventory, keyitems, weapon, hp, damage, gp, sp, cp. Additionally can add and remove, attack, and be damaged and calculate costs
-#29OCT2018 - Buy, sell, attack, defend, take damage, equip and unequip weapon and armor, calculate defense, and add/remove items are all complete. Can also load and save character stats
-
 '''
-Later additions:
+Later additions (To-do list):
 Injury status
+Move comments into docstring formats
+Add functions for leveling, experience and questlog management
 '''
 
 class Player:
@@ -258,25 +257,48 @@ class Player:
 
     #Access the player inventory
     def manage_inventory(self):
-        pass
+        menu = ["1. Show Inventory","2. Inspect Item","3. Discard Item","4. Done"]
+        while True:
+            print("Accessing Inventory:")
+            for m in menu:
+                print(m)
+            option = input("What would you like to do?\n> ")
+            if (option == "1") or (option.lower() == "show inventory"):
+                self.show_inventory()
+            elif (option == "2") or (option.lower() == "inspect item"):
+                self.inspect_item()
+            elif (option == "3") or (option.lower() == "discard item"):
+                self.remove_item()
+            elif (option == "4") or (option.lower() == "done"):
+                break
+            else:
+                print("Incorrect option. Try again.")
+
+    def selection(self,menu):
+        cnt = 1
+        for m in menu:
+            print(f"{cnt}. {m}")
+            cnt += 1
+        option = input("What would you like to do?\n> ")
+        opcnt = len(menu)
+        for n in opcnt:
+            if (option == str())
+        if (option == "1") or (option.lower() == opcnt[0] ):
+            self.show_inventory()
+        elif (option == "2") or (option.lower() == "inspect item"):
+            self.inspect_item()
+        elif (option == "3") or ()
 
     #Print out all player stats
     def show_stats(self):
-        pass
-        self.level = 1
-        self.exp = 0
-        self.gold = 10
-        self.inventory = {}
-        self.keyitems = []
-        self.weapon = 'fists'
-        self.weapondata = {'name': 'fists', 'damage': 1, 'description': 'Bare knuckles, the way mama intended!'}
-        self.max_hp = 10
-        self.hp = 10
-        self.damage = [1, 1]
-        self.name = 'Chosen One'
-        self.defense = 0
-        self.armor = {}
-        self.questlog = {}
+        print("Player stats:")
+        print(f"Name: {self.name}")
+        print(f"Level: {self.level}")
+        print(f"Current Experience: {self.exp}")
+        print(f"Gold: {self.gold}")
+        print(f"Max HP: {self.max_hp}")
+        print(f"Current HP: {self.hp}")
+        print(f"Current Defense: {self.defense}")
 
     # Renames duplicate item.
     def rename_item(self, item):
@@ -377,6 +399,6 @@ if __name__ == "__main__":
     #Test save and Load character
     kail = p.character_save()
     p.load_player(kail)
-    print("New character:",p)
+    p.show_stats()
     
     
