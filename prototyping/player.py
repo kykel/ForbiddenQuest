@@ -2,6 +2,7 @@
 
 
 import random, json
+from contextlib import suppress
 
 '''
 Later additions (To-do list):
@@ -274,20 +275,21 @@ class Player:
             else:
                 print("Incorrect option. Try again.")
 
-    def selection(self,menu):
-        cnt = 1
-        for m in menu:
-            print(f"{cnt}. {m}")
-            cnt += 1
-        option = input("What would you like to do?\n> ")
-        opcnt = len(menu)
-        for n in opcnt:
-            if (option == str())
-        if (option == "1") or (option.lower() == opcnt[0] ):
-            self.show_inventory()
-        elif (option == "2") or (option.lower() == "inspect item"):
-            self.inspect_item()
-        elif (option == "3") or ()
+    #Skyler's voodoo magic
+    #demomenu = ["attack", "defend", "show equipment", "show character"]
+    def menu(menuitems: list) -> str | None:
+        """ Generate a generic Menu based on *menuitems*. """
+        for k, v in enumerate(menuitems, start=1):
+            print(f"{k:d}. {str(v).title()}")
+
+        answer = input("Select an Option (by number or name): ").title()
+        with suppress(ValueError, IndexError):
+            return menuitems[int(answer) - 1].title()  # because 0-indexing
+
+        if answer.lower() in demomenu:
+            return answer
+
+        return None
 
     #Print out all player stats
     def show_stats(self):
