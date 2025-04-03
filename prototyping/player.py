@@ -9,6 +9,7 @@ Later additions (To-do list):
 Injury status
 Move comments into docstring formats
 Add functions for leveling, experience and questlog management
+Research pydantic
 '''
 
 class Player:
