@@ -276,9 +276,48 @@ class Player:
             else:
                 print("Incorrect option. Try again.")
 
+    def close_menu(self):
+        return "Done"
+
+    def new_manage_inventory(self):
+        menuitems = ["Show Inventory", "Inspect Item", "Discard Item", "Done"]
+        calls = [self.show_inventory,self.inspect_item,self.discard_item,self.close_menu]
+        output = ""
+        while output != "Done":
+            choice = self.menu_display(menuitems)
+            output = calls[choice]()
+
+    def menu_display(self, menuitems: list) -> str | None:
+        """ Generate a generic Menu based on *menuitems*. """
+        while True:
+            for k, v in enumerate(menuitems, start=1):
+                print(f"{k:d}. {str(v).title()}")
+
+            answer = input("Select an Option (by number or name): ").title()
+            with suppress(ValueError, IndexError):
+                #return menuitems[int(answer) - 1].title()  # because 0-indexing - used for returning a string
+                menusize = len(menuitems)
+                if (int(answer)) <= menusize:
+                    return (int(answer)-1)
+
+            if answer.title() in menuitems:
+                #return answer.title() # for returning a string
+                cnt = 1
+                for x in menuitems:
+                    if x == answer.title():
+                        return cnt-1
+                    else:
+                        cnt += 1
+            print("Incorrect answer. Try again.")
+
+    def inspect_item(self):
+        print("You inspect something.")
+
+    def discard_item(self):
+        print("You discard something.")
+
     #Skyler's voodoo magic
-    #demomenu = ["attack", "defend", "show equipment", "show character"]
-    def menu(menuitems: list) -> str | None:
+    def menu(self,menuitems: list,calls: list) -> str | None:
         """ Generate a generic Menu based on *menuitems*. """
         for k, v in enumerate(menuitems, start=1):
             print(f"{k:d}. {str(v).title()}")
@@ -287,8 +326,8 @@ class Player:
         with suppress(ValueError, IndexError):
             return menuitems[int(answer) - 1].title()  # because 0-indexing
 
-        if answer.lower() in demomenu:
-            return answer
+        if answer.title() in menuitems:
+            return answer.title()
 
         return None
 
@@ -363,6 +402,7 @@ class Player:
 if __name__ == "__main__":
     p = Player()
 
+    '''
     #Test inventory functions
     p.show_inventory()
     armor = {'type': 'chest', 'name': "Iron Breastplate", 'defense': 5}
@@ -403,5 +443,11 @@ if __name__ == "__main__":
     kail = p.character_save()
     p.load_player(kail)
     p.show_stats()
-    
+    '''
+
+    menuitems = ["Show Inventory", "Inspect Item", "Discard Item", "Done"]
+    #choice = p.menu(menuitems)
+    #print("Your choice:",choice)
+    p.new_manage_inventory()
+    #print("Your choice:", choice, "represents:", menuitems[choice-1])
     
