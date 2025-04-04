@@ -297,6 +297,7 @@ class Player:
             for k, v in enumerate(menuitems, start=1):
                 print(f"{k:d}. {str(v).title()}")
 
+            #Perhaps... just a though. Add a zipped for loop containing the calls and return them directly...
             answer = input("Select an Option (by number or name): ").title()
             with suppress(ValueError, IndexError):
                 #return menuitems[int(answer) - 1].title()  # because 0-indexing - used for returning a string
