@@ -283,10 +283,14 @@ class Player:
         menuitems = ["Show Inventory", "Inspect Item", "Discard Item", "Done"]
         calls = [self.show_inventory,self.inspect_item,self.discard_item,self.close_menu]
         output = ""
+        print("#######################\n# Accessing Inventory #\n#######################")
         while output != "Done":
             choice = self.menu_display(menuitems)
             output = calls[choice]()
+        print("Exiting menu.")
+        return input("\nPress enter to continue.\n")
 
+    # Skyler's voodoo magic with some updates
     def menu_display(self, menuitems: list) -> str | None:
         """ Generate a generic Menu based on *menuitems*. """
         while True:
@@ -311,25 +315,10 @@ class Player:
             print("Incorrect answer. Try again.")
 
     def inspect_item(self):
-        print("You inspect something.")
+        print("> Function under construction. Essentially, you inspect something.\n")
 
     def discard_item(self):
-        print("You discard something.")
-
-    #Skyler's voodoo magic
-    def menu(self,menuitems: list,calls: list) -> str | None:
-        """ Generate a generic Menu based on *menuitems*. """
-        for k, v in enumerate(menuitems, start=1):
-            print(f"{k:d}. {str(v).title()}")
-
-        answer = input("Select an Option (by number or name): ").title()
-        with suppress(ValueError, IndexError):
-            return menuitems[int(answer) - 1].title()  # because 0-indexing
-
-        if answer.title() in menuitems:
-            return answer.title()
-
-        return None
+        print("> Function under construction. Essentially, you discard something.\n")
 
     #Print out all player stats
     def show_stats(self):
