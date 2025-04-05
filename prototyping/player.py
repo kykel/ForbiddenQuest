@@ -260,29 +260,11 @@ class Player:
             case 3:
                 self.show_stats()
 
-    #Access the player inventory
-    def manage_inventory(self):
-        menu = ["1. Show Inventory","2. Inspect Item","3. Discard Item","4. Done"]
-        while True:
-            print("Accessing Inventory:")
-            for m in menu:
-                print(m)
-            option = input("What would you like to do?\n> ")
-            if (option == "1") or (option.lower() == "show inventory"):
-                self.show_inventory()
-            elif (option == "2") or (option.lower() == "inspect item"):
-                self.inspect_item()
-            elif (option == "3") or (option.lower() == "discard item"):
-                self.remove_item()
-            elif (option == "4") or (option.lower() == "done"):
-                break
-            else:
-                print("Incorrect option. Try again.")
-
     def close_menu(self):
         return "Done"
 
-    def new_manage_inventory(self):
+    def manage_inventory(self):
+        """ Access the player inventory menu """
         menuitems = ["Show Inventory", "Inspect Item", "Discard Item", "Done"]
         calls = [self.show_inventory,self.inspect_item,self.discard_item,self.close_menu]
         output = ""
@@ -299,15 +281,12 @@ class Player:
             #Skyler's version
             for k, v in enumerate(menuitems, start=1):
                 print(f"{k:d}. {str(v).title()}")
-
             answer = input("Select an Option (by number or name):").title()
-
             with suppress(ValueError, IndexError):
                 #return menuitems[int(answer) - 1].title()  # because 0-indexing - used for returning a string
                 menusize = len(menuitems)
                 if (int(answer)) <= menusize:
                     return (int(answer)-1)
-
             if answer.title() in menuitems:
                 #return answer.title() # for returning a string
                 cnt = 1
@@ -442,6 +421,6 @@ if __name__ == "__main__":
     menuitems = ["Show Inventory", "Inspect Item", "Discard Item", "Done"]
     #choice = p.menu(menuitems)
     #print("Your choice:",choice)
-    p.new_manage_inventory()
+    p.manage_inventory()
     #print("Your choice:", choice, "represents:", menuitems[choice-1])
     
