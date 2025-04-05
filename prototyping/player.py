@@ -124,6 +124,10 @@ class Player:
                 print(f"- {a}")
             print("#------------------------#")
 
+    def show_equipment(self)
+        self.show_weapon()
+        self.show_armor()
+
     def manage_equipment(self):
         while True:
             print("Equipment Management Menu:")
@@ -255,8 +259,6 @@ class Player:
             output = calls[self.universal_menu(menuitems)]()
         print("Exiting menu.")
         return input("\nPress enter to continue.\n")
-
-
 
     def close_menu(self):
         return "Done"
