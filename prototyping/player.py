@@ -247,28 +247,26 @@ class Player:
         return input("\nPress enter to continue.\n")
 
     def player_menu(self):
-        print("Accessing player menu. What would you like to do?")
-        options = ["1. Manage Inventory","2. Manage Equipment","3. Show Stats"]
-        for option in options:
-            print(option)
-        choice = input("> ")
-        match choice:
-            case 1:
-                self.manage_inventory()
-            case 2:
-                self.manage_equipment()
-            case 3:
-                self.show_stats()
+        print("#########################\n# Accessing Player Menu #\n#########################")
+        menuitems = ["Manage Inventory","Manage Equipment","Show Stats","Done"]
+        calls = [self.manage_inventory,self.manage_equipment,self.show_stats]
+        output = ""
+        while output != "Done":
+            output = calls[self.universal_menu(menuitems)]()
+        print("Exiting menu.")
+        return input("\nPress enter to continue.\n")
+
+
 
     def close_menu(self):
         return "Done"
 
     def manage_inventory(self):
         """ Access the player inventory menu """
+        print("#######################\n# Accessing Inventory #\n#######################")
         menuitems = ["Show Inventory", "Inspect Item", "Discard Item", "Done"]
         calls = [self.show_inventory,self.inspect_item,self.discard_item,self.close_menu]
         output = ""
-        print("#######################\n# Accessing Inventory #\n#######################")
         while output != "Done":
             output = calls[self.universal_menu(menuitems)]()
         print("Exiting menu.")
@@ -281,7 +279,7 @@ class Player:
             #Skyler's version
             for k, v in enumerate(menuitems, start=1):
                 print(f"{k:d}. {str(v).title()}")
-            answer = input("Select an Option (by number or name):").title()
+            answer = input("Select an Option (by number or name)\n> ").title()
             with suppress(ValueError, IndexError):
                 #return menuitems[int(answer) - 1].title()  # because 0-indexing - used for returning a string
                 menusize = len(menuitems)
@@ -421,6 +419,6 @@ if __name__ == "__main__":
     menuitems = ["Show Inventory", "Inspect Item", "Discard Item", "Done"]
     #choice = p.menu(menuitems)
     #print("Your choice:",choice)
-    p.manage_inventory()
+    p.player_menu()
     #print("Your choice:", choice, "represents:", menuitems[choice-1])
     
