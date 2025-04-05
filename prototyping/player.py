@@ -130,14 +130,19 @@ class Player:
 
     def manage_equipment(self):
         """ Access the player inventory menu """
+        '''
         print("#######################\n# Equipment Management Menu #\n#######################")
         menuitems = ["Show Equipment", "Equip", "Unequip", "Done"]
         calls = [self.show_equipment, self.close_menu]
         output = ""
         while output != "Done":
-            output = calls[self.universal_menu(menuitems)]()
+            output = self.universal_menu(menuitems)
+            if output == 1 or output == 2:
+                submenu = [f"{menuitems[output]} armor".title(),f"{menuitems[output]} weapon".title()]
+                choice = self.universal_menu(submenu)
         print("Exiting menu.")
         return input("\nPress enter to continue.\n")
+        '''
 
         while True:
             print("Equipment Management Menu:")
