@@ -10,6 +10,9 @@ Injury status
 Move comments into docstring formats
 Add functions for leveling, experience and questlog management
 Research pydantic
+Incorporate:
+return menu_call(menu, *args, **kwargs)
+return menu_call(menu)(*args, **kwargs)
 '''
 
 class Player:
@@ -285,20 +288,20 @@ class Player:
         output = ""
         print("#######################\n# Accessing Inventory #\n#######################")
         while output != "Done":
-            choice = self.menu_display(menuitems)
-            output = calls[choice]()
+            output = calls[self.universal_menu(menuitems)]()
         print("Exiting menu.")
         return input("\nPress enter to continue.\n")
 
     # Skyler's voodoo magic with some updates
-    def menu_display(self, menuitems: list) -> str | None:
+    def universal_menu(self, menuitems: list) -> str | None:
         """ Generate a generic Menu based on *menuitems*. """
         while True:
+            #Skyler's version
             for k, v in enumerate(menuitems, start=1):
                 print(f"{k:d}. {str(v).title()}")
 
-            #Perhaps... just a though. Add a zipped for loop containing the calls and return them directly...
-            answer = input("Select an Option (by number or name): ").title()
+            answer = input("Select an Option (by number or name):").title()
+
             with suppress(ValueError, IndexError):
                 #return menuitems[int(answer) - 1].title()  # because 0-indexing - used for returning a string
                 menusize = len(menuitems)
@@ -313,6 +316,7 @@ class Player:
                         return cnt-1
                     else:
                         cnt += 1
+
             print("Incorrect answer. Try again.")
 
     def inspect_item(self):
