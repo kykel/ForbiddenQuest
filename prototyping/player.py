@@ -124,7 +124,7 @@ class Player:
                 print(f"- {a}")
             print("#------------------------#")
 
-    def show_equipment(self)
+    def show_equipment(self):
         self.show_weapon()
         self.show_armor()
 
