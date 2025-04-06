@@ -131,13 +131,13 @@ class Player:
     def manage_equipment(self):
         """ Access the player inventory menu """
 
-        print("#######################\n# Equipment Management Menu #\n#######################")
+        header = "#############################\n# Equipment Management Menu #\n#############################"
         #menuitems = ["Show Equipment", "Equip", "Unequip", "Done"]
         menuitems = ["Show Equipment", "Equip Weapon", "Equip Armor", "Unequip Weapon", "Unequip Armor", "Done"]
         calls = [self.show_equipment, self.equip_weapon, self.equip_armor, self.unequip_weapon, self.unequip_armor, self.close_menu]
         output = ""
         while output != "Done":
-            output = self.universal_menu(menuitems)
+            output = self.universal_menu(menuitems, header)
             print(output)
             if output > 0 and output < 5:
                 parts = menuitems[output].split(" ")
