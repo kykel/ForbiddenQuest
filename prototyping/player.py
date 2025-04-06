@@ -66,7 +66,7 @@ class Player:
             print(f"Unable to equip '{name}'. Not found in inventory.\n")
 
     # Unequips name of weapon passed in.
-    def unequip_weapon(self, name):
+    def unequip_weapon(self,name):
         if ((name == 'weapon') or (name == self.weapon)):
             self.inventory[self.weapon] = self.weapondata
             self.weapon = 'fists'
@@ -130,62 +130,25 @@ class Player:
 
     def manage_equipment(self):
         """ Access the player inventory menu """
-        '''
+
         print("#######################\n# Equipment Management Menu #\n#######################")
-        menuitems = ["Show Equipment", "Equip", "Unequip", "Done"]
-        calls = [self.show_equipment, self.close_menu]
+        #menuitems = ["Show Equipment", "Equip", "Unequip", "Done"]
+        menuitems = ["Show Equipment", "Equip Weapon", "Equip Armor", "Unequip Weapon", "Unequip Armor", "Done"]
+        calls = [self.show_equipment, self.equip_weapon, self.equip_armor, self.unequip_weapon, self.unequip_armor, self.close_menu]
         output = ""
         while output != "Done":
             output = self.universal_menu(menuitems)
-            if output == 1 or output == 2:
-                submenu = [f"{menuitems[output]} armor".title(),f"{menuitems[output]} weapon".title()]
-                choice = self.universal_menu(submenu)
+            print(output)
+            if output > 0 and output < 5:
+                parts = menuitems[output].split(" ")
+                choice = input(f"Which {parts[1].lower()} do you want to {parts[0].lower()}?\n> ")
+                output = calls[output](choice)
+            else:
+                output = calls[output]()
+
         print("Exiting menu.")
         return input("\nPress enter to continue.\n")
-        '''
 
-        while True:
-            print("Equipment Management Menu:")
-            options = ["1. Show Equipment","2. Equip","3. Unequip","4. Done"]
-            option = ""
-            for o in options:
-                print(o)
-            choice = input("What would you like to do?\n> ")
-
-            if (choice == "1") or (choice.lower() == "show equipment"):
-                self.show_weapon()
-                self.show_armor()
-            elif (choice == "2") or (choice.lower() == "equip"):
-                option = "Equip"
-            elif (choice == "3") or (choice.lower() == "unequip"):
-                option = "Unequip"
-            elif (choice == "4") or (choice.lower() == "back"):
-                break
-            else:
-                print("Incorrect option. Try again.")
-
-            if option != "":
-                e = input(f"{option}:\n1. Armor\n2. Weapon\n> ")
-                if (e == "1") or (e.lower() == "armor"):
-                    match option.lower():
-                        case "equip":
-                            armor = input("What armor would you like to equip: ")
-                            self.equip_armor(armor)
-                        case "unequip":
-                            armor = input("What armor would you like to unequip: ")
-                            self.unequip_armor(armor)
-                elif (e == "2") or (e.lower() == "weapon"):
-                    match option.lower():
-                        case "equip":
-                            weapon = input("What weapon would you like to equip: ")
-                            self.equip_weapon(weapon)
-                        case "unequip":
-                            weapon = input("What weapon would you like to unequip: ")
-                            self.unequip_weapon(weapon)
-                else:
-                    print("Incorrect option. Try again.")
-
-            input("\nPress enter to continue.\n")
     
     #Calculates new defense after equipping armor.
     def calculate_defense(self):
@@ -290,9 +253,13 @@ class Player:
         return input("\nPress enter to continue.\n")
 
     # Skyler's voodoo magic with some updates
-    def universal_menu(self, menuitems: list) -> str | None:
+    def universal_menu(self, menuitems: list, header: str = "") -> str | None:
         """ Generate a generic Menu based on *menuitems*. """
         while True:
+
+            if header:
+                print(f"{header}", sep="\n")
+
             #Skyler's version
             for k, v in enumerate(menuitems, start=1):
                 print(f"{k:d}. {str(v).title()}")
@@ -390,7 +357,7 @@ class Player:
 if __name__ == "__main__":
     p = Player()
 
-    '''
+
     #Test inventory functions
     p.show_inventory()
     armor = {'type': 'chest', 'name': "Iron Breastplate", 'defense': 5}
@@ -402,6 +369,7 @@ if __name__ == "__main__":
     p.add_item(armor['name'], armor)
     p.add_item(helmet['name'], helmet)
     p.add_item(shelmet['name'], shelmet)
+    '''
     p.show_inventory()
 
     #Test armor functions
@@ -436,6 +404,7 @@ if __name__ == "__main__":
     menuitems = ["Show Inventory", "Inspect Item", "Discard Item", "Done"]
     #choice = p.menu(menuitems)
     #print("Your choice:",choice)
-    p.player_menu()
+    #p.player_menu()
+    p.manage_equipment()
     #print("Your choice:", choice, "represents:", menuitems[choice-1])
     
