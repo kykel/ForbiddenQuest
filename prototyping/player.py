@@ -124,17 +124,16 @@ class Player:
                 print(f"- {a}")
             print("#------------------------#")
 
-    def show_equipment(self):
+    def show_all_equipment(self):
         self.show_weapon()
         self.show_armor()
 
     def manage_equipment(self):
         """ Access the player inventory menu """
-
         header = "#############################\n# Equipment Management Menu #\n#############################"
         #menuitems = ["Show Equipment", "Equip", "Unequip", "Done"]
         menuitems = ["Show Equipment", "Equip Weapon", "Equip Armor", "Unequip Weapon", "Unequip Armor", "Done"]
-        calls = [self.show_equipment, self.equip_weapon, self.equip_armor, self.unequip_weapon, self.unequip_armor, self.close_menu]
+        calls = [self.show_all_equipment, self.equip_weapon, self.equip_armor, self.unequip_weapon, self.unequip_armor, self.close_menu]
         output = ""
         while output != "Done":
             output = self.universal_menu(menuitems, header)
@@ -145,7 +144,6 @@ class Player:
                 output = calls[output](choice)
             else:
                 output = calls[output]()
-
         print("Exiting menu.")
         return input("\nPress enter to continue.\n")
 
@@ -229,12 +227,12 @@ class Player:
         return input("\nPress enter to continue.\n")
 
     def player_menu(self):
-        print("#########################\n# Accessing Player Menu #\n#########################")
+        header = "###############\n# Player Menu #\n###############"
         menuitems = ["Manage Inventory","Manage Equipment","Show Stats","Done"]
-        calls = [self.manage_inventory,self.manage_equipment,self.show_stats]
+        calls = [self.manage_inventory,self.manage_equipment,self.show_stats,self.close_menu]
         output = ""
         while output != "Done":
-            output = calls[self.universal_menu(menuitems)]()
+            output = calls[self.universal_menu(menuitems,header)]()
         print("Exiting menu.")
         return input("\nPress enter to continue.\n")
 
@@ -243,12 +241,12 @@ class Player:
 
     def manage_inventory(self):
         """ Access the player inventory menu """
-        print("#######################\n# Accessing Inventory #\n#######################")
+        header = "##################\n# Inventory Menu #\n##################"
         menuitems = ["Show Inventory", "Inspect Item", "Discard Item", "Done"]
         calls = [self.show_inventory,self.inspect_item,self.discard_item,self.close_menu]
         output = ""
         while output != "Done":
-            output = calls[self.universal_menu(menuitems)]()
+            output = calls[self.universal_menu(menuitems,header)]()
         print("Exiting menu.")
         return input("\nPress enter to continue.\n")
 
@@ -405,6 +403,6 @@ if __name__ == "__main__":
     #choice = p.menu(menuitems)
     #print("Your choice:",choice)
     #p.player_menu()
-    p.manage_equipment()
+    p.player_menu()
     #print("Your choice:", choice, "represents:", menuitems[choice-1])
     
