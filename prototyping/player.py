@@ -147,7 +147,6 @@ class Player:
         print("Exiting menu.")
         return input("\nPress enter to continue.\n")
 
-    
     #Calculates new defense after equipping armor.
     def calculate_defense(self):
         defense = 0
