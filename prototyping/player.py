@@ -10,9 +10,6 @@ Injury status
 Move comments into docstring formats
 Add functions for leveling, experience and questlog management
 Research pydantic
-Incorporate:
-return menu_call(menu, *args, **kwargs)
-return menu_call(menu)(*args, **kwargs)
 '''
 
 class Player:
@@ -278,10 +275,30 @@ class Player:
             print("Incorrect answer. Try again.")
 
     def inspect_item(self):
-        print("> Function under construction. Essentially, you inspect something.\n")
+        choice = input("Which item would you like to inspect more closely:\n> ")
+        if choice.title() in self.inventory:
+            item = self.inventory[choice.title()]
+            for key,val in item.items():
+                print(key.title()," : ",val)
+        else:
+            print("Not in your inventory. You don't have that. Face the facts that you lost it somewhere and move on. Or try again. Whatever. It's your time wasted, not mine.")
 
     def discard_item(self):
-        print("> Function under construction. Essentially, you discard something.\n")
+        choice = input("Which item would you like to discard:\n> ")
+        if choice.title() in self.inventory:
+            item = self.inventory[choice.title()]
+            for key, val in item.items():
+                print(key.title(), " : ", val)
+            decision = input("Are you sure? (yes,no)\n> ")
+            if decision.lower() == 'yes':
+                del self.inventory[choice.title()]
+                print("Alright. It's done. Good riddance. I guess... Hope it wasn't important... *cough* hint hint *cough*")
+            elif decision.lower() == 'no':
+                print("Oh. Alright then. Thanks for wasting my time.")
+            else:
+                print("Come on. Stop playing games with me. You either do or you don't. It's a simple 'yes' or 'no' question.")
+        else:
+            print("You don't even have that! Maybe you should take another look at your inventory, BRO, and stop wasting my time!")
 
     #Print out all player stats
     def show_stats(self):
@@ -361,8 +378,8 @@ if __name__ == "__main__":
     helmet = {'type': 'head', 'name': "Iron Helmet", 'defense': 2}
     shelmet = {'type': 'head', 'name': "Skull Helmet", 'defense': 1}
 
-    p.add_item('dagger', {'damage': [1,4], 'name': 'dagger'})
-    p.add_item('axe', {'damage': [1, 6], 'name': 'axe'})
+    p.add_item('Dagger', {'damage': [1,4], 'name': 'Dagger','description': 'Boring old dagger. The kind you buy from your standard market.'})
+    p.add_item('Axe', {'damage': [1, 6], 'name': 'Axe'})
     p.add_item(armor['name'], armor)
     p.add_item(helmet['name'], helmet)
     p.add_item(shelmet['name'], shelmet)
