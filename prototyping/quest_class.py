@@ -28,10 +28,10 @@ class quest(object):
 		#http://codereview.stackexchange.com/questions/36768/tiny-text-adventure
 		#check this page
 		if type(self.state) == str:
-			print self.state
+			print(self.state)
 		if type(self.state) == list:
 			for i in self.state:
-				print i
+				print(i)
 		
 	#Handles all function calls. (screen clear, time pausing, etc)
 	def func_calls(self):
@@ -44,5 +44,5 @@ class quest(object):
 		
 	#Handles all user input.
 	def inputs(self):
-		choice = raw_input(question)
+		choice = input(question)
 		return choice
