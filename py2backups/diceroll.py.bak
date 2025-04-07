@@ -6,24 +6,24 @@ import random
 #six sided die 
 def sixsideddie():
     roll = random.randrange(1,6)
-    print("You rolled", roll)
+    print "You rolled", roll
     return roll
 
 #ten sided die    
 def tensideddie():
     roll = random.randrange(1,10)
-    print("You rolled", roll) 
+    print "You rolled", roll 
     return roll 
 
 #twenty sided die    
 def twentysideddie():
     roll = random.randrange(1,20)
-    print("You rolled", roll) 
+    print "You rolled", roll 
     return roll 
     
 def main():
-    print("Six sided die, ten, or twenty?")
-    choice = input("")
+    print "Six sided die, ten, or twenty?"
+    choice = raw_input("")
     if choice == "six":
         sixsideddie()
     elif choice == "ten":
@@ -31,7 +31,7 @@ def main():
     elif choice == "twenty":
         twentysideddie()
     else:
-        print("Not working.")
+        print "Not working."
         
         
 if __name__ == "__main__":

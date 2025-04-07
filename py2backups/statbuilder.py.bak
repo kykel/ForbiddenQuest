@@ -33,7 +33,7 @@ def dice6():
                 luck = luck + 1
             #roll = roll - 1
         level = level + 1
-    print("Current level:", level, "and current stats:\nSTR:", strength, "\nDEX:", dex, "\nINT:", intel, "\nCON:", con, "\nLUCK:", luck)
+    print "Current level:", level, "and current stats:\nSTR:", strength, "\nDEX:", dex, "\nINT:", intel, "\nCON:", con, "\nLUCK:", luck
       
     
 def tensideddie():
@@ -43,15 +43,15 @@ def tensideddie():
     
 def startingstats():
     strength = tensideddie()
-    print("Strength:", strength) 
+    print "Strength:", strength 
     dexterity = tensideddie()
-    print("Dexterity:", dexterity)
+    print "Dexterity:", dexterity
     Intelligence = tensideddie()
-    print("Intelligence:", Intelligence)
+    print "Intelligence:", Intelligence
     Const = tensideddie()
-    print("Constitution:", Const) 
+    print "Constitution:", Const 
     Luck = tensideddie()
-    print("Luck:", Luck)
+    print "Luck:", Luck
     
     
 

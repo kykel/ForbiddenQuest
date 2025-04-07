@@ -8,4 +8,4 @@ finaladj = ['destruction','reckoning','avenging','the baneful','death(yours, not
 
 weapon = 'The ' + adjectives[random.randrange(0,len(adjectives))] + ' ' + weapon_type[random.randrange(0,len(weapon_type))] + ' of ' + finaladj[random.randrange(0,len(finaladj))]
 #print "Wow. You walk into the room and find a weapon just lying on the floor. Talk about lucky.\n"
-print("You acquire", weapon)
+print "You acquire", weapon

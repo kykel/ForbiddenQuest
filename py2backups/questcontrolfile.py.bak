@@ -30,7 +30,7 @@ def funccall(choice, option1, option2, option3, option4, returnoption):
 
 #DOESN'T WORK PROPERLY - CALLS THE FUNCTIONS AS LOCAL. WANTS GLOBAL. NOT RETURNING TO THE LOCAL FUNCTION
 def directions(option1, option2, option3, returnoption):
-    direction = input("Which direction do you wish to go?\n(type your answer in all lowercase)\n1. straight\n2. left\n3. right\n")
+    direction = raw_input("Which direction do you wish to go?\n(type your answer in all lowercase)\n1. straight\n2. left\n3. right\n")
     if direction.lower() == 'left' or direction == '1':
         return option1()
     elif direction.lower() == 'straight' or direction == '2':
@@ -38,11 +38,11 @@ def directions(option1, option2, option3, returnoption):
     elif direction.lower() == 'right' or direction == '3':
         return option3()
     else:
-        print("\n\nSomehow you've fractured your place in the space time continuum and stepped back in time.... Weird. We may have investigate this...\n\n")
+        print "\n\nSomehow you've fractured your place in the space time continuum and stepped back in time.... Weird. We may have investigate this...\n\n"
         config.pause()
         config.clear()
         returnoption()
 
 def turn():
-    direction = input("Which way do you wish to go?\n1. left\n2. straight\n3. right\n4. go back")
+    direction = raw_input("Which way do you wish to go?\n1. left\n2. straight\n3. right\n4. go back")
     return direction
