@@ -25,9 +25,9 @@ class player():
         self.pldmg = dmg
     
     def start(self):
-        print("You are born.\n")
-        print("You grow up.\n")
-        wep = input("Pick a weapon!\n1.Sword\n2.Dagger\n3.Spear\n4.Bow\n")
+        print "You are born.\n"
+        print "You grow up.\n"
+        wep = raw_input("Pick a weapon!\n1.Sword\n2.Dagger\n3.Spear\n4.Bow\n")
         if wep == '1':
             wep = 'sword'
             self.pldmg = 7
@@ -41,7 +41,7 @@ class player():
             wep = 'bow'
             self.pldmg = 4
             
-        print("You picked a", wep + ".") 
+        print "You picked a", wep + "." 
         #self.attack()
 
     
@@ -53,17 +53,17 @@ class battle(player, Helga):
         while self.hp > 0 and self.plhp > 0:
             
             self.choice()
-            print("You attack with", self.pldmg, "damage.")
+            print "You attack with", self.pldmg, "damage."
             self.hp -= self.pldmg 
-            print("The enemy has", self.hp, "left.")
-            print("The", self.name, "attacks with", self.dmg, "damage.")
+            print "The enemy has", self.hp, "left."
+            print "The", self.name, "attacks with", self.dmg, "damage."
             self.plhp -= self.dmg 
-            print("You have", self.plhp, "left.")
+            print "You have", self.plhp, "left."
             if self.plhp <= 0:
-                print("You've died. Sorry bro!")
+                print "You've died. Sorry bro!"
                 break
             elif self.hp <=0:
-                print("You've killed the", self.name, "! Yay! You win!")
+                print "You've killed the", self.name, "! Yay! You win!"
                 break
             else:
                 pass  
@@ -72,19 +72,19 @@ class battle(player, Helga):
         if self.plhp >0:
             roll = random.randrange(1,7)
             if roll == 1:
-                print("You escape by the neck of your hair! Phew!")
+                print "You escape by the neck of your hair! Phew!"
                 sys.exit(0)
             else:
-                print("You fail to escape.")
+                print "You fail to escape."
                 self.attack()
         else:
-            print("You fail to escape!")
+            print "You fail to escape!"
             
             
     def block(self):
         roll = random.randrange(1,7)
         if roll == 1:
-            print("You block successfully!")
+            print "You block successfully!"
             self.choice()
         else:
             pass
@@ -95,7 +95,7 @@ class battle(player, Helga):
         self.attack()
         
     def choice(self):
-        choice = input("What do you want to do?\n'flee'\n'attack'\ndrink 'potion'\n")
+        choice = raw_input("What do you want to do?\n'flee'\n'attack'\ndrink 'potion'\n")
         if choice == 'flee' or choice.lower == 'flee':
             self.flee()
         elif choice == 'attack' or choice.lower == 'attack':
@@ -103,7 +103,7 @@ class battle(player, Helga):
         elif choice == 'drink' or choice == 'potion' or choice.lower == 'drink' or choice.lower == 'potion':
             self.potion()
         else:
-            print("Incorrect output. Try again.\n")
+            print "Incorrect output. Try again.\n"
             self.choice()
     
 
