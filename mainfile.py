@@ -66,39 +66,18 @@ def titlescreen():
     mainmenu()
 
 def mainmenu():
-    print("MAIN MENU:\n")
-    choice = input("What do you wish to do:\n1. new game\n2. load game\n3. save current game\n4. exit\n")
-    if choice == '1':
-        Utility.clear()
-        storyline.newgame()
-    elif choice == '2':
-        Utility.clear()
-        memorycard.loadgame()
-    elif choice == '3':
-        Utility.clear()
-        memorycard.savefile()
-    elif choice == '4':
-        Utility.clear()
-        exit()
-    elif choice == '5':
-        print("Which function do you want to jump to:")
-        call = input("\n1. quests\n2. combat\n3. storyline\n")
-        if call == '1':
-            Utility.clear()
-            quests.main()
-        elif call == '2':
-            Utility.clear()
-            combat.battle(c)
-        elif call == '3':
-            Utility.clear()
-            storyline.story()
-        else:
-            Utility.clear()
-            mainmenu()
-    else:
-        print("Error with your choice. Exiting.")
-        time.sleep(5)
-        exit()
+    header = "MAIN MENU"
+    menu = ["new game","load game","save current game","exit","blank"]
+    calls = [storyline.newgame,memorycard.loadgame,memorycard.savefile,exit,developer_menu]
+    output = Utility.universal_menu(menu,header)
+    calls[output]()
+
+
+def developer_menu():
+    menu = ["quests","combat","storyline","main manu","exit"]
+    calls = [quests.main,combat.battle,storyline.newgame,mainmenu,exit]
+    output = Utility.universal_menu(menu,"Welcome to the hidden developer menu, where all things are possible...\nChoose a function to jump to:")
+    calls[output]()
 
 def validation(x):
     print(type(x))
