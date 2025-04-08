@@ -8,7 +8,7 @@ import storyline
 import combat
 import stats
 import quests
-import config
+from utility import Utility
 import memorycard
 
 
@@ -28,7 +28,7 @@ def title(x):
     time.sleep(.1)
 
 def titlescreen():
-    config.clear()
+    Utility.clear()
     #intro = "W e l c o m e t"
     intro = ['W ','e ','l ','o ','m ','e ','t']
     i = []
@@ -40,7 +40,7 @@ def titlescreen():
         else:
             i.append(letter)
             time.sleep(.3)
-            config.clear()
+            Utility.clear()
             print(''.join(i).strip())
 
     title = [" ______________         _______   ________  ________    ________",
@@ -69,31 +69,31 @@ def mainmenu():
     print("MAIN MENU:\n")
     choice = input("What do you wish to do:\n1. new game\n2. load game\n3. save current game\n4. exit\n")
     if choice == '1':
-        config.clear()
+        Utility.clear()
         storyline.newgame()
     elif choice == '2':
-        config.clear()
+        Utility.clear()
         memorycard.loadgame()
     elif choice == '3':
-        config.clear()
+        Utility.clear()
         memorycard.savefile()
     elif choice == '4':
-        config.clear()
+        Utility.clear()
         exit()
     elif choice == '5':
         print("Which function do you want to jump to:")
         call = input("\n1. quests\n2. combat\n3. storyline\n")
         if call == '1':
-            config.clear()
+            Utility.clear()
             quests.main()
         elif call == '2':
-            config.clear()
+            Utility.clear()
             combat.battle(c)
         elif call == '3':
-            config.clear()
+            Utility.clear()
             storyline.story()
         else:
-            config.clear()
+            Utility.clear()
             mainmenu()
     else:
         print("Error with your choice. Exiting.")

@@ -6,7 +6,7 @@ import status
 import random
 import items
 #import mainfile
-import config
+import utility
 questtreelist =['1. skeletonkey', '2. treasurehunt']
 libraryflag = 0
 torch = 0

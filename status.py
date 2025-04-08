@@ -1,5 +1,5 @@
 import os
-import config
+import utility
 
 
 #Status (Sick, poisen, etc.)

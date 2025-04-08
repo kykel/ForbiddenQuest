@@ -6,7 +6,7 @@ import time
 import mainfile
 import quests
 import stats
-import config
+import utility
 
 
 

@@ -6,25 +6,25 @@ import time
 import mainfile
 import quests
 import stats
-import config
+from utility import Utility
 
 
 def newgame():
     #Starts a new game to select name, race and origin land.
     #Needs to be cleaned up.
     #Replacing player stats with object of player.py
-    config.level = 1
-    config.playerdmg = [1, 8]
-    config.health = 10
-    config.battles = 0
+    Utility.level = 1
+    Utility.playerdmg = [1, 8]
+    Utility.health = 10
+    Utility.battles = 0
     print(
         "Welcome player, to Forbidden Quest; a world of adventure and magic, mystery and secrecy, bravery and betrayal.\n")
-    config.pause()
+    Utility.pause()
     name = input("Quickly now, so your adventure can begin, what is your name young warrior?\n")
 
     if name == "":
         name = "Chosen-One"
-        config.pause()
+        Utility.pause()
         pass
     elif name != "":
         try:
@@ -35,9 +35,9 @@ def newgame():
             pass
     else:
         print("You introduce yourself as:", name, "\n")
-    config.name = name
+    Utility.name = name
 
-    print("\nIt is an honor to meet you,", config.name + ".",
+    print("\nIt is an honor to meet you,", Utility.name + ".",
           "\nI am Akendrial, third king of the third age of Vandaal. Long has prophecy fortold of your coming and long have I waited for you. Though, I'm afraid that prophecy was not specific as to who exactly you were.\n")
     race = input(
         "\nIf I may ask, of what ancestory are you?\n1. <Elf>\n2. <Human>\n3. <Dwarf>\n4. <Or something else entirely>\n")

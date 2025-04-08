@@ -3,7 +3,7 @@ import random
 
 #Custom Imports
 import mainfile
-import config
+import utility
 
 level = config.level
 playerdmg = config.playerdmg

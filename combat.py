@@ -7,7 +7,7 @@ import random
 import stats
 import quests
 import mainfile
-import config
+import utility
 
 
 

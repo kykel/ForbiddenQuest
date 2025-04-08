@@ -1,5 +1,5 @@
 import time
-import config
+import utility
 import items
 
 def tableofcontents():

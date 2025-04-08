@@ -1,5 +1,5 @@
 import mainfile
-import config
+import utility
 import os
 import subprocess
 

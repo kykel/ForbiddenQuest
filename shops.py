@@ -2,7 +2,7 @@
 # The Wizard's Hollow
 #The Blacksmith's Armory
 #The Tamer's Den
-import config
+import utility
 #import questcontrolfile
 
 config.clear()
