@@ -29,6 +29,7 @@ class Player:
         self.defense = 0
         self.armor = {}
         self.questlog = {}
+        self.battle_count = 0
     
     #Returns the amount of damage being done
     def attack(self):
