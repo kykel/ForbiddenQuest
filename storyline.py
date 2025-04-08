@@ -6,7 +6,7 @@ import time
 import mainfile
 import quests
 import stats
-from utility import Utility
+from utility import Utility as config
 
 
 def newgame():

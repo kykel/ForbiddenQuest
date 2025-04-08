@@ -2,24 +2,24 @@
 import random
 
 #Custom Imports
-import mainfile
-import utility
+#import mainfile
+from utility import Utility
 
-level = config.level
-playerdmg = config.playerdmg
-name = config.name
+level = Utility.level
+playerdmg = Utility.playerdmg
+name = Utility.name
 
 def playerstats():
-    level = config.level
-    battles = config.battles
-    health = config.health
+    level = Utility.level
+    battles = Utility.battles
+    health = Utility.health
     
     print("\n\n")
     print("PLAYER STAT READOUT:\n--------------------\n")
     print("Battles won:", battles)
     print("Current level:", level)
     print("Max health:", health)
-    print("Player damage:", config.playerdmg)
+    print("Player damage:", Utility.playerdmg)
     print("\n\n")
     
     exp = battles * 2
@@ -47,9 +47,9 @@ def playerstats():
     else:
         print("You messed something up. You should not be here.")   
     
-    config.level = level
-    config.health = health
-    config.battles = battles
+    Utility.level = level
+    Utility.health = health
+    Utility.battles = battles
         
         
 #This function is complete!    ##############################################################################################################################
