@@ -17,7 +17,7 @@ class Utility():
         pass
 
     @staticmethod
-    def pause(self):
+    def pause():
         return input("\nPress Enter to Continue.\n")
 
     # Clear/refresh the screen
@@ -47,17 +47,17 @@ class Utility():
                exit()
 
     @staticmethod
-    def yesorno(self, question, option1, option2, returnoption=""):
+    def yesorno(question, option1, option2, returnoption=""):
         while True:
             choice = input(question)
-            if choice == '1' or choice.lower == 'yes':
+            if choice == '1' or choice.lower() == 'yes':
                 return option1
-            elif choice == '2' or choice.lower == 'no':
+            elif choice == '2' or choice.lower() == 'no':
                 return option2
             else:
                 print("\n\nSomehow, you break your time matrix and a rift opens beside you, a violent maelstrom sucking everything in. Time mages manage to appear and pull you out just in time. Close call... Phew.\nYou find yourself back where you started. Time seems to have rolled back around you.\n")
-                pause()
-                clear()
+                Utility.pause()
+                Utility.clear()
 
     @staticmethod
     def universal_menu(menuitems: list, header: str = "") -> str | None:

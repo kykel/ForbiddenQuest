@@ -57,7 +57,7 @@ def newgame():
     no = "\nThe king in a sudden and uncontrollable rage rips a dagger out from beneath his kingly robes and stabs you and as you fall to the floor your vision fades and all goes black. \nGoodbye cruel world.\nAAAAHHHHHHHHHH!\nAAAAHHHHHHHHHH!\nAAAAHHHHHHHHHH!\nAAAAHHHHHHHHHH!\nAAAAHHHHHHHHHH!\nAAAAHHHHHHHHHH!"
     fail = "I'm sorry " + name + " but I'm afraid your language is still new to me and I didn't quite understand that.\n"
 
-    print(Utility.yesorno("Will you help us?\n> ", yes, no, fail))
+    print(Utility.yesorno("Will you help us? (yes or no)\n> ", yes, no, fail))
 
     '''
     while True:
