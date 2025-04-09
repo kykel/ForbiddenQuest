@@ -8,7 +8,7 @@ import storyline
 import combat
 import stats
 import quests
-from utility import Utility
+from utility import Utility as Utility
 import memorycard
 
 

@@ -6,7 +6,7 @@ import time
 import mainfile
 import quests
 import stats
-from utility import Utility as config
+from utility import Utility
 
 
 def newgame():
@@ -20,7 +20,7 @@ def newgame():
     print(
         "Welcome player, to Forbidden Quest; a world of adventure and magic, mystery and secrecy, bravery and betrayal.\n")
     Utility.pause()
-    name = input("Quickly now, so your adventure can begin, what is your name young warrior?\n")
+    name = input("Quickly now, so your adventure can begin, what is your name young warrior?\n").title()
 
     if name == "":
         name = "Chosen-One"
@@ -32,41 +32,40 @@ def newgame():
             print("Improper name. Game resetting.")
             newgame()
         except:
-            pass
-    else:
-        print("You introduce yourself as:", name, "\n")
+            print("You introduce yourself as:", name, "\n")
+
     Utility.name = name
 
-    print("\nIt is an honor to meet you,", Utility.name + ".",
-          "\nI am Akendrial, third king of the third age of Vandaal. Long has prophecy fortold of your coming and long have I waited for you. Though, I'm afraid that prophecy was not specific as to who exactly you were.\n")
-    race = input(
-        "\nIf I may ask, of what ancestory are you?\n1. <Elf>\n2. <Human>\n3. <Dwarf>\n4. <Or something else entirely>\n")
-    if race == '1':
-        race = 'Elf'
-        print("Excellent! An agile Elf, warrior of the wood! How I've dreamed of meeting your kind.\n")
-    elif race == '2':
-        race = 'Human'
-        print("It is an honor to meet you then brother. I was quite the adventurer myself as a lad.\n")
-    elif race == '3':
-        race = 'Dwarf'
-        print(
-            "Ah yes! The sturdy dwarf, miner of the stony depths. Your kind has ever been a mystery to us surface dwellers. An honor to meet you, to be sure.\n")
-    else:
-        race = input("Interesting. So what ancestory are you exactly?\n")
-        print("OH! Of course. Your kind are so rare here. Forgive me! I am meerly shocked by your presence.\n")
+    print("\nIt is an honor to meet you,", Utility.name + ".", "\nI am Akendrial, third king of the third age of Vandaal. Long has prophecy fortold of your coming and long have I waited for you. Though, I'm afraid that prophecy was not specific as to who exactly you were.\n")
+    #race = input("\nIf I may ask, of what ancestory are you?\n1. <Elf>\n2. <Human>\n3. <Dwarf>\n4. <Or something else entirely>\n")
+    header = "\nIf I may ask, of what ancestory are you?"
+    menu = ["Elf","Human","Dwarf","<Or something else entirely>"]
+    output = Utility.universal_menu(menu,header)
+    response = ["Excellent! An agile Elf, warrior of the wood! How I've dreamed of meeting your kind.\n","It is an honor to meet you then brother. I was quite the adventurer myself as a lad.\n","Ah yes! The sturdy dwarf, miner of the stony depths. Your kind has ever been a mystery to us surface dwellers. An honor to meet you, to be sure.\n","Interesting..."]
+    print(response[output])
+
+    if output == 3:
+        race = input("So what ancestory are you exactly?\n")
+        print("OH! Of course. Your kind are so rare here. Forgive me! I am meerly shocked by your presence my noble {}.\n".format(race))
 
     land = input("\nAnd if I may be so bold, from what land do you hail?\n")
     print("OH! Of course. I have heard tales of", land + ".",
-          "It is a quite a magical land.\n My own kingdom was once as lush and beautiful as the tales of ", land,
-          " but I'm afraid my land has since come under a horrible threat. I fear I must ask for you help in this matter.\n")
-    answer = input("Will you help us?\n")
-    done = 0
-    while done == 0:
+          "It is a quite a magical land.\n My own kingdom was once as beautiful as the tales of ", land, " but I'm afraid my land has since come under a horrible threat. I fear I must ask for you help in this matter.\n")
+
+    #answer = input("Will you help us?\n")
+    yes = "Oh Thank you! Thank you so much. You are indeed the warrior of prophecy. You must set off at once, there is little time left. I have spoken with my people and many have already agreed to accompany you upon this dark journey.\n"
+    no = "\nThe king in a sudden and uncontrollable rage rips a dagger out from beneath his kingly robes and stabs you and as you fall to the floor your vision fades and all goes black. \nGoodbye cruel world.\nAAAAHHHHHHHHHH!\nAAAAHHHHHHHHHH!\nAAAAHHHHHHHHHH!\nAAAAHHHHHHHHHH!\nAAAAHHHHHHHHHH!\nAAAAHHHHHHHHHH!"
+    fail = "I'm sorry " + name + " but I'm afraid your language is still new to me and I didn't quite understand that.\n"
+
+    print(Utility.yesorno("Will you help us?\n> ", yes, no, fail))
+
+    '''
+    while True:
 
         if answer == 'yes':
             print(
                 "Oh Thank you! Thank you so much. You are indeed the warrior of prophecy. You must set off at once, there is little time left. I have spoken with my people and many have already agreed to accompany you upon this dark journey.\n")
-            done = 1
+            break
         elif answer == 'no':
             print(
                 "\nThe king in a sudden and uncontrollable rage rips a dagger out from beneath his kingly robes and stabs you and as you fall to the floor your vision fades and all goes black. \nGoodbye cruel world.\n")
@@ -79,9 +78,9 @@ def newgame():
             exit()
 
         else:
-            print("I'm sorry", name,
-                  "but I'm afraid your language is still new to me and I didn't quite understand that.\n")
+            print("I'm sorry " + name + " but I'm afraid your language is still new to me and I didn't quite understand that.\n")
             answer = input("Will you help us?\n")
+    '''
 
     print(
         "You soon depart the king's good company on your quest to defeat Rirakoor, the great purple dragon in the east.\nFor many years the dragon has plagued the land. It is your quest to defeat it.\n")
