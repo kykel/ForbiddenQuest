@@ -1,0 +1,265 @@
+'{Skeleton Key}:[Graveyard]:graveyard:no': {}
+'{Skeleton Key}:[Graveyard]:gravekeeper''s house:yes':
+  introtext: >-
+
+    You take one last glance around before slamming your foot into the center
+    frame of the window. It caves like paper and crashes into the building.
+
+    Using your knife you knock out a few more shards of glass, sticking
+    dangerously from the windows frame.
+
+
+    You climb your way into the building but have only your left and chest into
+    the room when a zombie comes crashing at you from behind the bookshelf
+    beside you.
+
+    Panicked you lash out with you knife in futility. The contacted flesh at its
+    collar bone melts away and it crashes into you anyway, the stench and
+    decaying flesh smearing over you as the two of you fall back.
+
+
+    The zombies teeth are tearing into your throat before you hit the ground.
+    You flail pointlessly as his fingers begin to rip your organs from you
+    abdomen and you bleed out in the unkept grass.
+
+    Guess that explains what happened to the gravekeeper.
+  pointers:
+    - DEAD END
+'{Skeleton Key}:[Graveyard]:graveyard:yes':
+  introtext: >-
+
+    You enter the graveyard and see a small mosuleaum, large enough for some
+    ashes and an a single coffin.
+
+    Tombstones litter the area, various messages carved into them by loved ones.
+  question: Where to?
+  pointers:
+    - read the tombstones
+    - enter the mosuleaum
+    - back
+  secondarytext: Nothing has changed since the last visit.
+'{Skeleton Key}:[Graveyard]:graveyard:yes:enter the mosuleaum': {}
+treename: Graveyard
+savepoint: '{Skeleton Key}:[Graveyard]:graveyard:yes:read the tombstones'
+'{Skeleton Key}:[Graveyard]':
+  introtext: >-
+
+    You find yourself in the graveyard. It is an eerie place, wet and foggy with
+    a slight air of death emanating about.
+
+
+    Already you regret the decision. Before you stands a mausoleum.
+
+    To your left, a path leads to the gravekeeper's house and teh path to the
+    right leads deeper into the graveyard, silhouetted by fog.
+  pointers:
+    - gravekeeper's house
+    - mausoleum
+    - graveyard
+  secondarytext: >-
+
+    Before you stands a moseleum.
+
+    To your left a path to the gravekeeper's house and on your right the path
+    leads deeper into the graveyard, silhouetted by fog.
+'{Skeleton Key}:[Graveyard]:gravekeeper''s house':
+  introtext: >-
+
+    You walk over to the gravekeeper's house only to find the door locked. You
+    knock on the door, thinking it's only the sensible thing to do.
+
+    Besides, if nobody answers then maybe you could just break the 'window'.
+
+
+    Nobody answers. You hear no movement inside. Do you want to break open the
+    window and climb inside?
+  question: Do you want to break open the window and climb inside?
+  pointers:
+    - 'yes'
+    - 'no'
+  secondarytext: |-
+
+    You knock on the door.
+    Nobody answers and you can hear no movement inside.
+
+    Do you want to break open the window and climb inside?
+'{Skeleton Key}:[Graveyard]:mausoleum':
+  introtext: >-
+
+    You choose to enter the moseleum. What the hell are you thinking? Some
+    people just have a genuine death wish.
+
+
+    You follow the moseleum's many hallways until you're sure you've wandered so
+    far into the maze that you're lost. Well done moron. Something dark and
+    slimy is bound to kill now.
+
+
+    All around you are empty crypts. That is surely not a good sign. Many have
+    been seemingly broken out of from the inside. Still, you continue on.
+
+    The moseleum has little light, mostly candles that are somehow all lit and
+    seemingly unmelted no matter how far in you seem to go.
+
+
+    You are rounding a corner when you hear a noise up ahead. You continue on,
+    knife in hand and perhaps a bit more tentitively than before.
+
+    You round the next corner to find doors, bright yellow light leaking through
+    the key hold and cracks. You swallow nervously and peek through the keyhole.
+
+    Inside you see a single coffin, a large statue of the patron Hesephias,
+    goddess of peace, holding her hands together in prayer over the coffin.
+    There appears to be nothing else in the room. But you clearly heard a noice.
+    At least, you think you did.
+  question: Will you enter anyway?
+  pointers:
+    - 'yes'
+    - 'no'
+keyitems: []
+'{Skeleton Key}:[Graveyard]:mausoleum:yes':
+  introtext: >-
+
+    You enter through the doors anyway and miraculously find nothing of a
+    threatening nature inside. This is shaping up to be quite the easy job.
+
+    You approach the coffin and find engraved in old Andaal language, an ancient
+    language you just so happen to grow up speaking, the words: 
+
+
+    ONLY THE CHOSEN MAY OPEN.
+
+    BE WARNED. ALL UNWORTHY WILL DIE.
+
+
+        ______________    
+       /\____________/\              
+      / /            \ \             
+     / /              \ \            
+    / /                \ \           
+     /                  \ \          
+    /                    \ \         
+                          \ \        
+        ONLY THE CHOSEN    \ \       
+           MAY OPEN         \_\      
+                            / /      
+          BE WARNED        / /       
+    ALL UNWORTHY WILL DIE / /        
+                         / /         
+    ____________________/_/_____     
+
+    But you quit believing in such mumbo jumbo years ago.
+  question: Will you open the coffin?
+  pointers:
+    - 'yes'
+    - 'no'
+'{Skeleton Key}:[Graveyard]:graveyard:yes:read the tombstones':
+  introtext: |-
+
+    Various stones carry various messages but you find nothing of interest.
+  pointers:
+    - DEAD END
+  secondarytext: Nothing has changed since the last visit.
+'{Skeleton Key}:[Graveyard]:mausoleum:yes:no':
+  deathtext: >-
+
+    Panic setting in you immediatly turn and run the opposite direction but no
+    more than a few seconds later something trips you. You slam face first into
+    the mud.
+
+    You roll over just as a piercing object plunges into your guts.
+
+
+    Your blood washes away the mud, but you're too dead to see what killed you.
+  pointers:
+    - DEAD END
+'{Skeleton Key}:[Graveyard]:mausoleum:yes:yes':
+  introtext: >-
+
+    You open the coffin to find an old jumbled corpse of dried skin, hair and
+    bones. The key is on a necklace around the coprses neck. You don't hesitate
+    even a moment on tearing it free, dislodging the skull in the process.
+
+
+    The doors slam behind you then. A ghost appears, and judging by the beard it
+    is of the same corpse you just desicrated. 'WHO ARE YOU TO DISTURB MY
+    SLUMBER?' he shouts at you, voice booming so loud the coffin rattles in its
+    place.
+
+    I am Chosen-One seeking the skeleton key to open the great fortress of the
+    dragon terrorizing the lands in the east. I am on a quest to slay the beast.
+
+
+    The ghost stares at you a moment, his translucent eyes strangly captivating.
+
+
+    VERY WELL. I DEEM YOU WORTHY DESPITE YOUR DISRESPECT FOR THE DECEASED. YOU
+    MAY PASS.
+
+
+
+    With a pep in your step you follow the hallways back out, through the
+    graveyard and back to the tavern where you started. Things are looking up.
+  pointers:
+    - DEAD END
+'{Skeleton Key}:[Graveyard]:graveyard':
+  introtext: >-
+
+    You walk among the tombstones. The fog floats around them, ever moving, ever
+    changing, more akin to a river than the streams you walked back home.
+
+    The tombstones change shape around, from small, stony placs on the ground
+    that you trip over to massive stone faces that gargoyles cling to, watching
+    you through glowing eyes, a sense of damning in their stares.
+
+
+
+    The path leads you to a gated section, bordered by a steel fence laced
+    together with an intricate design of metal thorn bushes, large curving
+    thorns jutting off the tops of each bar of the fence.
+
+    It 'screams' get out in every way possible but you of course, intent on your
+    mission do not listen.
+
+
+
+    You push the gate open. The fog suddenly begins to swirl restlessly, as
+    though in warning or maybe in anticipation of your coming.
+
+    You swallow hard and survey your surroundings remembering bedgrudginly the
+    horror stories of zombies and ghouls your parents told you as a kid.
+
+
+    The fog suddenly parts, opening the path before you.
+  question: Do you enter?
+  pointers:
+    - 'yes'
+    - 'no'
+  secondarytext: Nothing has changed since the last visit.
+questname: Skeleton Key
+'{Skeleton Key}:[Graveyard]:gravekeeper''s house:no':
+  introtext: >-
+
+    You decide to go with integrity rather than greed. Good decision too. No
+    sooner than you walk away from the house does a zombie begin beating on the
+    door from the inside.
+
+    Close call.
+  pointers:
+    - DEAD END
+  secondarytext: |-
+
+    You can hear a zombie moaning inside.
+'{Skeleton Key}:[Graveyard]:mausoleum:no':
+  deathtext: >-
+
+    Panic setting in you immediatly turn and run the opposite direction but no
+    more than a few seconds later something trips you. You slam face first into
+    the mud.
+
+
+    You roll over just as a piercing object plunges into your guts.
+
+    Your blood washes away the mud, but you're too dead to see what killed you.
+  pointers:
+    - DEAD END
