@@ -23,7 +23,7 @@ class quest_parser:
         self.branchname = ''
         self.branchdata = {}
         self.questname = questname
-        self.quest_dir = 'quest_saves/'
+        self.quest_dir = '../developers/quest_builder_WIP/quest_saves/'
         self.tracker = {}
         self.player = player
         self.win_condition = False
@@ -48,8 +48,8 @@ class quest_parser:
     #Begins gameplay of quest.
     def start_quest(self):
         self.clear()
-        print("Quest: " + self.questdata['questname'] + '\n')
-        print("You arrive at {}.".format(self.questdata['treename']))
+        print "Quest: " + self.questdata['questname'] + '\n'
+        print "You arrive at {}.".format(self.questdata['treename'])
         self.player.questlog[self.questname] = "Incomplete"
         self.running()
     
@@ -58,7 +58,7 @@ class quest_parser:
         branchtext = self.secondarytext
         while self.win_condition == False:
             self.quest_save()
-            print("Location: {}\n".format(self.branchname))
+            print "Location: {}\n".format(self.branchname)
             #Checks to see if branch has changed and updates branch text accordingly
             if self.currentbranch != self.previousbranch:
                 branchtext = self.check_tracker()
@@ -69,18 +69,18 @@ class quest_parser:
             #self.boss_battle() - Need to add in a boss battle functionality
             self.death_text()
             if self.player.hp <= 0:
-                print("\nGame Over.\n")
+                print "\nGame Over.\n"
                 break
             self.change_branches(self.pointers())
             self.clear()
         
     #Prints out introtext
     def introtext(self):
-        print(self.branchdata['introtext'], "\n")
+        print self.branchdata['introtext'], "\n"
      
     #Prints out secondarytext    
     def secondarytext(self):
-        print(self.branchdata['secondarytext'], "\n")
+        print self.branchdata['secondarytext'], "\n"
     
     #Checks and returns the next pointer. - Need to finish WIN flag.
     def pointers(self):
@@ -90,10 +90,10 @@ class quest_parser:
         elif 'DEAD END' in self.branchdata['pointers']:
             return 'DEAD END'
         elif 'question' in self.branchdata:
-            print(self.branchdata['question'])
+            print self.branchdata['question']
         else:
-            print("Where do you want to go?")
-        print(" : ".join(self.branchdata['pointers']), "\n")
+            print "Where do you want to go?"
+        print " : ".join(self.branchdata['pointers']), "\n"
         ui = self.userInput()
         if ui in self.branchdata['pointers']:
             return ui
@@ -107,7 +107,7 @@ class quest_parser:
         
     #Returns input from user   
     def userInput(self):
-        return input()
+        return raw_input()
     
     #Traverses tree branches - takes input as x and adjusts branch as necessary.
     def change_branches(self, x):
@@ -123,12 +123,12 @@ class quest_parser:
             branchparts = self.currentbranch.split(':')
             printparts = self.currentbranch.split(':')[2:]
             printparts.insert(0,self.treename)
-            print("Choose an option:\n", " : ".join(printparts), "\n")
+            print "Choose an option:\n", " : ".join(printparts), "\n"
             ans = self.userInput()
             for i in branchparts:
                 cnt = branchparts.count(i)
                 if cnt > 1:
-                    print("*** Duplicate branch names exist in tree. Defaulting to top most branch. ***\n\n")
+                    print "*** Duplicate branch names exist in tree. Defaulting to top most branch. ***\n\n"
                     break
             for i in branchparts:
                 if ans.lower() in i.lower():
@@ -141,7 +141,7 @@ class quest_parser:
                     "Incorrect option. Try again.\n"
         #Returns to parent branch of the DEAD END branch.
         elif x == 'DEAD END':
-            print("Nothing further to do here.\n")
+            print "Nothing further to do here.\n"
             #self.branchdata['pointers'].add('passed')
             branchparts = self.currentbranch.split(':')
             self.currentbranch = ":".join(branchparts[:-1])
@@ -154,12 +154,12 @@ class quest_parser:
             self.currentbranch += ":" + x
             self.branchdata = self.questdata[self.currentbranch]
         elif x == 'WIN':
-            print("\n\nQuest Completed.\n\n")
+            print "\n\nQuest Completed.\n\n"
             self.player.questlog[self.questname] = 'Complete'
             self.wait()
             self.win_condition = True
         else:
-            print("Incorrect choice. Try again.\n")
+            print "Incorrect choice. Try again.\n"
             self.wait()
         #Grabs the very last index of the branch (branchname)
         self.branchname = self.currentbranch.split(':')[-1]
@@ -173,31 +173,31 @@ class quest_parser:
     #Checks branch for treasure and awards it to player            
     def find_treasure(self):
         if 'keyitem' in self.branchdata:
-            print(self.branchdata['itemintrotext'])
+            print self.branchdata['itemintrotext']
             self.player.add_keyitem(self.branchdata['keyitem'], self.branchdata['keyitemdescription'])
             del self.branchdata['keyitem']
             
         if 'gold' in self.branchdata:
-            print(self.branchdata['itemintrotext'])
+            print self.branchdata['itemintrotext']
             self.player.add_gold(self.branchdata['gold'])
             del self.branchdata['gold']
             
         if 'weapondict' in self.branchdata:
-            print(self.branchdata['itemintrotext'])
+            print self.branchdata['itemintrotext']
             self.player.add_item(self.branchdata['weapondict']['name'], self.branchdata['weapondict'])
             del self.branchdata['weapondict']
             
     #Checks for a room for damage and damages player.        
     def damage_room(self):
         if 'damage' in self.branchdata:
-            print("You take {} damage.".format(self.branchdata['damage']))
+            print "You take {} damage.".format(self.branchdata['damage'])
             hp = self.player.take_damage(self.branchdata['damage'])
-            print("You have {} life left.".format(hp))
+            print "You have {} life left.".format(hp)
 
     #Prints out death text and sets player hp to 0
     def death_text(self):
         if 'deathtext' in self.branchdata:
-            print(self.branchdata['deathtext'])
+            print self.branchdata['deathtext']
             self.player.hp = 0
     
     #Need to account for the removal of key items.        
@@ -240,7 +240,7 @@ class quest_parser:
     
     #Builds a tracker for the quest.
     def build_tracker(self):
-        for key,val in list(self.questdata.items()):
+        for key,val in self.questdata.items():
             if key.startswith(self.questtree):
                 self.tracker[key] = 'unvisited'
     
@@ -256,7 +256,7 @@ class quest_parser:
         os.system('cls' if os.name == 'nt' else 'clear')
 
     def wait(self):
-        input("\nPress enter to continue.")
+        raw_input("\nPress enter to continue.")
         
     #########################################################################################################################
     
