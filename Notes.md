@@ -16,7 +16,6 @@ Solution:
    - Complete
 2. Convert 'Primary Scripts' to Object Driven code.
 3. Incorporate code as a library (core).
-4. 
 
 ### Primary Scripts
 1. bosses.py - WIP
@@ -46,3 +45,6 @@ Solution:
 7. player.py - All player features
 8. combat.py - Handles all combat management and generation
 9. memorycard.py - Handles all file save and load
+
+## Alternatvie Potentials
+1. Possibly convert quests to YAML so I can hand write them? Might be difficult and not as effective.
