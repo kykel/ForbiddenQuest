@@ -16,6 +16,8 @@ Solution:
    - Complete
 2. Convert 'Primary Scripts' to Object Driven code.
 3. Incorporate code as a library (core).
+4. Add a tree plot
+   - https://stackoverflow.com/questions/13688410/dictionary-object-to-decision-tree-in-pydot
 
 ### Primary Scripts
 1. bosses.py - WIP
